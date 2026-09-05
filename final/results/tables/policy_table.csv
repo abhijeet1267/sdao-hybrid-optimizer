@@ -1,0 +1,6 @@
+policy,queries,ann_selections,ann_pct,mean_latency_ms,mean_recall_at_10,min_recall_at_10,frac_unsafe_ann,frac_recall_ge_target
+min_recall,125,100,80.0,15.100804023999997,1.0,1.0,0.0,1.0
+mean_recall,125,100,80.0,15.100804023999997,1.0,1.0,0.0,1.0
+quantile_recall,125,100,80.0,15.100804023999997,1.0,1.0,0.0,1.0
+lcb_recall,125,100,80.0,15.100804023999997,1.0,1.0,0.0,1.0
+failure_rate,125,0,0.0,15.290977616000005,1.0,1.0,,1.0

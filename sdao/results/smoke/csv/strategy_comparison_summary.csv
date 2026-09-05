@@ -1,0 +1,2 @@
+strategy,queries,latency_ms_mean,latency_ms_median,recall_at_10_mean,vectors_scanned_mean,memory_mb_peak
+POST,32,311.8483879375001,82.03750000000021,0.98125,232.71875,1628.25

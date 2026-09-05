@@ -1,0 +1,2 @@
+strategy,queries,latency_ms_mean,latency_ms_median,recall_at_10_mean,vectors_scanned_mean,memory_mb_peak
+GRAPH,32,274.11201687499994,121.31399999999992,1.0,232.71875,2262.046875

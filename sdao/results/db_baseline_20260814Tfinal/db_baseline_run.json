@@ -1,0 +1,8 @@
+{
+  "started_at_utc": "2026-08-14T13:29:25.259851+00:00",
+  "queries": 32,
+  "top_k": 10,
+  "vector_first_candidate_budget": 100,
+  "rows": 128,
+  "failures": 0
+}

@@ -1,0 +1,3 @@
+bucket,adaptive_selected,count
+"[0.00,0.05)",IVFFLAT_HYBRID,60
+"[0.50,1.00)",VECTOR_FIRST_HNSW,190

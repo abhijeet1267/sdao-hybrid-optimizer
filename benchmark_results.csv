@@ -1,0 +1,6 @@
+Strategy,Mean_Latency_ms,Median_Latency_ms,P95_Latency_ms,Recall_at_10
+Adaptive,52.1,49.3,99.2,1.0
+SQL_FIRST,65.4,52.1,155.3,1.0
+VECTOR_FIRST_HNSW,57.2,29.5,205.1,0.88
+HNSW_HYBRID,11.2,4.1,45.1,0.745
+IVFFLAT_HYBRID,22.1,18.2,52.4,0.812

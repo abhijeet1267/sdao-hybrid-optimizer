@@ -1,0 +1,5 @@
+environment,architecture,postgresql,pgvector,ram_gb,cpu_cores,HNSW_m,ef_construction,ef_search,index_size,mean_recall,min_recall,median_latency_ms,notes
+canonical_docker,aarch64,16.14 (Debian),0.8.5,unknown,unknown,16,64,100,unknown,0.810,0.0,1.4,Original baseline; SQL_FIRST selected 250/250; HNSW_HYBRID recall 0.81
+current_homebrew,aarch64,17.10 (Homebrew),0.8.5,8,8,16,64,100,782 MB,0.999,0.7,142.4,Canonical params on current env; recall near 1.0 but cold-cache latency high
+current_homebrew_ef200,aarch64,17.10 (Homebrew),0.8.5,8,8,16,200,100,782 MB,1.0,1.0,130.5,ef_construction=200; perfect recall; warm cache
+current_homebrew_200k,aarch64,17.10 (Homebrew),0.8.5,8,8,16,64,100,159 MB,1.0,1.0,9.0,200K subset; canonical params; perfect recall

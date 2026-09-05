@@ -1,0 +1,23 @@
+{
+  "decision": "F. Root cause cannot yet be fully isolated - see root_cause_report.md",
+  "rationale": "The original 1M SIFT1M baseline (SQL_FIRST selected 250/250) was produced in a Docker environment (pgvector/pgvector:0.8.5-pg16, PostgreSQL 16.14) with the default HNSW parameters (m=16, ef_construction=64). Reproducing the same code path with identical parameters on the current Homebrew/PG17.10 environment produces SQL_FIRST selected 0/250 and HNSW_HYBRID mean recall 0.999. The root cause is most likely HNSW graph construction quality differences between the two environments, but this cannot be fully confirmed without the original Docker environment. Until the Docker environment is reproduced on the same machine, the canonical experimental environment cannot be frozen.",
+  "current_environment": {
+    "postgresql": "17.10 (Homebrew)",
+    "pgvector": "0.8.5",
+    "os": "macOS 26.5.2 on aarch64",
+    "ram_gb": 8,
+    "cpu_cores": 8,
+    "table": "sift_hybrid (1,000,000 rows) or sift_hybrid_200k (200,000 rows)"
+  },
+  "canonical_index_parameters": {
+    "HNSW_m": 16,
+    "HNSW_ef_construction": 64,
+    "HNSW_ef_search_runtime": 100,
+    "IVFFLAT_lists": 1000,
+    "IVFFLAT_probes_runtime": 10,
+    "candidate_budget": 100
+  },
+  "recommended_next_step": "Run the original Docker environment (pgvector/pgvector:0.8.5-pg16) on the same machine, load the same 1M SIFT1M data, build the HNSW index with default parameters, and run the same benchmark with seed=20260820. If the original recall is reproduced, the environment is the cause. If not, the query workload is the cause. Only after this experiment should the canonical configuration be frozen.",
+  "frozen_only_after": "STEP 6 additional experiment completed (original Docker environment reproduced on the same machine)",
+  "do_not_use_until": "reproducibility_issue_resolved"
+}

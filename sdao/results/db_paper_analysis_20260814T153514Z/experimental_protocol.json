@@ -1,0 +1,38 @@
+{
+  "dataset": {
+    "name": "SIFT1M",
+    "rows": 1000000,
+    "embedding_dimension": 128,
+    "distance_metric": "L2"
+  },
+  "fixed_strategies": [
+    "SQL_FIRST",
+    "VECTOR_FIRST_HNSW",
+    "HNSW_HYBRID",
+    "IVFFLAT_HYBRID"
+  ],
+  "adaptive_planner": {
+    "selectivity_source": "live PostgreSQL EXPLAIN (FORMAT JSON) estimate only",
+    "calibration": "empirical bucket-median latency with conservative observed minimum-recall feasibility",
+    "target_recall": 0.95,
+    "fallback": "SQL_FIRST"
+  },
+  "execution": {
+    "workload_queries": 32,
+    "top_k": 10,
+    "warm_persistent_session": true,
+    "execution_order": "for each query: adaptive selected strategy, then four fixed strategies; exact filtered reference after each strategy",
+    "plan_verification": "separate EXPLAIN JSON evidence; ANN execution requires intended index"
+  },
+  "latency_metrics": {
+    "comparable": "timed selected SQL execution only; comparable across adaptive and fixed rows",
+    "decision_overhead": "EXPLAIN estimate + planner + verified executor wall time; excludes exact reference evaluation"
+  },
+  "limitations": {
+    "cold_cache_control": false,
+    "repeated_trials": false,
+    "random_interleaving": false,
+    "held_out_evaluation": false,
+    "calibration_evaluation_dependence": true
+  }
+}

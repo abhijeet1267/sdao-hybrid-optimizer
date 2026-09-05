@@ -1,0 +1,87 @@
+{
+  "collected_at_utc": "2026-08-14T16:36:07.997640+00:00",
+  "collection_scope": "read-only; excludes passwords and secrets",
+  "hardware": {
+    "cpu_model": "arm",
+    "cpu_model_reason": "CalledProcessError: Command '['sysctl', '-n', 'machdep.cpu.brand_string']' returned non-zero exit status 1.",
+    "architecture": "arm64",
+    "logical_cpu_count": 8,
+    "ram": null,
+    "ram_reason": "CalledProcessError: Command '['sysctl', '-n', 'hw.memsize']' returned non-zero exit status 1."
+  },
+  "operating_system": {
+    "name": "Darwin",
+    "version": "Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:46 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8103",
+    "release": "25.5.0"
+  },
+  "python": {
+    "version": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "executable": "/Users/abhijeetmiskin/AppData/MyProject/venv/bin/python",
+    "prefix": "/Users/abhijeetmiskin/AppData/MyProject/venv",
+    "virtual_env": null
+  },
+  "packages": {
+    "psycopg": {
+      "version": "3.3.4",
+      "reason": null
+    },
+    "pandas": {
+      "version": "3.0.5",
+      "reason": null
+    },
+    "numpy": {
+      "version": "2.5.1",
+      "reason": null
+    },
+    "matplotlib": {
+      "version": "3.11.1",
+      "reason": null
+    },
+    "scikit-learn": {
+      "version": "1.9.0",
+      "reason": null
+    },
+    "python-dotenv": {
+      "version": "1.2.2",
+      "reason": null
+    },
+    "PyPDF2": {
+      "version": null,
+      "reason": "not installed"
+    }
+  },
+  "docker": {
+    "server_version": null,
+    "server_version_reason": "CalledProcessError: Command '['docker', 'version', '--format', '{{.Server.Version}}']' returned non-zero exit status 1.",
+    "image": "pgvector/pgvector:0.8.5-pg16",
+    "image_digest": null,
+    "image_digest_reason": "CalledProcessError: Command '['docker', 'image', 'inspect', 'pgvector/pgvector:0.8.5-pg16', '--format', '{{index .RepoDigests 0}}']' returned non-zero exit status 1."
+  },
+  "postgresql": {
+    "server_version": null,
+    "pgvector_version": null,
+    "reason": "OperationalError: connection is bad: connection to server at \"127.0.0.1\", port 5433 failed: Operation not permitted\n\tIs the server running on that host and accepting TCP/IP connections?\nMultiple connection attempts failed. All failures were:\n- host: 'localhost', port: 5433, hostaddr: '::1': connection is bad: connection to server at \"::1\", port 5433 failed: Operation not permitted\n\tIs the server running on that host and accepting TCP/IP connections?\n- host: 'localhost', port: 5433, hostaddr: '127.0.0.1': connection is bad: connection to server at \"127.0.0.1\", port 5433 failed: Operation not permitted\n\tIs the server running on that host and accepting TCP/IP connections?"
+  },
+  "dataset": {
+    "name": "SIFT1M",
+    "row_count": 1000000,
+    "embedding_dimension": 128,
+    "base_vectors_path": "dataset/sift/sift_base.fvecs",
+    "base_vectors_sha256": "21f66e2975057b5728ba56de1c825bac4f4d89d596609ae985741c6242631816",
+    "attributes_path": "attributes.csv",
+    "attributes_sha256": "316ad69956db4e2da5566a50f3c3229af026d476f8dd7c9bce2a20efb21961ac"
+  },
+  "queries": {
+    "path": "queries.csv",
+    "sha256": "fcbced425b8ae01e97cb77faa2917431dca2aeccfeab62b8d25d9bb1975d6746",
+    "query_count": 32,
+    "generator": "generate_queries.py",
+    "seed": 42,
+    "seed_source": "np.random.seed(42) in generate_queries.py"
+  },
+  "git": {
+    "git_repository": false,
+    "git_commit": null,
+    "reason": "CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128."
+  }
+}

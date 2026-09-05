@@ -1,0 +1,72 @@
+{
+  "recorded_at_utc": "2026-08-27T15:58:11Z",
+  "host": {
+    "os": "macOS",
+    "os_version": "26.5.2",
+    "os_build": "25F84",
+    "kernel": "Darwin 25.5.0",
+    "arch": "arm64",
+    "machine_model": "Apple M-series (aarch64)",
+    "hostname": "Abhijeets-MacBook-Air-2.local"
+  },
+  "cpu": {
+    "physical_cores": 8,
+    "logical_cores": 8
+  },
+  "memory": {
+    "total_bytes": 8589934592,
+    "total_gb": 8
+  },
+  "disk": {
+    "filesystem": "/dev/disk3s1",
+    "size_gb": 228,
+    "used_gb": 173,
+    "available_gb": 13,
+    "capacity_pct": 93
+  },
+  "docker": {
+    "available": false,
+    "note": "Docker daemon is not running on this host. The original baseline (results/real_run_20260826T065155Z/) was produced in a Docker container with pgvector/pgvector:0.8.5-pg16 (PostgreSQL 16.14). Live experiments in this run use the homebrew PostgreSQL installation instead."
+  },
+  "postgresql": {
+    "version": "17.10",
+    "edition": "Homebrew",
+    "platform": "aarch64-apple-darwin25.4.0",
+    "compiler": "Apple clang 21.0.0",
+    "data_directory": "/opt/homebrew/var/postgresql@17",
+    "host": "localhost",
+    "port": 5432,
+    "auth_method": "trust (local)",
+    "database": "sdao",
+    "role": "sdao",
+    "version_note": "PostgreSQL 17.10 is one major version newer than the 16.14 used for the original baseline. pgvector is the same version (0.8.5) on both. Index behavior, query plans, and recall characteristics for the four-strategy benchmark are expected to be equivalent for this workload, but the version difference is documented here for transparency."
+  },
+  "pgvector": {
+    "version": "0.8.5",
+    "matches_baseline": true
+  },
+  "python": {
+    "interpreter": "/Users/abhijeetmiskin/AppData/MyProject/venv/bin/python3",
+    "note": "Project venv used for all runs."
+  },
+  "packages": {
+    "psycopg2": "from homebrew postgresql@17 toolchain (loaded at runtime)",
+    "numpy": "from venv",
+    "pandas": "from venv",
+    "matplotlib": "from venv",
+    "seaborn": "from venv"
+  },
+  "sift_dataset": {
+    "name": "SIFT1M",
+    "base_vectors_file": "dataset/sift/sift_base.fvecs",
+    "base_vector_count": 1000000,
+    "query_vector_file": "dataset/sift/sift_query.fvecs",
+    "query_vector_count": 10000,
+    "dimension": 128,
+    "distance": "L2"
+  },
+  "baseline_artifacts_preserved": [
+    "results/real_run_20260826T065155Z/",
+    "results/real_run_20260826T061655Z/"
+  ]
+}

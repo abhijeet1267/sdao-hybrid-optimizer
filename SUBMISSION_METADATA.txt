@@ -1,0 +1,100 @@
+================================================================================
+SUBMISSION METADATA PACKET
+================================================================================
+Paper ID         : (assigned by submission system)
+Submission Date  : (assigned by submission system)
+Track            : Research / Industrial
+Artifact Badges  : Artifacts Available; Artifacts Evaluated & Reusable
+Manuscript       : final/manuscript/main.pdf (6 pages, 106 KiB)
+                 : final/manuscript/main.tex
+ Blind copy       : final/manuscript/main_anonymized.pdf (6 pages, double-blind)
+================================================================================
+
+
+[1] PAPER TITLE
+--------------------------------------------------------------------------------
+Recall-Constrained Admission for Hybrid ANN-SQL Plans: PAC Bounds, q-Error
+Resilience, and 1M-Row Validation
+
+
+[2] AUTHORS AND AFFILIATIONS
+--------------------------------------------------------------------------------
+Author 1
+    Full Name      : Abhijeet L. M.
+    Affiliation    : School of Computer Science and Engineering,
+                     Vellore Institute of Technology, Chennai, India
+    Email          : abhijeet.lm@vit.ac.in
+    Contact Role   : First / corresponding author for artifact evaluation
+
+Author 2
+    Full Name      : Leninisha S.
+    Affiliation    : School of Computer Science and Engineering,
+                     Vellore Institute of Technology, Chennai, India
+    Email          : leninisha.s@vit.ac.in
+    Contact Role   : Co-author
+
+
+[3] SUBMISSION ABSTRACT  (target: < 250 words; actual: 248 words)
+--------------------------------------------------------------------------------
+Vector databases increasingly support hybrid SQL queries that combine
+relational predicates (e.g., WHERE price < 100) with approximate
+nearest-neighbour (ANN) top-k over high-dimensional embeddings. A
+latency-driven query planner will lead with the exact-SQL scan in
+selective predicates and the ANN index scan in non-selective ones,
+yet the recall of the latter can silently drop to 0.10-0.22 in
+production, producing wrong top-k results. We formalise this choice
+as a recall-constrained admission problem and prove a data-dependent
+(epsilon, delta)-PAC bound on the per-bucket mean Recall@10 of each
+candidate plan. The bound is computed once per (strategy,
+selectivity-bucket) pair offline, then evaluated in O(1) inside a
+PostgreSQL planner hook that gates every query. We validate it
+empirically on a 200,000-row SIFT-128 audit and a full 1,000,000-row
+production benchmark (cold-cache dynamics, q-error injection, PAC
+verification across 30 random seeds). The headline finding is
+structural: hybrid ANN plans deliver a 40-65x latency reduction over
+the SQL scan, but Recall@10 is bounded away from 0.95 by the fixed
+ef_search=100 graph-traversal budget, not by planner tuning. The
+admission gate therefore routes 100% of production-quality
+(R_target >= 0.9) queries to the exact-SQL plan in the 1M
+environment, admitting hybrid plans only for R_target <= 0.3
+(RAG surface-and-rerank workloads). The 200K audit shows the gate
+admits hybrid plans at 80% when the buffer cache and selectivity
+are favourable, proving the boundary is data-driven rather than
+hard-coded. Across 20 PAC cells the empirical Bernstein CI
+satisfies the theoretical guarantee (pass rate 1.00 >= 1 - delta
+= 0.95).
+
+
+[4] IEEE TAXONOMY KEYWORDS  (8 terms)
+--------------------------------------------------------------------------------
+1. Query processing
+2. Vector databases
+3. Approximate nearest neighbor search
+4. Database management systems
+5. Statistical guarantees
+6. Cost-based query optimizers
+7. PostgreSQL / pgvector
+8. PAC learning / Probably Approximately Correct
+
+
+[5] PRIMARY / SECONDARY ACM CCS CONCEPTS  (cross-reference)
+--------------------------------------------------------------------------------
+Primary   : Information systems -> Database management system engines
+            -> Query optimization
+Secondary : Information systems -> Information retrieval
+            -> Retrieval models and ranking
+            -> Nearest-neighbor search
+Secondary : Theory of computation -> Design and analysis of algorithms
+            -> Approximation algorithms
+
+
+[6] REPRODUCIBILITY / ARTIFACT-EVALUATION POINT OF CONTACT
+--------------------------------------------------------------------------------
+Artifact lead    : Abhijeet L. M.
+Email            : abhijeet.lm@vit.ac.in
+Public manifest  : final/audit/submission_checksums.sha256
+Reproduce cmd    : bash scripts/reproduce_all.sh
+Source paper     : final/manuscript/main.pdf
+================================================================================
+END OF SUBMISSION METADATA
+================================================================================

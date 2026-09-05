@@ -1,0 +1,5050 @@
+[
+  {
+    "query_id": 42,
+    "estimated_selectivity": 0.00513,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 99,
+    "estimated_selectivity": 0.0967,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 198,
+    "estimated_selectivity": 0.272595,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 156,
+    "estimated_selectivity": 0.272085,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 50,
+    "estimated_selectivity": 0.00477,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 245,
+    "estimated_selectivity": 0.788185,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 112,
+    "estimated_selectivity": 0.100665,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 232,
+    "estimated_selectivity": 0.97952,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 200,
+    "estimated_selectivity": 0.272595,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 204,
+    "estimated_selectivity": 0.658825,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 86,
+    "estimated_selectivity": 0.0999,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 3,
+    "estimated_selectivity": 0.00518,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 122,
+    "estimated_selectivity": 0.1037,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 239,
+    "estimated_selectivity": 0.653495,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 162,
+    "estimated_selectivity": 0.271,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 40,
+    "estimated_selectivity": 0.049415,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 26,
+    "estimated_selectivity": 0.004475,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 159,
+    "estimated_selectivity": 0.271,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 19,
+    "estimated_selectivity": 0.00525,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 222,
+    "estimated_selectivity": 0.500835,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 56,
+    "estimated_selectivity": 0.098665,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 247,
+    "estimated_selectivity": 0.82002,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 194,
+    "estimated_selectivity": 0.269895,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 169,
+    "estimated_selectivity": 0.2705,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 97,
+    "estimated_selectivity": 0.0999,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 221,
+    "estimated_selectivity": 0.95196,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 184,
+    "estimated_selectivity": 0.269895,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 79,
+    "estimated_selectivity": 0.0514,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 30,
+    "estimated_selectivity": 0.00518,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 89,
+    "estimated_selectivity": 0.098665,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 118,
+    "estimated_selectivity": 0.10083,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 124,
+    "estimated_selectivity": 0.2004,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 21,
+    "estimated_selectivity": 0.00509,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 133,
+    "estimated_selectivity": 0.196735,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 242,
+    "estimated_selectivity": 0.58423,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 164,
+    "estimated_selectivity": 0.271,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 202,
+    "estimated_selectivity": 0.775855,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 75,
+    "estimated_selectivity": 0.099535,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 51,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 10,
+    "estimated_selectivity": 0.049415,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 59,
+    "estimated_selectivity": 0.098665,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 244,
+    "estimated_selectivity": 0.8161,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 163,
+    "estimated_selectivity": 0.269895,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 85,
+    "estimated_selectivity": 0.099535,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 229,
+    "estimated_selectivity": 0.99477,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 136,
+    "estimated_selectivity": 0.10088,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 93,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 212,
+    "estimated_selectivity": 0.71166,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 54,
+    "estimated_selectivity": 0.099535,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 38,
+    "estimated_selectivity": 0.005015,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 47,
+    "estimated_selectivity": 0.04925,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 168,
+    "estimated_selectivity": 0.2705,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 151,
+    "estimated_selectivity": 0.269895,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 161,
+    "estimated_selectivity": 0.267975,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 74,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 130,
+    "estimated_selectivity": 0.10145,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 58,
+    "estimated_selectivity": 0.0967,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 61,
+    "estimated_selectivity": 0.098665,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 65,
+    "estimated_selectivity": 0.099535,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 49,
+    "estimated_selectivity": 0.005015,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 4,
+    "estimated_selectivity": 0.049935,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 53,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 33,
+    "estimated_selectivity": 0.00503,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 22,
+    "estimated_selectivity": 0.00507,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 44,
+    "estimated_selectivity": 0.004955,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 96,
+    "estimated_selectivity": 0.0999,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 18,
+    "estimated_selectivity": 0.005,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 171,
+    "estimated_selectivity": 0.271845,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 7,
+    "estimated_selectivity": 0.00525,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 213,
+    "estimated_selectivity": 0.595585,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 135,
+    "estimated_selectivity": 0.2033,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 170,
+    "estimated_selectivity": 0.317605,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 35,
+    "estimated_selectivity": 0.004995,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 25,
+    "estimated_selectivity": 0.00512,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 134,
+    "estimated_selectivity": 0.1034,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 12,
+    "estimated_selectivity": 0.005045,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 223,
+    "estimated_selectivity": 0.939585,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 87,
+    "estimated_selectivity": 0.0967,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 11,
+    "estimated_selectivity": 0.049935,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 90,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 9,
+    "estimated_selectivity": 0.00498,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 142,
+    "estimated_selectivity": 0.100035,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 141,
+    "estimated_selectivity": 0.2004,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 210,
+    "estimated_selectivity": 0.96958,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 152,
+    "estimated_selectivity": 0.272595,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 193,
+    "estimated_selectivity": 0.271845,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 98,
+    "estimated_selectivity": 0.05151,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 95,
+    "estimated_selectivity": 0.099535,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 182,
+    "estimated_selectivity": 0.272085,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 217,
+    "estimated_selectivity": 0.500835,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 69,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 41,
+    "estimated_selectivity": 0.04827,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 104,
+    "estimated_selectivity": 0.101155,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 131,
+    "estimated_selectivity": 0.104215,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 126,
+    "estimated_selectivity": 0.102295,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 27,
+    "estimated_selectivity": 0.04827,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 185,
+    "estimated_selectivity": 0.271845,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 183,
+    "estimated_selectivity": 0.2705,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 249,
+    "estimated_selectivity": 0.557055,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 209,
+    "estimated_selectivity": 0.583955,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 60,
+    "estimated_selectivity": 0.051335,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 205,
+    "estimated_selectivity": 0.599485,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 250,
+    "estimated_selectivity": 0.998565,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 123,
+    "estimated_selectivity": 0.2033,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 154,
+    "estimated_selectivity": 0.267975,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 144,
+    "estimated_selectivity": 0.1037,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 175,
+    "estimated_selectivity": 0.272595,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 178,
+    "estimated_selectivity": 0.282735,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 230,
+    "estimated_selectivity": 0.500835,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 36,
+    "estimated_selectivity": 0.049685,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 128,
+    "estimated_selectivity": 0.199565,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 91,
+    "estimated_selectivity": 0.098965,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 83,
+    "estimated_selectivity": 0.0999,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  },
+  {
+    "query_id": 5,
+    "estimated_selectivity": 0.00502,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 129,
+    "estimated_selectivity": 0.100035,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 195,
+    "estimated_selectivity": 0.272595,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 199,
+    "estimated_selectivity": 0.2705,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 138,
+    "estimated_selectivity": 0.196735,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 148,
+    "estimated_selectivity": 0.101505,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 187,
+    "estimated_selectivity": 0.31626,
+    "bucket": "[0.25,0.50)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "IVFFLAT_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 21.678645500000002,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 24
+      }
+    }
+  },
+  {
+    "query_id": 28,
+    "estimated_selectivity": 0.004955,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 214,
+    "estimated_selectivity": 0.586315,
+    "bucket": "[0.50,1.00)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "SQL_FIRST",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 26.990354,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 28
+      }
+    }
+  },
+  {
+    "query_id": 39,
+    "estimated_selectivity": 0.005105,
+    "bucket": "[0.00,0.05)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 3.136125,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.0,
+        "reason": "R_min=0.000 target=0.950",
+        "n": 21
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 21
+      }
+    }
+  },
+  {
+    "query_id": 149,
+    "estimated_selectivity": 0.100015,
+    "bucket": "[0.10,0.25)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 20.691792,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.8,
+        "reason": "R_min=0.800 target=0.950",
+        "n": 29
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 29
+      }
+    }
+  },
+  {
+    "query_id": 57,
+    "estimated_selectivity": 0.098665,
+    "bucket": "[0.05,0.10)",
+    "feasible": [
+      "SQL_FIRST",
+      "SQL_FIRST",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "selected": "HNSW_HYBRID",
+    "reason": "lowest_median_latency",
+    "predicted_latency_ms": 13.016,
+    "per_strategy_decision": {
+      "SQL_FIRST": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "VECTOR_FIRST_HNSW": {
+        "feasible": false,
+        "statistic": 0.5,
+        "reason": "R_min=0.500 target=0.950",
+        "n": 23
+      },
+      "HNSW_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      },
+      "IVFFLAT_HYBRID": {
+        "feasible": true,
+        "statistic": 1.0,
+        "reason": "R_min=1.000 target=0.950",
+        "n": 23
+      }
+    }
+  }
+]

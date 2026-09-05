@@ -1,0 +1,15 @@
+{
+  "seed": 20260820,
+  "split_seed": 20260821,
+  "query_count": 500,
+  "calibration_count": 250,
+  "test_count": 250,
+  "repetitions_calibration": 1,
+  "repetitions_heldout": 5,
+  "top_k": 10,
+  "target_recall": 0.95,
+  "vector_first_budget": 100,
+  "hnsw_ef_search": 100,
+  "ivfflat_probes": 10,
+  "admission_policy": "min_recall"
+}

@@ -1,0 +1,5 @@
+strategy,plan_verified,count
+HNSW_HYBRID,False,375
+IVFFLAT_HYBRID,False,375
+SQL_FIRST,True,375
+VECTOR_FIRST_HNSW,False,375

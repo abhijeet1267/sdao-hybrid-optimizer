@@ -1,0 +1,1001 @@
+query_id,strategy,median_latency_ms,recall_at_10,estimated_selectivity,bucket,adaptive_selected_strategy,is_adaptive_selection,repetitions,plan_index_names,plan_verified,access_path,sql_first_deterministic
+0,SQL_FIRST,90.437167,1.0,0.130278,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+0,VECTOR_FIRST_HNSW,3.515,0.0,0.130278,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+0,HNSW_HYBRID,1.345167,0.9,0.130278,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+0,IVFFLAT_HYBRID,5.024625,0.8,0.130278,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+1,SQL_FIRST,123.365375,1.0,0.974913,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+1,VECTOR_FIRST_HNSW,2.360333,0.0,0.974913,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+1,HNSW_HYBRID,1.069708,1.0,0.974913,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+1,IVFFLAT_HYBRID,3.717166,1.0,0.974913,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+3,SQL_FIRST,33.249,1.0,0.00139,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+3,VECTOR_FIRST_HNSW,2.3795,0.0,0.00139,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+3,HNSW_HYBRID,1.306583,0.0,0.00139,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+3,IVFFLAT_HYBRID,9.850833,0.7,0.00139,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+6,SQL_FIRST,154.522791,1.0,0.02171,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+6,VECTOR_FIRST_HNSW,8.873333,0.3,0.02171,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+6,HNSW_HYBRID,2.111209,0.3,0.02171,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+6,IVFFLAT_HYBRID,5.564792,0.6,0.02171,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+7,SQL_FIRST,66.868917,1.0,0.127185,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+7,VECTOR_FIRST_HNSW,2.490459,0.0,0.127185,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+7,HNSW_HYBRID,1.258542,0.8,0.127185,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+7,IVFFLAT_HYBRID,3.729583,0.4,0.127185,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+8,SQL_FIRST,36.118667,1.0,0.00097,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+8,VECTOR_FIRST_HNSW,3.472042,0.0,0.00097,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+8,HNSW_HYBRID,31.303292,1.0,0.00097,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+8,IVFFLAT_HYBRID,18.202209,0.4,0.00097,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+9,SQL_FIRST,209.735625,1.0,0.975667,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+9,VECTOR_FIRST_HNSW,6.332125,0.0,0.975667,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+9,HNSW_HYBRID,1.840167,1.0,0.975667,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+9,IVFFLAT_HYBRID,6.31325,1.0,0.975667,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+10,SQL_FIRST,117.419875,1.0,0.997272,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+10,VECTOR_FIRST_HNSW,2.377542,0.0,0.997272,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+10,HNSW_HYBRID,1.204792,1.0,0.997272,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+10,IVFFLAT_HYBRID,3.880042,0.8,0.997272,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+12,SQL_FIRST,108.2755,1.0,0.90307,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+12,VECTOR_FIRST_HNSW,2.725792,0.0,0.90307,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+12,HNSW_HYBRID,1.182708,1.0,0.90307,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+12,IVFFLAT_HYBRID,3.372416,0.6,0.90307,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+13,SQL_FIRST,87.055542,1.0,0.905593,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+13,VECTOR_FIRST_HNSW,2.4575,0.0,0.905593,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+13,HNSW_HYBRID,1.340833,1.0,0.905593,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+13,IVFFLAT_HYBRID,2.932125,0.8,0.905593,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+16,SQL_FIRST,86.33175,1.0,0.905953,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+16,VECTOR_FIRST_HNSW,1.432333,0.2,0.905953,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+16,HNSW_HYBRID,0.639917,1.0,0.905953,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+16,IVFFLAT_HYBRID,6.715667,1.0,0.905953,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+18,SQL_FIRST,305.419375,1.0,0.14618,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+18,VECTOR_FIRST_HNSW,46.015167,0.0,0.14618,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+18,HNSW_HYBRID,1.970875,1.0,0.14618,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+18,IVFFLAT_HYBRID,15.336125,0.8,0.14618,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+20,SQL_FIRST,313.86825,1.0,0.153863,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+20,VECTOR_FIRST_HNSW,12.119375,0.1,0.153863,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+20,HNSW_HYBRID,1.730084,1.0,0.153863,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+20,IVFFLAT_HYBRID,6.843625,0.9,0.153863,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+21,SQL_FIRST,121.870125,1.0,0.988065,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+21,VECTOR_FIRST_HNSW,2.639666,0.2,0.988065,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+21,HNSW_HYBRID,1.51975,0.9,0.988065,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+21,IVFFLAT_HYBRID,4.368416,0.8,0.988065,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+24,SQL_FIRST,92.059708,1.0,0.89572,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+24,VECTOR_FIRST_HNSW,2.195834,0.0,0.89572,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+24,HNSW_HYBRID,1.691583,1.0,0.89572,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+24,IVFFLAT_HYBRID,3.31625,0.5,0.89572,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+29,SQL_FIRST,107.495125,1.0,0.903869,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+29,VECTOR_FIRST_HNSW,4.431542,0.0,0.903869,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+29,HNSW_HYBRID,1.738375,1.0,0.903869,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+29,IVFFLAT_HYBRID,4.766708,0.6,0.903869,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+32,SQL_FIRST,24.124958,1.0,0.000739,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+32,VECTOR_FIRST_HNSW,2.635375,0.0,0.000739,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+32,HNSW_HYBRID,23.0545,1.0,0.000739,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+32,IVFFLAT_HYBRID,23.11925,1.0,0.000739,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+36,SQL_FIRST,72.678416,1.0,0.122623,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+36,VECTOR_FIRST_HNSW,1.978666,0.0,0.122623,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+36,HNSW_HYBRID,1.31725,1.0,0.122623,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+36,IVFFLAT_HYBRID,4.6355,0.9,0.122623,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+38,SQL_FIRST,77.969,1.0,0.127007,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+38,VECTOR_FIRST_HNSW,2.581,0.0,0.127007,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+38,HNSW_HYBRID,1.370333,1.0,0.127007,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+38,IVFFLAT_HYBRID,4.677833,0.7,0.127007,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+39,SQL_FIRST,139.105,1.0,0.920496,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+39,VECTOR_FIRST_HNSW,3.813875,0.0,0.920496,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+39,HNSW_HYBRID,1.221208,1.0,0.920496,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+39,IVFFLAT_HYBRID,4.936958,1.0,0.920496,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+41,SQL_FIRST,53.965792,1.0,0.002398,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+41,VECTOR_FIRST_HNSW,2.753959,0.0,0.002398,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+41,HNSW_HYBRID,1.883417,0.0,0.002398,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+41,IVFFLAT_HYBRID,9.821083,0.7,0.002398,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+43,SQL_FIRST,114.802291,1.0,0.765511,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+43,VECTOR_FIRST_HNSW,2.139875,0.0,0.765511,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+43,HNSW_HYBRID,1.048083,1.0,0.765511,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+43,IVFFLAT_HYBRID,4.251417,0.8,0.765511,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+44,SQL_FIRST,92.8635,1.0,0.970502,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+44,VECTOR_FIRST_HNSW,1.933125,0.0,0.970502,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+44,HNSW_HYBRID,1.043917,1.0,0.970502,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+44,IVFFLAT_HYBRID,4.661208,1.0,0.970502,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+45,SQL_FIRST,111.581667,1.0,0.90428,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+45,VECTOR_FIRST_HNSW,2.9245,0.0,0.90428,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+45,HNSW_HYBRID,1.104625,1.0,0.90428,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+45,IVFFLAT_HYBRID,3.434583,0.8,0.90428,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+46,SQL_FIRST,86.768208,1.0,0.904078,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+46,VECTOR_FIRST_HNSW,2.92425,0.0,0.904078,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+46,HNSW_HYBRID,2.243292,1.0,0.904078,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+46,IVFFLAT_HYBRID,5.714375,0.9,0.904078,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+47,SQL_FIRST,96.735167,1.0,0.906049,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+47,VECTOR_FIRST_HNSW,2.412917,0.0,0.906049,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+47,HNSW_HYBRID,1.632041,0.9,0.906049,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+47,IVFFLAT_HYBRID,3.127833,0.9,0.906049,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+50,SQL_FIRST,104.175917,1.0,0.988803,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+50,VECTOR_FIRST_HNSW,2.513708,0.0,0.988803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+50,HNSW_HYBRID,2.356708,1.0,0.988803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+50,IVFFLAT_HYBRID,4.23725,0.9,0.988803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+52,SQL_FIRST,36.043666,1.0,0.002127,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+52,VECTOR_FIRST_HNSW,2.644792,0.0,0.002127,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+52,HNSW_HYBRID,1.885833,0.0,0.002127,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+52,IVFFLAT_HYBRID,6.975209,0.2,0.002127,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+55,SQL_FIRST,116.403125,1.0,0.895612,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+55,VECTOR_FIRST_HNSW,2.570958,0.0,0.895612,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+55,HNSW_HYBRID,1.68475,1.0,0.895612,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+55,IVFFLAT_HYBRID,3.219458,0.9,0.895612,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+56,SQL_FIRST,158.918875,1.0,0.980136,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+56,VECTOR_FIRST_HNSW,4.797084,0.0,0.980136,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+56,HNSW_HYBRID,1.720167,1.0,0.980136,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+56,IVFFLAT_HYBRID,10.5735,1.0,0.980136,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+58,SQL_FIRST,97.040333,1.0,0.903679,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+58,VECTOR_FIRST_HNSW,2.536291,0.0,0.903679,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+58,HNSW_HYBRID,1.837625,1.0,0.903679,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+58,IVFFLAT_HYBRID,2.929375,0.7,0.903679,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+59,SQL_FIRST,177.018583,1.0,0.154155,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+59,VECTOR_FIRST_HNSW,9.371833,0.1,0.154155,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+59,HNSW_HYBRID,1.79575,0.7,0.154155,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+59,IVFFLAT_HYBRID,5.048833,0.7,0.154155,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+61,SQL_FIRST,22.087333,1.0,0.000907,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+61,VECTOR_FIRST_HNSW,2.446792,0.0,0.000907,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+61,HNSW_HYBRID,20.870333,1.0,0.000907,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+61,IVFFLAT_HYBRID,8.59625,0.3,0.000907,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+64,SQL_FIRST,104.092791,1.0,0.984882,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+64,VECTOR_FIRST_HNSW,1.969417,0.2,0.984882,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+64,HNSW_HYBRID,1.534125,1.0,0.984882,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+64,IVFFLAT_HYBRID,6.207208,1.0,0.984882,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+68,SQL_FIRST,94.261917,1.0,0.904018,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+68,VECTOR_FIRST_HNSW,1.9255,0.0,0.904018,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+68,HNSW_HYBRID,1.48375,1.0,0.904018,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+68,IVFFLAT_HYBRID,4.435083,0.9,0.904018,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+70,SQL_FIRST,133.6705,1.0,0.148773,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+70,VECTOR_FIRST_HNSW,9.738083,0.2,0.148773,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+70,HNSW_HYBRID,1.812167,0.8,0.148773,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+70,IVFFLAT_HYBRID,3.367958,0.7,0.148773,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+76,SQL_FIRST,96.329083,1.0,0.993282,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+76,VECTOR_FIRST_HNSW,2.395459,0.0,0.993282,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+76,HNSW_HYBRID,1.522083,1.0,0.993282,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+76,IVFFLAT_HYBRID,4.005125,0.9,0.993282,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+78,SQL_FIRST,22.505458,1.0,0.001143,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+78,VECTOR_FIRST_HNSW,1.742667,0.0,0.001143,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+78,HNSW_HYBRID,0.855375,0.0,0.001143,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+78,IVFFLAT_HYBRID,11.7765,0.5,0.001143,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+79,SQL_FIRST,85.776166,1.0,0.90592,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+79,VECTOR_FIRST_HNSW,1.856208,0.0,0.90592,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+79,HNSW_HYBRID,0.84225,1.0,0.90592,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+79,IVFFLAT_HYBRID,4.350583,1.0,0.90592,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+81,SQL_FIRST,86.23025,1.0,0.906113,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+81,VECTOR_FIRST_HNSW,3.009875,0.1,0.906113,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+81,HNSW_HYBRID,1.790875,1.0,0.906113,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+81,IVFFLAT_HYBRID,3.489875,0.7,0.906113,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+83,SQL_FIRST,139.870084,1.0,0.017749,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+83,VECTOR_FIRST_HNSW,6.389167,0.1,0.017749,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+83,HNSW_HYBRID,1.358125,0.1,0.017749,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+83,IVFFLAT_HYBRID,4.110916,0.7,0.017749,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+84,SQL_FIRST,86.466291,1.0,0.860206,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+84,VECTOR_FIRST_HNSW,2.113125,0.0,0.860206,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+84,HNSW_HYBRID,1.0595,0.9,0.860206,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+84,IVFFLAT_HYBRID,2.826208,0.8,0.860206,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+86,SQL_FIRST,79.056458,1.0,0.904097,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+86,VECTOR_FIRST_HNSW,1.991125,0.0,0.904097,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+86,HNSW_HYBRID,1.112958,1.0,0.904097,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+86,IVFFLAT_HYBRID,3.366083,0.8,0.904097,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+88,SQL_FIRST,25.192041,1.0,0.010116,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+88,VECTOR_FIRST_HNSW,1.882292,0.0,0.010116,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+88,HNSW_HYBRID,1.044166,0.0,0.010116,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+88,IVFFLAT_HYBRID,5.434125,0.8,0.010116,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+90,SQL_FIRST,67.939541,1.0,0.139118,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+90,VECTOR_FIRST_HNSW,2.223708,0.1,0.139118,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+90,HNSW_HYBRID,1.142042,1.0,0.139118,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+90,IVFFLAT_HYBRID,3.469834,0.5,0.139118,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+93,SQL_FIRST,34.303958,1.0,0.002203,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+93,VECTOR_FIRST_HNSW,2.137542,0.0,0.002203,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+93,HNSW_HYBRID,1.2165,0.0,0.002203,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+93,IVFFLAT_HYBRID,9.1165,0.9,0.002203,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+94,SQL_FIRST,95.131,1.0,0.930915,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+94,VECTOR_FIRST_HNSW,2.466834,0.0,0.930915,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+94,HNSW_HYBRID,1.8095,0.9,0.930915,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+94,IVFFLAT_HYBRID,3.733125,0.6,0.930915,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+95,SQL_FIRST,19.718333,1.0,0.000751,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+95,VECTOR_FIRST_HNSW,2.199,0.0,0.000751,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+95,HNSW_HYBRID,19.218958,1.0,0.000751,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+95,IVFFLAT_HYBRID,19.5155,1.0,0.000751,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+96,SQL_FIRST,98.32275,1.0,0.981032,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+96,VECTOR_FIRST_HNSW,2.898833,0.0,0.981032,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+96,HNSW_HYBRID,2.11925,1.0,0.981032,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+96,IVFFLAT_HYBRID,4.270833,0.7,0.981032,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+97,SQL_FIRST,91.844875,1.0,0.981613,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+97,VECTOR_FIRST_HNSW,1.898042,0.0,0.981613,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+97,HNSW_HYBRID,0.877125,1.0,0.981613,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+97,IVFFLAT_HYBRID,3.756625,1.0,0.981613,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+98,SQL_FIRST,91.465875,1.0,0.955379,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+98,VECTOR_FIRST_HNSW,2.000875,0.0,0.955379,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+98,HNSW_HYBRID,0.9925,1.0,0.955379,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+98,IVFFLAT_HYBRID,3.756792,1.0,0.955379,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+100,SQL_FIRST,28.989417,1.0,0.011951,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+100,VECTOR_FIRST_HNSW,2.030625,0.4,0.011951,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+100,HNSW_HYBRID,1.010125,0.4,0.011951,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+100,IVFFLAT_HYBRID,4.127791,0.6,0.011951,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+101,SQL_FIRST,87.239708,1.0,0.876662,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+101,VECTOR_FIRST_HNSW,2.367833,0.0,0.876662,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+101,HNSW_HYBRID,1.233792,1.0,0.876662,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+101,IVFFLAT_HYBRID,2.049458,0.7,0.876662,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+105,SQL_FIRST,87.745083,1.0,0.897404,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+105,VECTOR_FIRST_HNSW,2.358375,0.0,0.897404,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+105,HNSW_HYBRID,1.158959,1.0,0.897404,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+105,IVFFLAT_HYBRID,4.106,0.9,0.897404,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+106,SQL_FIRST,92.451208,1.0,0.982588,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+106,VECTOR_FIRST_HNSW,1.948208,0.1,0.982588,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+106,HNSW_HYBRID,0.971625,1.0,0.982588,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+106,IVFFLAT_HYBRID,5.736125,1.0,0.982588,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+107,SQL_FIRST,26.274209,1.0,0.001531,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+107,VECTOR_FIRST_HNSW,2.0265,0.0,0.001531,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+107,HNSW_HYBRID,0.928125,0.0,0.001531,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+107,IVFFLAT_HYBRID,8.510084,0.4,0.001531,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+108,SQL_FIRST,22.074167,1.0,0.007815,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+108,VECTOR_FIRST_HNSW,1.479125,0.1,0.007815,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+108,HNSW_HYBRID,0.73675,0.1,0.007815,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+108,IVFFLAT_HYBRID,8.211291,1.0,0.007815,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+109,SQL_FIRST,94.95375,1.0,0.970835,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+109,VECTOR_FIRST_HNSW,1.817042,0.0,0.970835,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+109,HNSW_HYBRID,0.926458,1.0,0.970835,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+109,IVFFLAT_HYBRID,4.871458,1.0,0.970835,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+110,SQL_FIRST,139.575583,1.0,0.147902,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+110,VECTOR_FIRST_HNSW,7.184083,0.0,0.147902,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+110,HNSW_HYBRID,1.523459,1.0,0.147902,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+110,IVFFLAT_HYBRID,3.581708,1.0,0.147902,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+111,SQL_FIRST,155.189083,1.0,0.020779,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+111,VECTOR_FIRST_HNSW,9.685792,0.3,0.020779,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+111,HNSW_HYBRID,1.754916,0.3,0.020779,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+111,IVFFLAT_HYBRID,5.887875,0.4,0.020779,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+112,SQL_FIRST,113.085375,1.0,0.977898,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+112,VECTOR_FIRST_HNSW,2.264667,0.0,0.977898,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+112,HNSW_HYBRID,1.491792,1.0,0.977898,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+112,IVFFLAT_HYBRID,4.364417,0.9,0.977898,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+114,SQL_FIRST,86.869792,1.0,0.904928,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+114,VECTOR_FIRST_HNSW,2.223209,0.0,0.904928,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+114,HNSW_HYBRID,1.676917,1.0,0.904928,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+114,IVFFLAT_HYBRID,5.730458,1.0,0.904928,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+116,SQL_FIRST,67.423666,1.0,0.134528,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+116,VECTOR_FIRST_HNSW,2.101458,0.0,0.134528,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+116,HNSW_HYBRID,1.302125,1.0,0.134528,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+116,IVFFLAT_HYBRID,3.599166,0.6,0.134528,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+119,SQL_FIRST,101.445125,1.0,0.907248,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+119,VECTOR_FIRST_HNSW,2.726125,0.0,0.907248,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+119,HNSW_HYBRID,1.567416,1.0,0.907248,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+119,IVFFLAT_HYBRID,3.216958,0.8,0.907248,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+121,SQL_FIRST,176.079875,1.0,0.015328,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+121,VECTOR_FIRST_HNSW,12.5355,0.0,0.015328,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+121,HNSW_HYBRID,2.279459,0.0,0.015328,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+121,IVFFLAT_HYBRID,8.653042,0.6,0.015328,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+124,SQL_FIRST,86.575459,1.0,0.906101,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+124,VECTOR_FIRST_HNSW,2.13675,0.0,0.906101,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+124,HNSW_HYBRID,1.299584,1.0,0.906101,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+124,IVFFLAT_HYBRID,3.77325,0.9,0.906101,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+128,SQL_FIRST,82.777167,1.0,0.903315,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+128,VECTOR_FIRST_HNSW,1.851833,0.0,0.903315,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+128,HNSW_HYBRID,0.974375,1.0,0.903315,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+128,IVFFLAT_HYBRID,4.286083,1.0,0.903315,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+129,SQL_FIRST,95.073625,1.0,0.986928,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+129,VECTOR_FIRST_HNSW,2.671833,0.2,0.986928,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+129,HNSW_HYBRID,2.079166,1.0,0.986928,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+129,IVFFLAT_HYBRID,3.520666,0.8,0.986928,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+130,SQL_FIRST,81.801625,1.0,0.687604,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+130,VECTOR_FIRST_HNSW,2.072458,0.0,0.687604,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+130,HNSW_HYBRID,1.073875,1.0,0.687604,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+130,IVFFLAT_HYBRID,4.386375,1.0,0.687604,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+131,SQL_FIRST,80.171583,1.0,0.902949,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+131,VECTOR_FIRST_HNSW,1.448916,0.0,0.902949,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+131,HNSW_HYBRID,0.673209,1.0,0.902949,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+131,IVFFLAT_HYBRID,7.000708,1.0,0.902949,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+133,SQL_FIRST,68.734625,1.0,0.014415,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+133,VECTOR_FIRST_HNSW,2.064,0.1,0.014415,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+133,HNSW_HYBRID,1.084,0.1,0.014415,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+133,IVFFLAT_HYBRID,3.997625,0.8,0.014415,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+134,SQL_FIRST,87.406916,1.0,0.904645,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+134,VECTOR_FIRST_HNSW,1.952125,0.0,0.904645,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+134,HNSW_HYBRID,0.997041,1.0,0.904645,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+134,IVFFLAT_HYBRID,4.915417,1.0,0.904645,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+136,SQL_FIRST,84.199667,1.0,0.749673,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+136,VECTOR_FIRST_HNSW,1.959333,0.0,0.749673,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+136,HNSW_HYBRID,0.950417,0.9,0.749673,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+136,IVFFLAT_HYBRID,5.614375,1.0,0.749673,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+137,SQL_FIRST,81.728291,1.0,0.904011,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+137,VECTOR_FIRST_HNSW,1.845875,0.0,0.904011,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+137,HNSW_HYBRID,0.913041,1.0,0.904011,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+137,IVFFLAT_HYBRID,3.932292,0.9,0.904011,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+138,SQL_FIRST,88.756667,1.0,0.758761,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+138,VECTOR_FIRST_HNSW,2.528875,0.0,0.758761,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+138,HNSW_HYBRID,1.150542,1.0,0.758761,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+138,IVFFLAT_HYBRID,4.732042,0.8,0.758761,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+139,SQL_FIRST,84.097,1.0,0.905887,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+139,VECTOR_FIRST_HNSW,2.301333,0.0,0.905887,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+139,HNSW_HYBRID,1.236625,0.9,0.905887,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+139,IVFFLAT_HYBRID,3.300292,0.6,0.905887,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+142,SQL_FIRST,88.965209,1.0,0.697652,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+142,VECTOR_FIRST_HNSW,1.961208,0.0,0.697652,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+142,HNSW_HYBRID,0.953208,1.0,0.697652,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+142,IVFFLAT_HYBRID,4.09175,1.0,0.697652,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+146,SQL_FIRST,86.806292,1.0,0.903739,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+146,VECTOR_FIRST_HNSW,2.149459,0.0,0.903739,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+146,HNSW_HYBRID,1.258459,1.0,0.903739,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+146,IVFFLAT_HYBRID,4.350541,0.8,0.903739,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+149,SQL_FIRST,149.387083,1.0,0.972463,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+149,VECTOR_FIRST_HNSW,4.00225,0.0,0.972463,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+149,HNSW_HYBRID,2.753209,1.0,0.972463,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+149,IVFFLAT_HYBRID,5.663583,0.6,0.972463,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+150,SQL_FIRST,23.014333,1.0,0.001048,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+150,VECTOR_FIRST_HNSW,2.005791,0.1,0.001048,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+150,HNSW_HYBRID,1.206708,0.1,0.001048,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+150,IVFFLAT_HYBRID,6.67525,0.4,0.001048,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+151,SQL_FIRST,125.075792,1.0,0.997739,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+151,VECTOR_FIRST_HNSW,2.283125,0.0,0.997739,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+151,HNSW_HYBRID,1.69,1.0,0.997739,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+151,IVFFLAT_HYBRID,3.287916,1.0,0.997739,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+153,SQL_FIRST,81.95475,1.0,0.128023,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+153,VECTOR_FIRST_HNSW,2.729708,0.0,0.128023,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+153,HNSW_HYBRID,1.965625,0.9,0.128023,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+153,IVFFLAT_HYBRID,2.911083,0.7,0.128023,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+154,SQL_FIRST,97.2915,1.0,0.821831,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+154,VECTOR_FIRST_HNSW,2.393042,0.0,0.821831,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+154,HNSW_HYBRID,1.305334,0.9,0.821831,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+154,IVFFLAT_HYBRID,3.257209,0.5,0.821831,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+155,SQL_FIRST,110.036458,1.0,0.903203,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+155,VECTOR_FIRST_HNSW,2.5585,0.0,0.903203,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+155,HNSW_HYBRID,1.53475,1.0,0.903203,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+155,IVFFLAT_HYBRID,4.14925,1.0,0.903203,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+156,SQL_FIRST,17.365958,1.0,0.000167,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+156,VECTOR_FIRST_HNSW,2.703667,0.0,0.000167,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+156,HNSW_HYBRID,15.940791,1.0,0.000167,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",False,exact_bitmap,True
+156,IVFFLAT_HYBRID,15.41175,1.0,0.000167,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",False,exact_bitmap,True
+157,SQL_FIRST,113.664083,1.0,0.906846,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+157,VECTOR_FIRST_HNSW,2.093083,0.0,0.906846,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+157,HNSW_HYBRID,0.856375,1.0,0.906846,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+157,IVFFLAT_HYBRID,5.457875,1.0,0.906846,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+161,SQL_FIRST,146.698459,1.0,0.987791,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+161,VECTOR_FIRST_HNSW,3.162291,0.0,0.987791,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+161,HNSW_HYBRID,2.375667,1.0,0.987791,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+161,IVFFLAT_HYBRID,4.198209,1.0,0.987791,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+162,SQL_FIRST,148.564166,1.0,0.799565,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+162,VECTOR_FIRST_HNSW,2.440875,0.0,0.799565,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+162,HNSW_HYBRID,1.840333,1.0,0.799565,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+162,IVFFLAT_HYBRID,4.502708,0.9,0.799565,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+164,SQL_FIRST,139.283958,1.0,0.918803,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+164,VECTOR_FIRST_HNSW,2.683416,0.0,0.918803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+164,HNSW_HYBRID,2.857958,1.0,0.918803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+164,IVFFLAT_HYBRID,5.760792,0.8,0.918803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+165,SQL_FIRST,127.372125,1.0,0.905843,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+165,VECTOR_FIRST_HNSW,1.788542,0.1,0.905843,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+165,HNSW_HYBRID,1.46425,1.0,0.905843,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+165,IVFFLAT_HYBRID,7.220625,1.0,0.905843,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+167,SQL_FIRST,99.633041,1.0,0.905554,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+167,VECTOR_FIRST_HNSW,2.478625,0.1,0.905554,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+167,HNSW_HYBRID,1.5515,1.0,0.905554,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+167,IVFFLAT_HYBRID,4.943042,1.0,0.905554,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+169,SQL_FIRST,76.532792,1.0,0.132205,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+169,VECTOR_FIRST_HNSW,2.334167,0.0,0.132205,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+169,HNSW_HYBRID,1.5965,1.0,0.132205,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+169,IVFFLAT_HYBRID,7.387041,0.7,0.132205,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+170,SQL_FIRST,153.693375,1.0,0.144088,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+170,VECTOR_FIRST_HNSW,9.65225,0.0,0.144088,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+170,HNSW_HYBRID,1.697917,1.0,0.144088,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+170,IVFFLAT_HYBRID,3.642916,0.4,0.144088,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+171,SQL_FIRST,108.692084,1.0,0.903481,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+171,VECTOR_FIRST_HNSW,2.431917,0.1,0.903481,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+171,HNSW_HYBRID,1.167167,1.0,0.903481,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+171,IVFFLAT_HYBRID,4.304958,0.9,0.903481,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+173,SQL_FIRST,59.956,1.0,0.14118,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+173,VECTOR_FIRST_HNSW,1.994458,0.0,0.14118,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+173,HNSW_HYBRID,1.782625,0.9,0.14118,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+173,IVFFLAT_HYBRID,2.961333,0.9,0.14118,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+175,SQL_FIRST,87.760666,1.0,0.90445,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+175,VECTOR_FIRST_HNSW,2.558208,0.0,0.90445,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+175,HNSW_HYBRID,1.567958,1.0,0.90445,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+175,IVFFLAT_HYBRID,4.608666,0.9,0.90445,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+178,SQL_FIRST,175.45775,1.0,0.143384,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+178,VECTOR_FIRST_HNSW,6.520167,0.0,0.143384,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+178,HNSW_HYBRID,1.412375,0.9,0.143384,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+178,IVFFLAT_HYBRID,4.452334,1.0,0.143384,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+179,SQL_FIRST,106.442959,1.0,0.90587,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+179,VECTOR_FIRST_HNSW,3.963625,0.0,0.90587,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+179,HNSW_HYBRID,2.162208,1.0,0.90587,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+179,IVFFLAT_HYBRID,4.0065,0.6,0.90587,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+182,SQL_FIRST,159.572208,1.0,0.019929,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+182,VECTOR_FIRST_HNSW,9.651667,0.1,0.019929,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+182,HNSW_HYBRID,2.126542,0.1,0.019929,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+182,IVFFLAT_HYBRID,4.92025,0.7,0.019929,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+183,SQL_FIRST,94.096667,1.0,0.939004,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+183,VECTOR_FIRST_HNSW,1.949833,0.0,0.939004,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+183,HNSW_HYBRID,0.974833,1.0,0.939004,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+183,IVFFLAT_HYBRID,4.959417,1.0,0.939004,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+186,SQL_FIRST,94.200334,1.0,0.90899,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+186,VECTOR_FIRST_HNSW,2.408459,0.0,0.90899,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+186,HNSW_HYBRID,1.389208,1.0,0.90899,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+186,IVFFLAT_HYBRID,3.455709,0.7,0.90899,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+187,SQL_FIRST,24.857917,1.0,0.001647,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+187,VECTOR_FIRST_HNSW,2.2115,0.1,0.001647,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+187,HNSW_HYBRID,1.228541,0.1,0.001647,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+187,IVFFLAT_HYBRID,5.588334,0.1,0.001647,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+188,SQL_FIRST,62.942791,1.0,0.12854,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+188,VECTOR_FIRST_HNSW,2.2755,0.0,0.12854,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+188,HNSW_HYBRID,1.252792,1.0,0.12854,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+188,IVFFLAT_HYBRID,3.522625,0.7,0.12854,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+189,SQL_FIRST,58.156959,1.0,0.13558,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+189,VECTOR_FIRST_HNSW,2.115,0.0,0.13558,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+189,HNSW_HYBRID,1.082292,1.0,0.13558,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+189,IVFFLAT_HYBRID,2.702417,0.7,0.13558,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+195,SQL_FIRST,87.663,1.0,0.771276,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+195,VECTOR_FIRST_HNSW,2.0595,0.0,0.771276,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+195,HNSW_HYBRID,1.114,1.0,0.771276,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+195,IVFFLAT_HYBRID,6.564625,1.0,0.771276,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+196,SQL_FIRST,91.714875,1.0,0.903399,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+196,VECTOR_FIRST_HNSW,2.60225,0.1,0.903399,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+196,HNSW_HYBRID,1.356834,1.0,0.903399,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+196,IVFFLAT_HYBRID,3.906458,0.8,0.903399,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+197,SQL_FIRST,61.9445,1.0,0.126849,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+197,VECTOR_FIRST_HNSW,1.759292,0.0,0.126849,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+197,HNSW_HYBRID,0.770083,1.0,0.126849,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+197,IVFFLAT_HYBRID,2.565792,0.9,0.126849,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+198,SQL_FIRST,173.478583,1.0,0.018392,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+198,VECTOR_FIRST_HNSW,10.55875,0.1,0.018392,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+198,HNSW_HYBRID,1.836291,0.1,0.018392,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+198,IVFFLAT_HYBRID,5.30875,0.4,0.018392,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+205,SQL_FIRST,17.016834,1.0,0.000304,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+205,VECTOR_FIRST_HNSW,2.447417,0.0,0.000304,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+205,HNSW_HYBRID,17.041292,1.0,0.000304,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",False,exact_bitmap,True
+205,IVFFLAT_HYBRID,17.290208,1.0,0.000304,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",False,exact_bitmap,True
+207,SQL_FIRST,24.627417,1.0,0.000816,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+207,VECTOR_FIRST_HNSW,4.13525,0.1,0.000816,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+207,HNSW_HYBRID,23.306667,1.0,0.000816,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+207,IVFFLAT_HYBRID,22.855959,1.0,0.000816,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+209,SQL_FIRST,103.483917,1.0,0.987163,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+209,VECTOR_FIRST_HNSW,2.79675,0.1,0.987163,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+209,HNSW_HYBRID,1.178542,1.0,0.987163,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+209,IVFFLAT_HYBRID,3.98575,1.0,0.987163,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+210,SQL_FIRST,108.912,1.0,0.984766,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+210,VECTOR_FIRST_HNSW,2.633208,0.2,0.984766,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+210,HNSW_HYBRID,1.105833,1.0,0.984766,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+210,IVFFLAT_HYBRID,3.39775,1.0,0.984766,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+212,SQL_FIRST,88.691959,1.0,0.904818,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+212,VECTOR_FIRST_HNSW,1.677959,0.1,0.904818,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+212,HNSW_HYBRID,1.26525,1.0,0.904818,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+212,IVFFLAT_HYBRID,3.421084,1.0,0.904818,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+213,SQL_FIRST,97.155792,1.0,0.968114,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+213,VECTOR_FIRST_HNSW,2.375792,0.2,0.968114,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+213,HNSW_HYBRID,1.158625,1.0,0.968114,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+213,IVFFLAT_HYBRID,4.167542,1.0,0.968114,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+219,SQL_FIRST,107.802,1.0,0.977263,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+219,VECTOR_FIRST_HNSW,1.653959,0.1,0.977263,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+219,HNSW_HYBRID,0.698625,1.0,0.977263,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+219,IVFFLAT_HYBRID,6.578375,1.0,0.977263,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+221,SQL_FIRST,196.27525,1.0,0.020419,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+221,VECTOR_FIRST_HNSW,9.695458,0.3,0.020419,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+221,HNSW_HYBRID,1.654709,0.3,0.020419,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+221,IVFFLAT_HYBRID,7.500375,0.7,0.020419,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+223,SQL_FIRST,109.476416,1.0,0.833542,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+223,VECTOR_FIRST_HNSW,1.6705,0.1,0.833542,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+223,HNSW_HYBRID,1.13175,1.0,0.833542,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+223,IVFFLAT_HYBRID,3.420208,0.9,0.833542,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+227,SQL_FIRST,24.971834,1.0,0.006885,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+227,VECTOR_FIRST_HNSW,2.070833,0.0,0.006885,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+227,HNSW_HYBRID,1.222958,0.0,0.006885,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+227,IVFFLAT_HYBRID,7.952666,0.9,0.006885,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+228,SQL_FIRST,97.992542,1.0,0.982339,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+228,VECTOR_FIRST_HNSW,1.756041,0.1,0.982339,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+228,HNSW_HYBRID,1.197125,1.0,0.982339,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+228,IVFFLAT_HYBRID,2.906959,1.0,0.982339,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+229,SQL_FIRST,152.70375,1.0,0.01517,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+229,VECTOR_FIRST_HNSW,7.63775,0.0,0.01517,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+229,HNSW_HYBRID,1.552625,0.0,0.01517,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+229,IVFFLAT_HYBRID,7.940459,1.0,0.01517,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+230,SQL_FIRST,97.16975,1.0,0.956827,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+230,VECTOR_FIRST_HNSW,1.969667,0.0,0.956827,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+230,HNSW_HYBRID,0.99125,1.0,0.956827,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+230,IVFFLAT_HYBRID,6.845,1.0,0.956827,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+232,SQL_FIRST,92.035083,1.0,0.905875,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+232,VECTOR_FIRST_HNSW,2.214875,0.0,0.905875,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+232,HNSW_HYBRID,1.163417,1.0,0.905875,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+232,IVFFLAT_HYBRID,3.788417,0.9,0.905875,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+233,SQL_FIRST,95.171584,1.0,0.973955,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+233,VECTOR_FIRST_HNSW,2.21175,0.0,0.973955,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+233,HNSW_HYBRID,1.096583,1.0,0.973955,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+233,IVFFLAT_HYBRID,4.055292,0.8,0.973955,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+234,SQL_FIRST,102.25525,1.0,0.973115,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+234,VECTOR_FIRST_HNSW,2.505375,0.0,0.973115,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+234,HNSW_HYBRID,1.757041,1.0,0.973115,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+234,IVFFLAT_HYBRID,5.853917,0.6,0.973115,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+236,SQL_FIRST,100.322,1.0,0.903441,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+236,VECTOR_FIRST_HNSW,2.632208,0.0,0.903441,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+236,HNSW_HYBRID,1.487417,1.0,0.903441,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+236,IVFFLAT_HYBRID,2.321542,1.0,0.903441,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+237,SQL_FIRST,16.991042,1.0,0.000431,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+237,VECTOR_FIRST_HNSW,2.215584,0.0,0.000431,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+237,HNSW_HYBRID,17.206833,1.0,0.000431,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",False,exact_bitmap,True
+237,IVFFLAT_HYBRID,17.016709,1.0,0.000431,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",False,exact_bitmap,True
+238,SQL_FIRST,94.434542,1.0,0.914564,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+238,VECTOR_FIRST_HNSW,2.20325,0.0,0.914564,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+238,HNSW_HYBRID,1.453917,0.9,0.914564,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+238,IVFFLAT_HYBRID,3.024875,0.7,0.914564,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+240,SQL_FIRST,9.949541,1.0,0.001325,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+240,VECTOR_FIRST_HNSW,1.911292,0.0,0.001325,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+240,HNSW_HYBRID,0.962291,0.0,0.001325,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+240,IVFFLAT_HYBRID,6.004167,0.5,0.001325,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+243,SQL_FIRST,96.176708,1.0,0.923577,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+243,VECTOR_FIRST_HNSW,2.054333,0.0,0.923577,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+243,HNSW_HYBRID,1.157125,1.0,0.923577,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+243,IVFFLAT_HYBRID,3.195709,1.0,0.923577,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+254,SQL_FIRST,31.362208,1.0,0.001825,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+254,VECTOR_FIRST_HNSW,2.341458,0.0,0.001825,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+254,HNSW_HYBRID,2.514792,0.0,0.001825,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+254,IVFFLAT_HYBRID,9.544625,0.5,0.001825,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+255,SQL_FIRST,67.992083,1.0,0.134394,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+255,VECTOR_FIRST_HNSW,2.126583,0.0,0.134394,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+255,HNSW_HYBRID,1.083458,1.0,0.134394,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+255,IVFFLAT_HYBRID,3.521167,0.9,0.134394,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+257,SQL_FIRST,101.105625,1.0,0.977698,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+257,VECTOR_FIRST_HNSW,2.199834,0.1,0.977698,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+257,HNSW_HYBRID,2.496667,1.0,0.977698,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+257,IVFFLAT_HYBRID,5.472042,0.9,0.977698,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+258,SQL_FIRST,90.529209,1.0,0.905726,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+258,VECTOR_FIRST_HNSW,2.1345,0.0,0.905726,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+258,HNSW_HYBRID,1.2345,1.0,0.905726,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+258,IVFFLAT_HYBRID,3.771458,1.0,0.905726,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+259,SQL_FIRST,92.613958,1.0,0.905194,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+259,VECTOR_FIRST_HNSW,2.069833,0.0,0.905194,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+259,HNSW_HYBRID,1.158333,1.0,0.905194,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+259,IVFFLAT_HYBRID,4.307375,0.9,0.905194,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+260,SQL_FIRST,102.436292,1.0,0.757457,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+260,VECTOR_FIRST_HNSW,2.73575,0.0,0.757457,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+260,HNSW_HYBRID,1.776625,1.0,0.757457,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+260,IVFFLAT_HYBRID,3.760125,0.8,0.757457,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+262,SQL_FIRST,94.472208,1.0,0.903277,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+262,VECTOR_FIRST_HNSW,2.25975,0.0,0.903277,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+262,HNSW_HYBRID,1.196084,1.0,0.903277,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+262,IVFFLAT_HYBRID,3.364917,1.0,0.903277,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+265,SQL_FIRST,99.070875,1.0,0.969817,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+265,VECTOR_FIRST_HNSW,2.275791,0.2,0.969817,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+265,HNSW_HYBRID,1.268292,1.0,0.969817,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+265,IVFFLAT_HYBRID,2.462625,0.8,0.969817,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+266,SQL_FIRST,113.196542,1.0,0.88464,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+266,VECTOR_FIRST_HNSW,2.289833,0.0,0.88464,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+266,HNSW_HYBRID,1.172458,1.0,0.88464,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+266,IVFFLAT_HYBRID,7.733333,1.0,0.88464,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+267,SQL_FIRST,169.267292,1.0,0.019628,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+267,VECTOR_FIRST_HNSW,6.584541,0.1,0.019628,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+267,HNSW_HYBRID,1.297208,0.1,0.019628,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+267,IVFFLAT_HYBRID,4.538875,1.0,0.019628,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+268,SQL_FIRST,160.874542,1.0,0.020389,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+268,VECTOR_FIRST_HNSW,9.408292,0.2,0.020389,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+268,HNSW_HYBRID,1.7895,0.2,0.020389,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+268,IVFFLAT_HYBRID,5.742167,0.7,0.020389,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+272,SQL_FIRST,182.063583,1.0,0.019043,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+272,VECTOR_FIRST_HNSW,8.933458,0.0,0.019043,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+272,HNSW_HYBRID,1.767,0.0,0.019043,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+272,IVFFLAT_HYBRID,4.763458,0.7,0.019043,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+275,SQL_FIRST,96.344041,1.0,0.966371,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+275,VECTOR_FIRST_HNSW,1.545042,0.1,0.966371,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+275,HNSW_HYBRID,0.784958,1.0,0.966371,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+275,IVFFLAT_HYBRID,6.492834,1.0,0.966371,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+277,SQL_FIRST,18.021459,1.0,0.004393,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+277,VECTOR_FIRST_HNSW,1.971375,0.0,0.004393,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+277,HNSW_HYBRID,1.235583,0.0,0.004393,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+277,IVFFLAT_HYBRID,4.904291,0.7,0.004393,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+281,SQL_FIRST,150.84675,1.0,0.142815,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+281,VECTOR_FIRST_HNSW,9.694542,0.0,0.142815,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+281,HNSW_HYBRID,1.827,1.0,0.142815,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+281,IVFFLAT_HYBRID,5.149666,1.0,0.142815,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+282,SQL_FIRST,97.77125,1.0,0.872517,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+282,VECTOR_FIRST_HNSW,1.773417,0.0,0.872517,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+282,HNSW_HYBRID,1.008959,1.0,0.872517,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+282,IVFFLAT_HYBRID,4.952875,1.0,0.872517,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+284,SQL_FIRST,89.096541,1.0,0.763059,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+284,VECTOR_FIRST_HNSW,2.343625,0.0,0.763059,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+284,HNSW_HYBRID,1.123458,0.9,0.763059,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+284,IVFFLAT_HYBRID,4.960584,0.6,0.763059,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+287,SQL_FIRST,12.017084,1.0,0.002789,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+287,VECTOR_FIRST_HNSW,2.107542,0.0,0.002789,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+287,HNSW_HYBRID,1.201166,0.0,0.002789,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+287,IVFFLAT_HYBRID,5.831334,0.3,0.002789,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+294,SQL_FIRST,109.166,1.0,0.975665,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+294,VECTOR_FIRST_HNSW,2.25275,0.1,0.975665,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+294,HNSW_HYBRID,1.10925,1.0,0.975665,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+294,IVFFLAT_HYBRID,4.544958,1.0,0.975665,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+295,SQL_FIRST,96.458917,1.0,0.947895,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+295,VECTOR_FIRST_HNSW,2.089584,0.0,0.947895,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+295,HNSW_HYBRID,0.94375,1.0,0.947895,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+295,IVFFLAT_HYBRID,2.981833,1.0,0.947895,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+296,SQL_FIRST,101.959584,1.0,0.978524,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+296,VECTOR_FIRST_HNSW,3.469542,0.0,0.978524,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+296,HNSW_HYBRID,1.81025,1.0,0.978524,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+296,IVFFLAT_HYBRID,4.59475,0.7,0.978524,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+298,SQL_FIRST,88.983375,1.0,0.904389,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+298,VECTOR_FIRST_HNSW,1.535542,0.0,0.904389,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+298,HNSW_HYBRID,0.779,1.0,0.904389,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+298,IVFFLAT_HYBRID,6.779916,1.0,0.904389,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+301,SQL_FIRST,100.842375,1.0,0.963957,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+301,VECTOR_FIRST_HNSW,1.817709,0.0,0.963957,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+301,HNSW_HYBRID,1.179792,1.0,0.963957,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+301,IVFFLAT_HYBRID,5.7775,1.0,0.963957,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+302,SQL_FIRST,18.41475,1.0,0.00613,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+302,VECTOR_FIRST_HNSW,2.430875,0.0,0.00613,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+302,HNSW_HYBRID,1.475042,0.0,0.00613,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+302,IVFFLAT_HYBRID,7.134917,0.7,0.00613,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+303,SQL_FIRST,127.183,1.0,0.990606,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+303,VECTOR_FIRST_HNSW,2.425041,0.1,0.990606,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+303,HNSW_HYBRID,1.145209,1.0,0.990606,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+303,IVFFLAT_HYBRID,3.4555,0.7,0.990606,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+304,SQL_FIRST,87.506458,1.0,0.905339,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+304,VECTOR_FIRST_HNSW,2.173292,0.0,0.905339,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+304,HNSW_HYBRID,1.420041,1.0,0.905339,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+304,IVFFLAT_HYBRID,5.538042,0.9,0.905339,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+310,SQL_FIRST,99.546375,1.0,0.990864,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+310,VECTOR_FIRST_HNSW,2.126083,0.0,0.990864,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+310,HNSW_HYBRID,1.115333,1.0,0.990864,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+310,IVFFLAT_HYBRID,3.748833,0.7,0.990864,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+312,SQL_FIRST,19.318291,1.0,0.000605,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+312,VECTOR_FIRST_HNSW,2.127166,0.0,0.000605,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+312,HNSW_HYBRID,18.994167,1.0,0.000605,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+312,IVFFLAT_HYBRID,18.757083,1.0,0.000605,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+313,SQL_FIRST,125.996917,1.0,0.903189,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+313,VECTOR_FIRST_HNSW,2.631917,0.0,0.903189,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+313,HNSW_HYBRID,1.78125,1.0,0.903189,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+313,IVFFLAT_HYBRID,3.7535,0.9,0.903189,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+314,SQL_FIRST,16.478459,1.0,0.000242,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+314,VECTOR_FIRST_HNSW,2.805875,0.0,0.000242,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+314,HNSW_HYBRID,17.219875,1.0,0.000242,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",False,exact_bitmap,True
+314,IVFFLAT_HYBRID,15.714041,1.0,0.000242,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",False,exact_bitmap,True
+315,SQL_FIRST,93.06375,1.0,0.904028,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+315,VECTOR_FIRST_HNSW,3.19875,0.0,0.904028,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+315,HNSW_HYBRID,2.165,1.0,0.904028,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+315,IVFFLAT_HYBRID,3.673042,0.6,0.904028,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+316,SQL_FIRST,90.436958,1.0,0.902845,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+316,VECTOR_FIRST_HNSW,3.182625,0.0,0.902845,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+316,HNSW_HYBRID,1.814167,0.9,0.902845,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+316,IVFFLAT_HYBRID,3.72175,0.7,0.902845,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+318,SQL_FIRST,105.074417,1.0,0.855138,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+318,VECTOR_FIRST_HNSW,15.764959,0.0,0.855138,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+318,HNSW_HYBRID,2.492708,1.0,0.855138,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+318,IVFFLAT_HYBRID,4.852791,0.8,0.855138,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+320,SQL_FIRST,91.266958,1.0,0.905235,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+320,VECTOR_FIRST_HNSW,1.574125,0.0,0.905235,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+320,HNSW_HYBRID,0.695834,1.0,0.905235,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+320,IVFFLAT_HYBRID,3.367916,1.0,0.905235,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+322,SQL_FIRST,100.419167,1.0,0.902924,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+322,VECTOR_FIRST_HNSW,3.02725,0.0,0.902924,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+322,HNSW_HYBRID,2.433292,1.0,0.902924,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+322,IVFFLAT_HYBRID,3.343875,0.6,0.902924,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+324,SQL_FIRST,167.383833,1.0,0.016948,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+324,VECTOR_FIRST_HNSW,9.036084,0.1,0.016948,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+324,HNSW_HYBRID,1.69425,0.1,0.016948,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+324,IVFFLAT_HYBRID,7.187292,0.6,0.016948,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+326,SQL_FIRST,27.966042,1.0,0.0109,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+326,VECTOR_FIRST_HNSW,1.885042,0.1,0.0109,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+326,HNSW_HYBRID,1.173667,0.1,0.0109,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+326,IVFFLAT_HYBRID,6.37475,1.0,0.0109,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+327,SQL_FIRST,104.078875,1.0,0.97872,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+327,VECTOR_FIRST_HNSW,2.596583,0.0,0.97872,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+327,HNSW_HYBRID,1.140291,1.0,0.97872,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+327,IVFFLAT_HYBRID,3.748583,0.9,0.97872,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+329,SQL_FIRST,33.072459,1.0,0.002071,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+329,VECTOR_FIRST_HNSW,2.0055,0.0,0.002071,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+329,HNSW_HYBRID,1.063417,0.0,0.002071,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+329,IVFFLAT_HYBRID,7.609417,0.5,0.002071,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+331,SQL_FIRST,190.238084,1.0,0.151099,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+331,VECTOR_FIRST_HNSW,9.050916,0.1,0.151099,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+331,HNSW_HYBRID,1.515042,1.0,0.151099,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+331,IVFFLAT_HYBRID,8.354958,1.0,0.151099,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+332,SQL_FIRST,128.14025,1.0,0.982688,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+332,VECTOR_FIRST_HNSW,2.79475,0.1,0.982688,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+332,HNSW_HYBRID,2.133917,1.0,0.982688,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+332,IVFFLAT_HYBRID,5.199417,0.8,0.982688,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+333,SQL_FIRST,130.789209,1.0,0.979782,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+333,VECTOR_FIRST_HNSW,2.430041,0.1,0.979782,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+333,HNSW_HYBRID,1.905875,1.0,0.979782,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+333,IVFFLAT_HYBRID,4.618042,0.8,0.979782,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+334,SQL_FIRST,60.014916,1.0,0.010492,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+334,VECTOR_FIRST_HNSW,2.751791,0.2,0.010492,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+334,HNSW_HYBRID,1.5625,0.2,0.010492,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+334,IVFFLAT_HYBRID,6.229792,0.4,0.010492,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+336,SQL_FIRST,13.387958,1.0,0.00239,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+336,VECTOR_FIRST_HNSW,4.184541,0.0,0.00239,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+336,HNSW_HYBRID,1.82225,0.0,0.00239,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+336,IVFFLAT_HYBRID,7.896291,0.4,0.00239,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+338,SQL_FIRST,115.906084,1.0,0.99496,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+338,VECTOR_FIRST_HNSW,1.939792,0.0,0.99496,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+338,HNSW_HYBRID,0.978959,1.0,0.99496,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+338,IVFFLAT_HYBRID,5.061666,1.0,0.99496,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+343,SQL_FIRST,99.167417,1.0,0.978803,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+343,VECTOR_FIRST_HNSW,2.400041,0.0,0.978803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+343,HNSW_HYBRID,1.28075,1.0,0.978803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+343,IVFFLAT_HYBRID,3.1105,0.9,0.978803,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+344,SQL_FIRST,103.015791,1.0,0.934401,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+344,VECTOR_FIRST_HNSW,3.016709,0.1,0.934401,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+344,HNSW_HYBRID,1.87575,1.0,0.934401,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+344,IVFFLAT_HYBRID,4.644584,0.5,0.934401,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+345,SQL_FIRST,111.737542,1.0,0.986393,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+345,VECTOR_FIRST_HNSW,2.761125,0.0,0.986393,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+345,HNSW_HYBRID,1.062458,1.0,0.986393,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+345,IVFFLAT_HYBRID,4.352167,1.0,0.986393,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+348,SQL_FIRST,141.450542,1.0,0.144597,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+348,VECTOR_FIRST_HNSW,9.894708,0.0,0.144597,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+348,HNSW_HYBRID,1.78175,1.0,0.144597,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+348,IVFFLAT_HYBRID,3.883459,0.7,0.144597,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+349,SQL_FIRST,98.43625,1.0,0.966157,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+349,VECTOR_FIRST_HNSW,2.423334,0.1,0.966157,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+349,HNSW_HYBRID,1.482042,1.0,0.966157,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+349,IVFFLAT_HYBRID,2.870375,0.7,0.966157,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+351,SQL_FIRST,67.19875,1.0,0.123909,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+351,VECTOR_FIRST_HNSW,2.309375,0.0,0.123909,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+351,HNSW_HYBRID,1.013917,1.0,0.123909,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+351,IVFFLAT_HYBRID,3.836167,0.6,0.123909,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+352,SQL_FIRST,88.913917,1.0,0.903504,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+352,VECTOR_FIRST_HNSW,2.752083,0.0,0.903504,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+352,HNSW_HYBRID,1.388083,1.0,0.903504,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+352,IVFFLAT_HYBRID,2.971583,0.8,0.903504,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+353,SQL_FIRST,93.086875,1.0,0.858883,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+353,VECTOR_FIRST_HNSW,2.233458,0.0,0.858883,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+353,HNSW_HYBRID,1.327792,1.0,0.858883,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+353,IVFFLAT_HYBRID,5.143125,1.0,0.858883,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+354,SQL_FIRST,86.060417,1.0,0.905838,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+354,VECTOR_FIRST_HNSW,2.420583,0.2,0.905838,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+354,HNSW_HYBRID,1.199458,1.0,0.905838,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+354,IVFFLAT_HYBRID,3.892708,0.6,0.905838,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+355,SQL_FIRST,94.74375,1.0,0.841483,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+355,VECTOR_FIRST_HNSW,2.351875,0.0,0.841483,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+355,HNSW_HYBRID,1.167459,1.0,0.841483,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+355,IVFFLAT_HYBRID,3.154666,0.9,0.841483,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+356,SQL_FIRST,92.538334,1.0,0.845975,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+356,VECTOR_FIRST_HNSW,1.752375,0.0,0.845975,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+356,HNSW_HYBRID,0.913834,1.0,0.845975,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+356,IVFFLAT_HYBRID,3.05425,1.0,0.845975,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+360,SQL_FIRST,24.435,1.0,0.001449,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+360,VECTOR_FIRST_HNSW,2.073959,0.1,0.001449,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+360,HNSW_HYBRID,1.039875,0.1,0.001449,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+360,IVFFLAT_HYBRID,10.78225,0.2,0.001449,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+362,SQL_FIRST,34.814083,1.0,0.002206,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+362,VECTOR_FIRST_HNSW,1.755292,0.0,0.002206,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+362,HNSW_HYBRID,0.965791,0.0,0.002206,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+362,IVFFLAT_HYBRID,8.347583,0.7,0.002206,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+365,SQL_FIRST,34.418417,1.0,0.00231,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+365,VECTOR_FIRST_HNSW,2.131292,0.2,0.00231,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+365,HNSW_HYBRID,1.048833,0.2,0.00231,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+365,IVFFLAT_HYBRID,6.433791,0.6,0.00231,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+366,SQL_FIRST,119.018458,1.0,0.952303,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+366,VECTOR_FIRST_HNSW,3.3845,0.0,0.952303,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+366,HNSW_HYBRID,1.920208,1.0,0.952303,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+366,IVFFLAT_HYBRID,7.129541,1.0,0.952303,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+368,SQL_FIRST,101.751625,1.0,0.95051,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+368,VECTOR_FIRST_HNSW,3.695333,0.0,0.95051,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+368,HNSW_HYBRID,1.612917,1.0,0.95051,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+368,IVFFLAT_HYBRID,4.722459,0.8,0.95051,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+369,SQL_FIRST,110.910208,1.0,0.99173,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+369,VECTOR_FIRST_HNSW,2.284167,0.1,0.99173,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+369,HNSW_HYBRID,1.325417,1.0,0.99173,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+369,IVFFLAT_HYBRID,4.962958,0.8,0.99173,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+371,SQL_FIRST,130.194959,1.0,0.980439,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+371,VECTOR_FIRST_HNSW,3.635834,0.3,0.980439,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+371,HNSW_HYBRID,2.161875,1.0,0.980439,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+371,IVFFLAT_HYBRID,3.476667,0.5,0.980439,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+373,SQL_FIRST,15.62825,1.0,0.000285,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+373,VECTOR_FIRST_HNSW,2.133375,0.0,0.000285,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+373,HNSW_HYBRID,16.064791,1.0,0.000285,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",False,exact_bitmap,True
+373,IVFFLAT_HYBRID,16.003167,1.0,0.000285,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx""]",False,exact_bitmap,True
+380,SQL_FIRST,104.386084,1.0,0.91898,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+380,VECTOR_FIRST_HNSW,2.499583,0.0,0.91898,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+380,HNSW_HYBRID,1.542625,1.0,0.91898,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+380,IVFFLAT_HYBRID,3.772125,1.0,0.91898,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+382,SQL_FIRST,99.995,1.0,0.904485,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+382,VECTOR_FIRST_HNSW,2.49,0.0,0.904485,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+382,HNSW_HYBRID,1.118166,1.0,0.904485,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+382,IVFFLAT_HYBRID,3.823209,0.8,0.904485,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+385,SQL_FIRST,23.749709,1.0,0.000998,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+385,VECTOR_FIRST_HNSW,2.003208,0.0,0.000998,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+385,HNSW_HYBRID,1.140166,0.0,0.000998,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+385,IVFFLAT_HYBRID,10.2325,0.9,0.000998,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+388,SQL_FIRST,159.39425,1.0,0.017801,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+388,VECTOR_FIRST_HNSW,9.633708,0.2,0.017801,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+388,HNSW_HYBRID,1.865459,0.2,0.017801,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+388,IVFFLAT_HYBRID,5.363625,0.6,0.017801,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+389,SQL_FIRST,95.5195,1.0,0.988597,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+389,VECTOR_FIRST_HNSW,2.372833,0.1,0.988597,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+389,HNSW_HYBRID,1.243792,0.9,0.988597,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+389,IVFFLAT_HYBRID,4.759791,0.5,0.988597,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+390,SQL_FIRST,207.749958,1.0,0.021414,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+390,VECTOR_FIRST_HNSW,6.476792,0.1,0.021414,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+390,HNSW_HYBRID,1.346083,0.1,0.021414,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+390,IVFFLAT_HYBRID,5.784042,0.8,0.021414,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+393,SQL_FIRST,91.246958,1.0,0.790166,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+393,VECTOR_FIRST_HNSW,2.477833,0.0,0.790166,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+393,HNSW_HYBRID,1.483,0.8,0.790166,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+393,IVFFLAT_HYBRID,2.7555,0.8,0.790166,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+395,SQL_FIRST,155.450167,1.0,0.146968,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+395,VECTOR_FIRST_HNSW,9.062542,0.1,0.146968,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+395,HNSW_HYBRID,1.7675,1.0,0.146968,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+395,IVFFLAT_HYBRID,4.42125,1.0,0.146968,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+398,SQL_FIRST,25.080458,1.0,0.001273,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+398,VECTOR_FIRST_HNSW,2.652917,0.0,0.001273,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+398,HNSW_HYBRID,1.267416,0.0,0.001273,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+398,IVFFLAT_HYBRID,7.371375,0.5,0.001273,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+399,SQL_FIRST,121.776584,1.0,0.98542,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+399,VECTOR_FIRST_HNSW,3.457666,0.0,0.98542,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+399,HNSW_HYBRID,1.265417,1.0,0.98542,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+399,IVFFLAT_HYBRID,3.004583,0.9,0.98542,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+400,SQL_FIRST,67.31675,1.0,0.140299,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+400,VECTOR_FIRST_HNSW,2.298958,0.0,0.140299,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+400,HNSW_HYBRID,1.340959,0.9,0.140299,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+400,IVFFLAT_HYBRID,5.20725,0.6,0.140299,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+401,SQL_FIRST,96.800125,1.0,0.696268,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+401,VECTOR_FIRST_HNSW,2.982958,0.1,0.696268,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+401,HNSW_HYBRID,2.003375,1.0,0.696268,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+401,IVFFLAT_HYBRID,6.031416,0.6,0.696268,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+403,SQL_FIRST,60.206542,1.0,0.002188,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+403,VECTOR_FIRST_HNSW,2.347167,0.0,0.002188,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+403,HNSW_HYBRID,2.306125,0.0,0.002188,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+403,IVFFLAT_HYBRID,15.15125,0.5,0.002188,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+404,SQL_FIRST,61.269542,1.0,0.124267,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+404,VECTOR_FIRST_HNSW,2.131416,0.0,0.124267,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+404,HNSW_HYBRID,0.963709,1.0,0.124267,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+404,IVFFLAT_HYBRID,4.491708,1.0,0.124267,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+408,SQL_FIRST,132.474667,1.0,0.996346,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+408,VECTOR_FIRST_HNSW,4.204375,0.0,0.996346,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+408,HNSW_HYBRID,2.012084,1.0,0.996346,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+408,IVFFLAT_HYBRID,4.272333,0.9,0.996346,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+409,SQL_FIRST,83.064209,1.0,0.134632,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+409,VECTOR_FIRST_HNSW,2.780291,0.1,0.134632,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+409,HNSW_HYBRID,1.311416,0.7,0.134632,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+409,IVFFLAT_HYBRID,3.877333,0.9,0.134632,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+411,SQL_FIRST,91.7555,1.0,0.904438,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+411,VECTOR_FIRST_HNSW,3.2405,0.0,0.904438,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+411,HNSW_HYBRID,1.158458,1.0,0.904438,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+411,IVFFLAT_HYBRID,4.245208,0.9,0.904438,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+422,SQL_FIRST,116.009959,1.0,0.793114,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+422,VECTOR_FIRST_HNSW,1.913625,0.0,0.793114,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+422,HNSW_HYBRID,1.045667,1.0,0.793114,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+422,IVFFLAT_HYBRID,4.7115,1.0,0.793114,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+426,SQL_FIRST,113.672458,1.0,0.99041,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+426,VECTOR_FIRST_HNSW,2.024875,0.0,0.99041,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+426,HNSW_HYBRID,0.767625,1.0,0.99041,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+426,IVFFLAT_HYBRID,4.051,1.0,0.99041,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+427,SQL_FIRST,106.470458,1.0,0.902746,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+427,VECTOR_FIRST_HNSW,2.395,0.0,0.902746,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+427,HNSW_HYBRID,1.745166,1.0,0.902746,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+427,IVFFLAT_HYBRID,3.388916,0.8,0.902746,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+428,SQL_FIRST,115.136916,1.0,0.976301,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+428,VECTOR_FIRST_HNSW,2.828166,0.0,0.976301,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+428,HNSW_HYBRID,1.179583,1.0,0.976301,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+428,IVFFLAT_HYBRID,2.954625,0.8,0.976301,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+431,SQL_FIRST,95.148334,1.0,0.9028,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+431,VECTOR_FIRST_HNSW,2.129125,0.0,0.9028,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+431,HNSW_HYBRID,1.080625,1.0,0.9028,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+431,IVFFLAT_HYBRID,2.918208,1.0,0.9028,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+433,SQL_FIRST,33.084541,1.0,0.001959,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_in_stock_idx"", ""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+433,VECTOR_FIRST_HNSW,1.8695,0.0,0.001959,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+433,HNSW_HYBRID,1.063792,0.0,0.001959,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+433,IVFFLAT_HYBRID,6.544667,0.8,0.001959,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+434,SQL_FIRST,70.587041,1.0,0.131453,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+434,VECTOR_FIRST_HNSW,2.361375,0.0,0.131453,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+434,HNSW_HYBRID,1.357542,0.9,0.131453,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+434,IVFFLAT_HYBRID,3.639375,0.9,0.131453,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+439,SQL_FIRST,30.341333,1.0,0.012686,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+439,VECTOR_FIRST_HNSW,2.399375,0.0,0.012686,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+439,HNSW_HYBRID,0.954959,0.0,0.012686,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+439,IVFFLAT_HYBRID,3.653667,1.0,0.012686,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+441,SQL_FIRST,132.993833,1.0,0.885652,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+441,VECTOR_FIRST_HNSW,2.469791,0.0,0.885652,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+441,HNSW_HYBRID,1.044834,1.0,0.885652,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+441,IVFFLAT_HYBRID,6.744792,0.8,0.885652,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+443,SQL_FIRST,205.816583,1.0,0.15264,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+443,VECTOR_FIRST_HNSW,15.115584,0.0,0.15264,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+443,HNSW_HYBRID,3.173708,1.0,0.15264,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+443,IVFFLAT_HYBRID,6.009125,0.8,0.15264,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+448,SQL_FIRST,25.544125,1.0,0.009279,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+448,VECTOR_FIRST_HNSW,2.157834,0.4,0.009279,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+448,HNSW_HYBRID,1.375208,0.4,0.009279,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+448,IVFFLAT_HYBRID,7.167875,0.6,0.009279,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+449,SQL_FIRST,71.934584,1.0,0.131656,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+449,VECTOR_FIRST_HNSW,2.232542,0.0,0.131656,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+449,HNSW_HYBRID,0.973875,1.0,0.131656,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+449,IVFFLAT_HYBRID,4.145208,0.7,0.131656,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+451,SQL_FIRST,171.114416,1.0,0.147373,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+451,VECTOR_FIRST_HNSW,10.174125,0.0,0.147373,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+451,HNSW_HYBRID,1.631209,0.9,0.147373,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+451,IVFFLAT_HYBRID,2.855875,0.8,0.147373,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+453,SQL_FIRST,159.436375,1.0,0.018182,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+453,VECTOR_FIRST_HNSW,6.996834,0.0,0.018182,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+453,HNSW_HYBRID,1.508417,0.0,0.018182,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+453,IVFFLAT_HYBRID,5.929042,0.8,0.018182,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+454,SQL_FIRST,79.487792,1.0,0.131009,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+454,VECTOR_FIRST_HNSW,2.766875,0.0,0.131009,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+454,HNSW_HYBRID,1.696416,1.0,0.131009,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+454,IVFFLAT_HYBRID,5.412125,0.8,0.131009,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+457,SQL_FIRST,97.974666,1.0,0.98274,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+457,VECTOR_FIRST_HNSW,2.2525,0.3,0.98274,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+457,HNSW_HYBRID,1.241916,0.9,0.98274,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+457,IVFFLAT_HYBRID,3.570875,0.5,0.98274,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+461,SQL_FIRST,99.421166,1.0,0.905103,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+461,VECTOR_FIRST_HNSW,1.994125,0.1,0.905103,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+461,HNSW_HYBRID,0.884208,1.0,0.905103,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+461,IVFFLAT_HYBRID,3.112625,1.0,0.905103,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+463,SQL_FIRST,101.897375,1.0,0.718586,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+463,VECTOR_FIRST_HNSW,2.392625,0.0,0.718586,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+463,HNSW_HYBRID,1.210458,1.0,0.718586,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+463,IVFFLAT_HYBRID,2.982875,0.7,0.718586,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+465,SQL_FIRST,98.749334,1.0,0.970156,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+465,VECTOR_FIRST_HNSW,1.763041,0.1,0.970156,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+465,HNSW_HYBRID,0.903125,1.0,0.970156,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+465,IVFFLAT_HYBRID,3.212583,1.0,0.970156,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+466,SQL_FIRST,87.533209,1.0,0.904071,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+466,VECTOR_FIRST_HNSW,2.747541,0.2,0.904071,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+466,HNSW_HYBRID,2.128709,0.8,0.904071,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+466,IVFFLAT_HYBRID,3.10125,0.9,0.904071,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+468,SQL_FIRST,100.552334,1.0,0.969298,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+468,VECTOR_FIRST_HNSW,1.879958,0.2,0.969298,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+468,HNSW_HYBRID,0.814417,1.0,0.969298,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+468,IVFFLAT_HYBRID,6.662375,1.0,0.969298,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+469,SQL_FIRST,99.528209,1.0,0.977815,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+469,VECTOR_FIRST_HNSW,2.347791,0.0,0.977815,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+469,HNSW_HYBRID,1.311416,1.0,0.977815,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+469,IVFFLAT_HYBRID,2.84925,0.9,0.977815,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+470,SQL_FIRST,12.736291,1.0,0.002832,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_price_idx"", ""sift_hybrid_category_idx""]",True,exact_bitmap,True
+470,VECTOR_FIRST_HNSW,1.923458,0.0,0.002832,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+470,HNSW_HYBRID,1.089959,0.0,0.002832,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+470,IVFFLAT_HYBRID,7.651375,0.9,0.002832,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+471,SQL_FIRST,116.116041,1.0,0.90357,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+471,VECTOR_FIRST_HNSW,2.141666,0.0,0.90357,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+471,HNSW_HYBRID,1.590833,1.0,0.90357,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+471,IVFFLAT_HYBRID,2.314,1.0,0.90357,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+476,SQL_FIRST,108.290333,1.0,0.905111,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+476,VECTOR_FIRST_HNSW,2.446666,0.0,0.905111,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+476,HNSW_HYBRID,2.134416,1.0,0.905111,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+476,IVFFLAT_HYBRID,5.37275,0.8,0.905111,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+477,SQL_FIRST,81.605084,1.0,0.132122,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+477,VECTOR_FIRST_HNSW,2.432375,0.0,0.132122,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+477,HNSW_HYBRID,1.396083,1.0,0.132122,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+477,IVFFLAT_HYBRID,4.110042,0.7,0.132122,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+480,SQL_FIRST,196.431792,1.0,0.021746,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+480,VECTOR_FIRST_HNSW,6.326541,0.3,0.021746,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+480,HNSW_HYBRID,1.3855,0.3,0.021746,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+480,IVFFLAT_HYBRID,8.282583,1.0,0.021746,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+482,SQL_FIRST,98.877125,1.0,0.820371,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+482,VECTOR_FIRST_HNSW,3.032958,0.0,0.820371,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+482,HNSW_HYBRID,1.528292,1.0,0.820371,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+482,IVFFLAT_HYBRID,3.239459,0.9,0.820371,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+484,SQL_FIRST,100.7545,1.0,0.994434,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+484,VECTOR_FIRST_HNSW,2.527542,0.0,0.994434,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+484,HNSW_HYBRID,1.716833,1.0,0.994434,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+484,IVFFLAT_HYBRID,3.664333,0.7,0.994434,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+485,SQL_FIRST,88.701667,1.0,0.903607,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+485,VECTOR_FIRST_HNSW,2.234333,0.0,0.903607,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+485,HNSW_HYBRID,1.126958,0.9,0.903607,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+485,IVFFLAT_HYBRID,2.623958,0.7,0.903607,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+489,SQL_FIRST,108.417667,1.0,0.681197,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+489,VECTOR_FIRST_HNSW,2.331084,0.0,0.681197,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+489,HNSW_HYBRID,0.95675,1.0,0.681197,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+489,IVFFLAT_HYBRID,2.754416,1.0,0.681197,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+490,SQL_FIRST,19.215583,1.0,0.00064,"[0.00,0.05)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",True,exact_bitmap,True
+490,VECTOR_FIRST_HNSW,1.9365,0.0,0.00064,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+490,HNSW_HYBRID,19.2395,1.0,0.00064,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+490,IVFFLAT_HYBRID,19.22325,1.0,0.00064,"[0.00,0.05)",SQL_FIRST,False,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx"", ""sift_hybrid_price_idx""]",False,exact_bitmap,True
+491,SQL_FIRST,94.616167,1.0,0.889545,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+491,VECTOR_FIRST_HNSW,2.520084,0.0,0.889545,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+491,HNSW_HYBRID,1.230333,1.0,0.889545,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+491,IVFFLAT_HYBRID,3.712084,0.8,0.889545,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+492,SQL_FIRST,103.345917,1.0,0.903891,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+492,VECTOR_FIRST_HNSW,2.644,0.1,0.903891,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+492,HNSW_HYBRID,1.593084,1.0,0.903891,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+492,IVFFLAT_HYBRID,2.299792,1.0,0.903891,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+493,SQL_FIRST,65.058958,1.0,0.126315,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+493,VECTOR_FIRST_HNSW,1.971959,0.0,0.126315,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+493,HNSW_HYBRID,1.424375,0.9,0.126315,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+493,IVFFLAT_HYBRID,3.013417,1.0,0.126315,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+495,SQL_FIRST,106.15775,1.0,0.964046,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+495,VECTOR_FIRST_HNSW,1.841,0.1,0.964046,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+495,HNSW_HYBRID,0.822292,1.0,0.964046,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+495,IVFFLAT_HYBRID,3.868125,1.0,0.964046,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+496,SQL_FIRST,95.654458,1.0,0.903955,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+496,VECTOR_FIRST_HNSW,3.138208,0.0,0.903955,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+496,HNSW_HYBRID,1.701,1.0,0.903955,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+496,IVFFLAT_HYBRID,4.657667,0.8,0.903955,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+497,SQL_FIRST,115.044583,1.0,0.959319,"[0.50,1.00)",SQL_FIRST,True,5,[],True,exact_seq,True
+497,VECTOR_FIRST_HNSW,2.447708,0.0,0.959319,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+497,HNSW_HYBRID,1.300041,1.0,0.959319,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+497,IVFFLAT_HYBRID,7.081417,1.0,0.959319,"[0.50,1.00)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+498,SQL_FIRST,65.316375,1.0,0.137732,"[0.10,0.25)",SQL_FIRST,True,5,[],True,exact_seq,True
+498,VECTOR_FIRST_HNSW,2.187875,0.0,0.137732,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+498,HNSW_HYBRID,0.952917,1.0,0.137732,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+498,IVFFLAT_HYBRID,3.924583,1.0,0.137732,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True
+499,SQL_FIRST,171.871,1.0,0.151521,"[0.10,0.25)",SQL_FIRST,True,5,"[""sift_hybrid_category_idx"", ""sift_hybrid_in_stock_idx""]",True,exact_bitmap,True
+499,VECTOR_FIRST_HNSW,8.594,0.0,0.151521,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx"", ""sift_hybrid_pkey""]",True,hnsw_index,True
+499,HNSW_HYBRID,1.497209,1.0,0.151521,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_hnsw_idx""]",True,hnsw_index,True
+499,IVFFLAT_HYBRID,7.49875,1.0,0.151521,"[0.10,0.25)",SQL_FIRST,False,5,"[""sift_hybrid_embedding_ivfflat_idx""]",True,ivfflat_index,True

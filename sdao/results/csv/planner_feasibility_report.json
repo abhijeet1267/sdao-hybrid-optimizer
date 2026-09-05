@@ -1,0 +1,7 @@
+{
+  "summary": {
+    "target_recall": 0.95,
+    "planner_behavior": "Strategies are filtered by estimated recall before selecting the lowest-cost feasible option.",
+    "notes": "This report is generated from the updated planner implementation and is intended to support the paper's feasibility discussion."
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "canonical_run": {
+    "directory": "results/real_run_20260826T065155Z/",
+    "started_at_utc": "2026-08-26T06:51:56.704+00:00",
+    "finished_at_utc": "2026-08-26T06:56:10.107+00:00",
+    "seed": 20260820,
+    "split_seed": 20260821,
+    "query_count": 500,
+    "calibration_count": 250,
+    "heldout_count": 250,
+    "repetitions": 5,
+    "top_k": 10,
+    "target_recall": 0.95,
+    "vector_first_budget": 100
+  },
+  "canonical_environment": {
+    "docker_image": "pgvector/pgvector:0.8.5-pg16",
+    "docker_image_tag": "0.8.5-pg16",
+    "postgresql_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "postgresql_platform": "aarch64-unknown-linux-gnu",
+    "postgresql_compiler": "gcc (Debian 12.2.0-14+deb12u1) 12.2.0",
+    "pgvector_version": "0.8.5",
+    "os": "Debian 12 (Bookworm) on aarch64 (ARM64) inside Docker",
+    "host_architecture": "aarch64 (ARM64)",
+    "ram_unknown": "Docker host RAM not recorded in run metadata",
+    "cpu_unknown": "Docker host CPU not recorded in run metadata"
+  },
+  "canonical_index_parameters": {
+    "HNSW_m": 16,
+    "HNSW_ef_construction": 64,
+    "HNSW_ef_search_runtime": 100,
+    "HNSW_ef_construction_source": "pgvector 0.8.5 default (load_sift_hybrid.py uses no WITH clause)",
+    "IVFFLAT_lists": 1000,
+    "IVFFLAT_probes_runtime": 10,
+    "source": "load_sift_hybrid.py CREATE INDEX statements (no WITH clause for HNSW; IVFFLAT WITH (lists=1000))"
+  },
+  "canonical_strategy_settings": {
+    "SQL_FIRST": {"enable_indexscan": "off"},
+    "VECTOR_FIRST_HNSW": {"hnsw.ef_search": 100, "ivfflat.probes": 1000, "candidate_budget": 100},
+    "HNSW_HYBRID": {"hnsw.ef_search": 100, "ivfflat.probes": 1000},
+    "IVFFLAT_HYBRID": {"ivfflat.probes": 10, "hnsw.ef_search": 1000}
+  },
+  "canonical_schema": {
+    "table": "sift_hybrid",
+    "columns": ["id SERIAL PK", "embedding vector(128)", "category VARCHAR(50)", "price NUMERIC(10,2)", "in_stock BOOLEAN"],
+    "row_count": 1000000,
+    "secondary_indexes": ["category", "price", "in_stock"]
+  },
+  "canonical_workload": {
+    "query_template_count": 3,
+    "templates": [
+      "target<0.25: (category = %s AND price < %s AND in_stock = %s)",
+      "target<0.60: ((category = %s AND price < %s) OR in_stock = %s)",
+      "target>=0.60: (category = %s OR price < %s OR in_stock = %s)"
+    ],
+    "target_distribution": "uniform U(0.01, 1.0)",
+    "category_choice": "uniform from 10 categories (category_00 .. category_09)",
+    "in_stock_choice": "coin flip",
+    "price_limit_formula": "10.01 + 990*target, clipped to [10.01, 1000.0]"
+  },
+  "current_environment": {
+    "docker_image": "N/A (Homebrew, not Docker)",
+    "postgresql_version": "17.10 (Homebrew)",
+    "postgresql_platform": "aarch64-apple-darwin25.4.0",
+    "postgresql_compiler": "Apple clang 21.0.0",
+    "pgvector_version": "0.8.5",
+    "os": "macOS 26.5.2 on aarch64 (M-series)",
+    "host_architecture": "aarch64 (ARM64)",
+    "ram_gb": 8,
+    "physical_cores": 8
+  },
+  "current_index_parameters": {
+    "HNSW_m": 16,
+    "HNSW_ef_construction": 200,
+    "HNSW_ef_search_runtime": 100,
+    "IVFFLAT_lists": 100,
+    "IVFFLAT_probes_runtime": 10
+  },
+  "parameter_discrepancies": [
+    {
+      "parameter": "HNSW_ef_construction",
+      "canonical": 64,
+      "current": 200,
+      "source_of_difference": "load_sift_hybrid.py uses pgvector default (64); my initial build used explicit 200"
+    },
+    {
+      "parameter": "IVFFLAT_lists",
+      "canonical": 1000,
+      "current": 100,
+      "source_of_difference": "load_sift_hybrid.py uses lists=1000; my build used lists=100"
+    },
+    {
+      "parameter": "postgresql_version",
+      "canonical": "16.14",
+      "current": "17.10",
+      "source_of_difference": "Docker image pgvector/pgvector:0.8.5-pg16 vs Homebrew postgresql@17"
+    }
+  ],
+  "notes": [
+    "The .env file lists PGVECTOR_HNSW_EF_CONSTRUCTION=200, but load_sift_hybrid.py does not read .env and uses pgvector defaults. The .env value is misleading documentation.",
+    "ANALYZE state: the canonical run did not record explicit ANALYZE. The benchmark executes immediately after load_sift_hybrid.py returns, so ANALYZE is not called. PostgreSQL autovacuum may have run ANALYZE during the load."
+  ]
+}

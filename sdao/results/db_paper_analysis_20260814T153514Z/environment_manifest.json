@@ -1,0 +1,91 @@
+{
+  "collected_at_utc": "2026-08-14T15:35:15.058662+00:00",
+  "collection_scope": "read-only; excludes passwords and secrets",
+  "hardware": {
+    "cpu_model": "Apple M1",
+    "cpu_model_reason": null,
+    "architecture": "arm64",
+    "logical_cpu_count": 8,
+    "ram": "8192 MiB",
+    "ram_reason": null
+  },
+  "operating_system": {
+    "name": "Darwin",
+    "version": "Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:46 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8103",
+    "release": "25.5.0"
+  },
+  "python": {
+    "version": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+    "executable": "/Users/abhijeetmiskin/AppData/MyProject/venv/bin/python",
+    "prefix": "/Users/abhijeetmiskin/AppData/MyProject/venv",
+    "virtual_env": null
+  },
+  "packages": {
+    "psycopg": {
+      "version": "3.3.4",
+      "reason": null
+    },
+    "pandas": {
+      "version": "3.0.5",
+      "reason": null
+    },
+    "numpy": {
+      "version": "2.5.1",
+      "reason": null
+    },
+    "matplotlib": {
+      "version": "3.11.1",
+      "reason": null
+    },
+    "scikit-learn": {
+      "version": "1.9.0",
+      "reason": null
+    },
+    "python-dotenv": {
+      "version": "1.2.2",
+      "reason": null
+    },
+    "PyPDF2": {
+      "version": null,
+      "reason": "not installed"
+    }
+  },
+  "docker": {
+    "server_version": "29.6.1",
+    "server_version_reason": null,
+    "image": "pgvector/pgvector:0.8.5-pg16",
+    "image_digest": "pgvector/pgvector@sha256:1d533553fefe4f12e5d80c7b80622ba0c382abb5758856f52983d8789179f0fb",
+    "image_digest_reason": null
+  },
+  "postgresql": {
+    "server_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "reason": null,
+    "host": "localhost",
+    "port": 5433,
+    "database": "sdao",
+    "user": "sdao"
+  },
+  "dataset": {
+    "name": "SIFT1M",
+    "row_count": 1000000,
+    "embedding_dimension": 128,
+    "base_vectors_path": "dataset/sift/sift_base.fvecs",
+    "base_vectors_sha256": "21f66e2975057b5728ba56de1c825bac4f4d89d596609ae985741c6242631816",
+    "attributes_path": "attributes.csv",
+    "attributes_sha256": "316ad69956db4e2da5566a50f3c3229af026d476f8dd7c9bce2a20efb21961ac"
+  },
+  "queries": {
+    "path": "queries.csv",
+    "sha256": "fcbced425b8ae01e97cb77faa2917431dca2aeccfeab62b8d25d9bb1975d6746",
+    "query_count": 32,
+    "generator": "generate_queries.py",
+    "seed": 42,
+    "seed_source": "np.random.seed(42) in generate_queries.py"
+  },
+  "git": {
+    "git_repository": false,
+    "git_commit": null,
+    "reason": "CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128."
+  }
+}

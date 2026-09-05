@@ -1,0 +1,17 @@
+{
+  "host": "localhost",
+  "port": 5432,
+  "dbname": "sdao",
+  "user": "postgres",
+  "password": "REDACTED",
+  "schema": "public",
+  "container_name": "",
+  "table_name": "sift_hybrid",
+  "distance_op": "<->",
+  "distance_name": "L2",
+  "ivfflat_lists": 1000,
+  "hnsw_m": 16,
+  "hnsw_ef_construction": 200,
+  "hnsw_ef_search": 100,
+  "ivfflat_probes": 10
+}

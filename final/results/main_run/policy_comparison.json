@@ -1,0 +1,192 @@
+[
+  {
+    "policy": "min_recall",
+    "queries": 125,
+    "ann_selections": 100,
+    "ann_pct": 80.0,
+    "mean_latency_ms": 15.100804023999997,
+    "mean_recall_at_10": 1.0,
+    "min_recall_at_10": 1.0,
+    "frac_unsafe_ann": 0.0,
+    "frac_recall_ge_target": 1.0,
+    "selection_by_bucket": [
+      {
+        "bucket": "[0.00,0.05)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      },
+      {
+        "bucket": "[0.05,0.10)",
+        "selected": "SQL_FIRST",
+        "count": 25
+      },
+      {
+        "bucket": "[0.10,0.25)",
+        "selected": "HNSW_HYBRID",
+        "count": 23
+      },
+      {
+        "bucket": "[0.25,0.50)",
+        "selected": "HNSW_HYBRID",
+        "count": 29
+      },
+      {
+        "bucket": "[0.50,1.00)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "policy": "mean_recall",
+    "queries": 125,
+    "ann_selections": 100,
+    "ann_pct": 80.0,
+    "mean_latency_ms": 15.100804023999997,
+    "mean_recall_at_10": 1.0,
+    "min_recall_at_10": 1.0,
+    "frac_unsafe_ann": 0.0,
+    "frac_recall_ge_target": 1.0,
+    "selection_by_bucket": [
+      {
+        "bucket": "[0.00,0.05)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      },
+      {
+        "bucket": "[0.05,0.10)",
+        "selected": "SQL_FIRST",
+        "count": 25
+      },
+      {
+        "bucket": "[0.10,0.25)",
+        "selected": "HNSW_HYBRID",
+        "count": 23
+      },
+      {
+        "bucket": "[0.25,0.50)",
+        "selected": "HNSW_HYBRID",
+        "count": 29
+      },
+      {
+        "bucket": "[0.50,1.00)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "policy": "quantile_recall",
+    "queries": 125,
+    "ann_selections": 100,
+    "ann_pct": 80.0,
+    "mean_latency_ms": 15.100804023999997,
+    "mean_recall_at_10": 1.0,
+    "min_recall_at_10": 1.0,
+    "frac_unsafe_ann": 0.0,
+    "frac_recall_ge_target": 1.0,
+    "selection_by_bucket": [
+      {
+        "bucket": "[0.00,0.05)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      },
+      {
+        "bucket": "[0.05,0.10)",
+        "selected": "SQL_FIRST",
+        "count": 25
+      },
+      {
+        "bucket": "[0.10,0.25)",
+        "selected": "HNSW_HYBRID",
+        "count": 23
+      },
+      {
+        "bucket": "[0.25,0.50)",
+        "selected": "HNSW_HYBRID",
+        "count": 29
+      },
+      {
+        "bucket": "[0.50,1.00)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "policy": "lcb_recall",
+    "queries": 125,
+    "ann_selections": 100,
+    "ann_pct": 80.0,
+    "mean_latency_ms": 15.100804023999997,
+    "mean_recall_at_10": 1.0,
+    "min_recall_at_10": 1.0,
+    "frac_unsafe_ann": 0.0,
+    "frac_recall_ge_target": 1.0,
+    "selection_by_bucket": [
+      {
+        "bucket": "[0.00,0.05)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      },
+      {
+        "bucket": "[0.05,0.10)",
+        "selected": "SQL_FIRST",
+        "count": 25
+      },
+      {
+        "bucket": "[0.10,0.25)",
+        "selected": "HNSW_HYBRID",
+        "count": 23
+      },
+      {
+        "bucket": "[0.25,0.50)",
+        "selected": "HNSW_HYBRID",
+        "count": 29
+      },
+      {
+        "bucket": "[0.50,1.00)",
+        "selected": "IVFFLAT_HYBRID",
+        "count": 24
+      }
+    ]
+  },
+  {
+    "policy": "failure_rate",
+    "queries": 125,
+    "ann_selections": 0,
+    "ann_pct": 0.0,
+    "mean_latency_ms": 15.290977616000003,
+    "mean_recall_at_10": 1.0,
+    "min_recall_at_10": 1.0,
+    "frac_unsafe_ann": null,
+    "frac_recall_ge_target": 1.0,
+    "selection_by_bucket": [
+      {
+        "bucket": "[0.00,0.05)",
+        "selected": "SQL_FIRST",
+        "count": 24
+      },
+      {
+        "bucket": "[0.05,0.10)",
+        "selected": "SQL_FIRST",
+        "count": 25
+      },
+      {
+        "bucket": "[0.10,0.25)",
+        "selected": "SQL_FIRST",
+        "count": 23
+      },
+      {
+        "bucket": "[0.25,0.50)",
+        "selected": "SQL_FIRST",
+        "count": 29
+      },
+      {
+        "bucket": "[0.50,1.00)",
+        "selected": "SQL_FIRST",
+        "count": 24
+      }
+    ]
+  }
+]

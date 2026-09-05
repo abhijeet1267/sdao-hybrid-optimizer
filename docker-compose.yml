@@ -1,0 +1,20 @@
+services:
+  postgres:
+    # PostgreSQL 16 with pgvector 0.8.5; keep this versioned tag for experiments.
+    image: pgvector/pgvector:0.8.5-pg16
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sdao}
+      POSTGRES_USER: ${POSTGRES_USER:-sdao}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env or the shell}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 12
+    volumes:
+      - sdao_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  sdao_postgres_data:

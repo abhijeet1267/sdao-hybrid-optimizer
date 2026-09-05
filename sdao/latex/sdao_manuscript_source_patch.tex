@@ -1,0 +1,230 @@
+% SDAO manuscript source-level patch
+% This file compiles independently and contains ready-to-paste replacements.
+% Apply the marked blocks to the original manuscript .tex source.
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage{xcolor,listings}
+
+\lstdefinestyle{sdao-sql}{
+  language=SQL,
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  frame=single,
+  breaklines=true
+}
+
+% Use these macros consistently throughout prose, tables, and captions.
+\newcommand{\PRE}{\textsc{PRE}}
+\newcommand{\POST}{\textsc{POST}}
+\newcommand{\GRAPH}{\textsc{GRAPH}}
+\newcommand{\ISECT}{\textsc{ISECT}}
+\newcommand{\graphtraversal}{predicate-aware graph traversal}
+
+\begin{document}
+
+\section*{Ready-to-paste SDAO manuscript corrections}
+
+\subsection*{Abstract replacement}
+
+Replace the malformed example query in the Abstract with:
+
+\begin{quote}
+For example, a product-search request may ask for the $K$ most similar
+items whose \texttt{category} equals a requested value and whose
+\texttt{price} is below a requested bound.
+\end{quote}
+
+\subsection*{Section 3: complete PostgreSQL-compatible query}
+
+Replace the malformed query snippet in the motivating example with:
+
+\begin{lstlisting}[style=sdao-sql,
+caption={Representative PostgreSQL-compatible hybrid SQL--vector query.},
+label={lst:motivating-query}]
+SELECT id,
+       embedding <-> :query_embedding AS distance
+FROM products
+WHERE category = :category
+  AND price < :max_price
+ORDER BY embedding <-> :query_embedding
+LIMIT :k;
+\end{lstlisting}
+
+The text introducing the listing should read:
+
+\begin{quote}
+Consider a product-search table with the hybrid query shown in
+Listing~\ref{lst:motivating-query}. The query combines an L2 vector
+ordering with structured category and price predicates.
+\end{quote}
+
+\subsection*{Terminology normalization}
+
+At first mention in each major section, write:
+
+\begin{quote}
+\graphtraversal\ (\GRAPH)
+\end{quote}
+
+Thereafter use \verb|\GRAPH| in text, tables, captions, and Algorithm~1.
+Replace the following variants globally unless they refer to a distinct
+external system: ``graph strategy,'' ``graph traversal,'' ``filtered graph
+search,'' and ``ACORN-style graph traversal.'' Captions should use the form
+``\GRAPH\ (predicate-aware graph traversal).''
+
+\subsection*{Section 4.2: replacement mathematical formulation}
+\label{sec:problem-formulation}
+
+\begin{verbatim}
+\subsection{Problem Formulation}
+\label{sec:problem-formulation}
+
+Let a hybrid query be
+\[
+q = \langle \mathbf{v}, P, K \rangle,
+\]
+where \(\mathbf{v}\) is the query embedding, \(P\) is a structured
+predicate, and \(K\) is the requested result count. Let
+\[
+\sigma(P)
+  = \frac{\left|\{x \in \mathcal{D} : P(x)\}\right|}
+          {|\mathcal{D}|}
+\]
+denote the true predicate selectivity. For \(K' \gg K\), let
+\[
+\rho(\mathbf{v}, P)
+  = \frac{
+      \left|
+        \mathcal{N}_{K'}(\mathbf{v})
+        \cap \{x \in \mathcal{D} : P(x)\}
+      \right|
+    }{K'}
+\]
+denote the local overlap between predicate-satisfying tuples and the
+\(K'\) nearest neighbors of \(\mathbf{v}\). Let
+\[
+\mathcal{S} = \{\PRE, \POST, \GRAPH, \ISECT\}.
+\]
+Given \(\widehat{\sigma}(P)\), \(\widehat{\rho}(\mathbf{v},P)\),
+and \(\widehat{R}_{s}(q)\) for each \(s \in \mathcal{S}\), SDAO selects
+\[
+s^{\star}(q)
+=
+\underset{s \in \mathcal{S}}{\arg\min}\;
+\mathbb{E}\!\left[
+  \widehat{\operatorname{Cost}}
+  \bigl(s \mid \widehat{\sigma}(P),
+  \widehat{\rho}(\mathbf{v},P)\bigr)
+\right]
+\quad \text{subject to} \quad
+\widehat{R}_{s}(q) \geq R_{\mathrm{target}}.
+\]
+\end{verbatim}
+
+\subsection*{Section 4.9: replacement cost model}
+\label{sec:cost-model}
+
+\begin{verbatim}
+\subsection{Cost Model}
+\label{sec:cost-model}
+
+Let \(\widehat{C}(P)\) be the estimated pre-filter candidate set:
+\[
+\left|\widehat{C}(P)\right| = \widehat{\sigma}(P)N.
+\]
+SDAO estimates the cost of each strategy as
+\begin{align}
+\widehat{\operatorname{Cost}}_{\PRE}
+  &= c_1\left|\widehat{C}(P)\right|
+   + c_2\left|\widehat{C}(P)\right|\log K, \\
+\widehat{\operatorname{Cost}}_{\POST}
+  &= c_3\operatorname{ANN}(Kf) + c_4Kf, \\
+\widehat{\operatorname{Cost}}_{\GRAPH}
+  &= c_5\,ef_{\mathrm{search}}
+     \left(1 + \frac{1}{\max(\widehat{\sigma}(P),\varepsilon)}\right), \\
+\widehat{\operatorname{Cost}}_{\ISECT}
+  &= c_6\left(\left|B_v\right| + \left|B_p\right|\right),
+\end{align}
+where \(\varepsilon > 0\) prevents division by zero, \(f\) is the
+post-filter oversampling factor, \(ef_{\mathrm{search}}\) is the graph
+exploration factor, \(B_v\) is the selected vector bucket, and \(B_p\)
+is the predicate bitmap. When \(\widehat{\rho}(\mathbf{v},P)\) is close
+to \(\widehat{\sigma}(P)\), SDAO uses
+\[
+f \approx \frac{1}{\max(\widehat{\sigma}(P),\varepsilon)}.
+\]
+When \(\widehat{\rho}(\mathbf{v},P) < \widehat{\sigma}(P)\), the
+planner increases \(f\) to compensate for the under-representation of
+predicate-satisfying tuples near the query embedding.
+\end{verbatim}
+
+\subsection*{Cross-reference repairs}
+
+Add this label to the existing Future Work section:
+
+\begin{verbatim}
+\section{Future Work}
+\label{sec:future-work}
+\end{verbatim}
+
+Replace the unresolved phrase in Finding~3:
+
+\begin{verbatim}
+the reinforcement-learning-based threshold refinement proposed as
+future work (Section~\ref{sec:future-work})
+\end{verbatim}
+
+The mention of ``hypotheses H1--H3'' in Section~6.3 cannot be linked,
+because no such hypotheses are defined in the draft. Until formal hypotheses
+are introduced, replace that phrase with:
+
+\begin{verbatim}
+the original evaluation plan---million-scale datasets, real baseline
+systems, and evaluation across the full selectivity spectrum---
+\end{verbatim}
+
+\subsection*{Section 6.x: compilable ablation-study template}
+\label{sec:ablation-template}
+
+\begin{verbatim}
+\subsection{Ablation Study}
+\label{sec:ablation}
+
+We will evaluate the contribution of each SDAO component by removing one
+component at a time while holding the dataset, query workload, ANN parameters,
+and target recall constant. We will report end-to-end latency, filtered
+Recall@10, vectors scanned, and planning overhead. Results will be reported
+after implementation.
+
+\begin{table*}[t]
+\centering
+\caption{Planned SDAO ablation study. Values are intentionally marked
+``To be measured'' until the planned evaluation is completed.}
+\label{tab:ablation}
+\small
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{llrrrr}
+\toprule
+Variant & Removed or modified component &
+Latency (ms) & Recall@10 & Vectors scanned & Planner overhead (ms) \\
+\midrule
+Full SDAO & None (reference configuration) &
+To be measured & To be measured & To be measured & To be measured \\
+No estimator & Learned selectivity/overlap estimator &
+To be measured & To be measured & To be measured & To be measured \\
+No online learning & Feedback-driven estimator updates &
+To be measured & To be measured & To be measured & To be measured \\
+No \GRAPH & Predicate-aware graph traversal action &
+To be measured & To be measured & To be measured & To be measured \\
+No \ISECT & Index-intersection action &
+To be measured & To be measured & To be measured & To be measured \\
+No adaptive planner & Fixed-strategy selection policy &
+To be measured & To be measured & To be measured & To be measured \\
+\bottomrule
+\end{tabular}
+\end{table*}
+\end{verbatim}
+
+\end{document}

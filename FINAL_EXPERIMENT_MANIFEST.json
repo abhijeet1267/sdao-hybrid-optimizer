@@ -1,0 +1,95 @@
+{
+  "generated_at_utc": "2026-08-28T02:29:43+00:00",
+  "platform": {
+    "system": "Darwin",
+    "release": "25.5.0",
+    "machine": "arm64",
+    "python_version": "3.12.13"
+  },
+  "postgresql": {
+    "version": "17.10 (Homebrew)",
+    "pgvector_version": "0.8.5",
+    "host": "localhost",
+    "port": 5432,
+    "database": "sdao"
+  },
+  "hardware": {
+    "physical_cores": 8,
+    "logical_cores": 8,
+    "total_memory_gb": 8
+  },
+  "datasets": {
+    "primary": {
+      "name": "SIFT1M",
+      "subset_size": 200000,
+      "full_size": 1000000,
+      "vector_dimension": 128,
+      "distance": "L2",
+      "source": "dataset/sift/sift_base.fvecs"
+    }
+  },
+  "experiments": {
+    "baseline_reproduction_1M": {
+      "purpose": "Reproduce the original 250-query held-out run on PG 17.10",
+      "input_csv": "results/exp_20260827T000000Z/baseline_reproduction_warm/summary.csv",
+      "seeds": {
+        "workload": 20260820,
+        "split": 20260821
+      },
+      "repetitions": 5,
+      "result_summary": "All strategies ~98-114ms; ANN recall near 1.0; adaptive selects IVFFLAT_HYBRID and VECTOR_FIRST_HNSW (not SQL_FIRST). Differs from original because HNSW graph quality is better in this environment."
+    },
+    "param_sweep_200K": {
+      "purpose": "Sweep HNSW ef_search and IVFFLAT probes on the 200K subset",
+      "input_dir": "results/exp_200k/param_sweep/",
+      "sweep_grid": {
+        "hnsw_ef_search": [
+          50,
+          100,
+          200,
+          400
+        ],
+        "ivfflat_probes": [
+          1,
+          10,
+          50,
+          200
+        ]
+      },
+      "seeds": {
+        "workload": 20260820,
+        "split": 20260821
+      },
+      "repetitions": 5,
+      "result_summary": "HNSW_HYBRID and IVFFLAT_HYBRID achieve recall 1.0 at all parameter settings. VECTOR_FIRST_HNSW fails (recall 0.27) due to small candidate budget."
+    },
+    "admission_policy_comparison": {
+      "purpose": "Compare 4 admission policies (min_recall, mean_recall, lcb_recall, quantile_recall)",
+      "input_script": "run_admission_policies.py",
+      "result_summary": "All 4 policies give the same result on 200K: IVFFLAT_HYBRID for all queries. Policies would diverge on harder workloads."
+    }
+  },
+  "admission_policies": {
+    "min_recall": "Rmin(bucket) >= 0.95 (original baseline)",
+    "mean_recall": "Rmean(bucket) >= 0.95",
+    "lcb_recall": "bootstrap 95% lower confidence bound on Rmean >= 0.95",
+    "quantile_recall": "5th percentile of recall distribution >= 0.95"
+  },
+  "original_baseline_preserved": {
+    "path": "results/real_run_20260826T065155Z/",
+    "untouched": true
+  },
+  "reproduction_commands": [
+    "venv/bin/python load_sift_subset.py",
+    "venv/bin/python run_param_sweep.py",
+    "venv/bin/python run_admission_policies.py"
+  ],
+  "output_artifacts": [
+    "FINAL_RESULTS.csv",
+    "FINAL_RESULTS.json",
+    "FINAL_RESEARCH_REPORT.md",
+    "results/exp_20260827T000000Z/environment.json",
+    "results/exp_20260827T000000Z/baseline_reproduction*/",
+    "results/exp_200k/param_sweep/"
+  ]
+}

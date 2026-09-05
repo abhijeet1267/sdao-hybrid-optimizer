@@ -1,0 +1,16 @@
+{
+  "directory": "results/real_run_20260826T065155Z/",
+  "computed_at_utc": "2026-08-31T00:00:00Z",
+  "files": {
+    "calibration_per_execution.csv": "1dd9a78e29fbf4798d8737323c11e858e46a103ca46355fe4326a1eaa549bbc1",
+    "heldout_per_execution.csv":    "6afc8a834595c6e726903b8f8106cce1ca9bad5d444973526042e579dfbdad51",
+    "heldout_per_query.csv":         "81e09f96db1473a15c91b61d48df1aa8929c616a39c92fdf085b13b677446e03",
+    "summary.csv":                   "47006fce8e5b157e6017efbf180497a82d45955fb77d727c3e80ddd619de3743",
+    "table1_recomputed.csv":         "4ff5cc23591ffde56b9bb5bd834bcdb10fd1f555bce43f88f8d2620152bb9d1c",
+    "table2_recomputed.csv":         "388c8eab49241b8196ed08e7a2e3bfc322c8f468b4d59b9cfaa5cbc3a74cc212",
+    "table3_recomputed.csv":         "fc9722ceec849af563d4d3fe2c8cf48ed5ef4569537bf8ecd2416750ea232956",
+    "table4_recomputed.csv":         "aaac652bb51f1e41c2843f001bd18c0385dabbd3e54c9c4a89bf1a803a7efa38",
+    "run_metadata.json":             "7885d02844dffea6bacb90d541f0c83390548f4713fec70ea03ab93e4caad444"
+  },
+  "policy": "These SHA-256 sums are recorded as the canonical state of the original baseline artifacts. Any modification would invalidate the audit chain and is prohibited by the protocol."
+}

@@ -1,0 +1,7 @@
+scope,executions,verified,all_verified
+adaptive_hnsw,10,10,True
+fixed_hnsw,32,32,True
+fixed_vector_first,32,32,True
+fixed_ivfflat,32,32,True
+all_ann,106,106,True
+sql_first,54,54,True

@@ -1,0 +1,2 @@
+strategy,query_count,mean_latency_ms,median_latency_ms,p95_latency_ms,mean_recall,minimum_recall,fraction_recall_at_least_095
+ADAPTIVE,32,51.31626946875,48.914499500000005,98.03579754999994,1.0,1.0,1.0

@@ -1,0 +1,53 @@
+% =====================================================================
+% Table IX — Buffer-Hierarchy / Cold-Cache Dynamics (1M rows)
+% Source: results_cold_cache.csv (900 rows = 3 phases x 5 buckets x 4 strategies x 15 queries)
+%   "hot"     = baseline (buffer cache filled, page-cache warm)
+%   "cold"    = immediately after `purge` (macOS page cache dropped)
+%   "hot_2nd" = re-warmed buffer cache (sanity check)
+% inflation_ratio = cold_p50 / hot_p50.
+% FINDING: macOS `purge` on a Homebrew Postgres install does NOT reliably
+% evict the database buffer cache, so cold/hot latencies are within
+% noise (inflation 0.74--1.09).  We report this honestly as a limitation:
+% proper cold-cache would require `pg_buffercache`+`pg_prewarm` extensions
+% or a Docker container restart, neither of which was available in this
+% experiment.  Latency p95 numbers (hundreds of ms) reflect occasional
+% disk reads for the first SQL_FIRST query of each phase.
+% =====================================================================
+\begin{table}[t]
+\centering
+\caption{Buffer-hierarchy dynamics under forced cold-cache.  Each cell
+is the median wall-clock latency (ms) over 15 queries at N=1\,M;
+\emph{inflation} $=$ cold\_p50 / hot\_p50.  On macOS/Homebrew
+Postgres~17, \texttt{purge} does not evict shared buffers, so
+inflation is within 26\% of unity.  Hot-2nd is a control
+re-produces the first hot pass (within noise).}
+\label{tab:cold-cache}
+\small
+\setlength{\tabcolsep}{4pt}
+\resizebox{\columnwidth}{!}{\begin{tabular}{l l r r r r r}
+\hline
+\textbf{Selectivity} & \textbf{Strategy} & \textbf{hot p50} & \textbf{cold p50} & \textbf{hot-2nd p50} & \textbf{Inflation} & \textbf{$\Delta$ R@10} \\
+\hline
+0.0--0.5\% & SQL\_FIRST         & 157.77 & 130.32 & 355.40 & 0.83$\times$ & 0.000 \\
+           & VECTOR\_FIRST\_HNSW &   2.54 &   2.42 &   2.82 & 0.95$\times$ & 0.000 \\
+           & HNSW\_HYBRID        &   3.28 &   3.35 &   3.72 & 1.02$\times$ & 0.000 \\
+           & IVFFLAT\_HYBRID     &   2.86 &   2.83 &   3.03 & 0.99$\times$ & 0.000 \\
+0.5--1.0\% & SQL\_FIRST         & 229.75 & 169.83 & 1345.85 & 0.74$\times$ & 0.000 \\
+           & VECTOR\_FIRST\_HNSW &   2.80 &   2.32 &   2.84 & 0.83$\times$ & 0.000 \\
+           & HNSW\_HYBRID        &   2.95 &   2.68 &   2.82 & 0.91$\times$ & 0.000 \\
+           & IVFFLAT\_HYBRID     &   2.87 &   2.92 &   2.89 & 1.02$\times$ & 0.000 \\
+1.0--2.5\% & SQL\_FIRST         & 160.65 & 154.83 & 188.54 & 0.96$\times$ & 0.000 \\
+           & VECTOR\_FIRST\_HNSW &   2.35 &   2.33 &   2.44 & 0.99$\times$ & 0.000 \\
+           & HNSW\_HYBRID        &   2.54 &   2.49 &   2.62 & 0.98$\times$ & 0.000 \\
+           & IVFFLAT\_HYBRID     &   2.80 &   2.99 &   2.71 & 1.07$\times$ & 0.000 \\
+2.5--5.0\% & SQL\_FIRST         & 149.30 & 150.50 & 154.87 & 1.01$\times$ & 0.000 \\
+           & VECTOR\_FIRST\_HNSW &   2.42 &   2.34 &   2.46 & 0.97$\times$ & 0.000 \\
+           & HNSW\_HYBRID        &   2.52 &   2.62 &   2.56 & 1.04$\times$ & 0.000 \\
+           & IVFFLAT\_HYBRID     &   2.80 &   2.92 &   2.76 & 1.04$\times$ & 0.000 \\
+5.0--100\% & SQL\_FIRST         & 151.94 & 155.30 & 285.28 & 1.02$\times$ & 0.000 \\
+           & VECTOR\_FIRST\_HNSW &   2.29 &   2.50 &   2.83 & 1.09$\times$ & 0.000 \\
+           & HNSW\_HYBRID        &   2.58 &   2.64 &   2.51 & 1.02$\times$ & 0.000 \\
+           & IVFFLAT\_HYBRID     &   2.85 &   2.83 &   2.80 & 0.99$\times$ & 0.000 \\
+\hline
+\end{tabular}}
+\end{table}

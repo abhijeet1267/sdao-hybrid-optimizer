@@ -1,0 +1,48 @@
+% =====================================================================
+% Table VII — 1M-row Scale Performance (N = 1,000,000)
+% Source: results_scale.csv (500 rows; 25 queries x 5 buckets x 4 strategies x 3 repeats)
+%   wall_p50/p95/p99 are computed per (strategy, bucket) over all 25*3 = 75 measurements.
+%   Recall@10 is the mean over the same 75 measurements.
+%   speedup_vs_sql_first = SQL_FIRST(bucket).p50 / strategy(bucket).p50.
+% All latencies in milliseconds.
+% =====================================================================
+\begin{table*}[t]
+\centering
+\caption{Scale performance on the 1\,M-row SIFT-128 table
+(\texttt{items\_embedding}).  Each cell is the median wall-clock latency
+of 75 measurements (25 queries $\times$ 3 repeats) under
+hot-buffer-cache.  \emph{speedup} is taken relative to the
+\texttt{SQL\_FIRST} baseline at the same selectivity bucket.  Note the
+inverse relationship between latency and recall: the hybrid ANN plan
+sacrifices recall for a 40--65$\times$ latency reduction in highly
+selective predicates.}
+\label{tab:scale-1M}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{l l r r r r r r}
+\hline
+\textbf{Selectivity} & \textbf{Strategy} & \textbf{N} & \textbf{p50 (ms)} & \textbf{p95 (ms)} & \textbf{p99 (ms)} & \textbf{Recall@10} & \textbf{Speedup} \\
+\hline
+0.0--0.5\%   & SQL\_FIRST         & 25 & 121.77 & 230.45 & 239.99 & 1.000 & 1.00$\times$ \\
+             & VECTOR\_FIRST\_HNSW & 25 &   2.40 &   5.80 &   6.11 & 0.072 & 50.67$\times$ \\
+             & HNSW\_HYBRID        & 25 &   2.92 &   4.73 &   4.89 & 0.112 & 41.72$\times$ \\
+             & IVFFLAT\_HYBRID     & 25 &   2.66 & 137.91 & 149.96 & 0.048 & 45.85$\times$ \\
+0.5--1.0\%   & SQL\_FIRST         & 25 & 144.46 & 274.17 & 285.70 & 1.000 & 1.00$\times$ \\
+             & VECTOR\_FIRST\_HNSW & 25 &   2.28 &   5.60 &   5.90 & 0.124 & 63.44$\times$ \\
+             & HNSW\_HYBRID        & 25 &   2.60 &   3.56 &   3.64 & 0.152 & 55.50$\times$ \\
+             & IVFFLAT\_HYBRID     & 25 &   2.64 & 122.30 & 132.94 & 0.092 & 54.80$\times$ \\
+1.0--2.5\%   & SQL\_FIRST         & 25 & 143.90 & 271.95 & 283.33 & 1.000 & 1.00$\times$ \\
+             & VECTOR\_FIRST\_HNSW & 25 &   2.24 &   5.57 &   5.83 & 0.164 & 64.27$\times$ \\
+             & HNSW\_HYBRID        & 25 &   2.39 &   3.33 &   3.42 & 0.172 & 60.23$\times$ \\
+             & IVFFLAT\_HYBRID     & 25 &   2.62 & 131.01 & 142.40 & 0.212 & 54.84$\times$ \\
+2.5--5.0\%   & SQL\_FIRST         & 25 & 142.47 & 274.65 & 286.55 & 0.996 & 1.00$\times$ \\
+             & VECTOR\_FIRST\_HNSW & 25 &   2.31 &   5.60 &   5.91 & 0.204 & 61.54$\times$ \\
+             & HNSW\_HYBRID        & 25 &   2.41 &   3.27 &   3.35 & 0.216 & 59.22$\times$ \\
+             & IVFFLAT\_HYBRID     & 25 &   2.66 & 131.87 & 143.36 & 0.180 & 53.56$\times$ \\
+5.0--100\%   & SQL\_FIRST         & 25 & 149.69 & 279.88 & 291.98 & 1.000 & 1.00$\times$ \\
+             & VECTOR\_FIRST\_HNSW & 25 &   2.32 &   5.71 &   6.01 & 0.192 & 64.41$\times$ \\
+             & HNSW\_HYBRID        & 25 &   2.51 &   3.30 &   3.37 & 0.192 & 59.57$\times$ \\
+             & IVFFLAT\_HYBRID     & 25 &   2.73 & 141.03 & 153.35 & 0.216 & 54.77$\times$ \\
+\hline
+\end{tabular}
+\end{table*}

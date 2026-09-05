@@ -1,0 +1,5890 @@
+[
+  {
+    "query_id": 0,
+    "predicate": "category == 'Speaker'",
+    "selectivity": 0.124993,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 1195.140375,
+    "reference_latency_ms": 169.691625,
+    "recall": 1.0,
+    "returned_ids": [
+      708177,
+      701258,
+      565419,
+      236647,
+      565814,
+      36267,
+      886630,
+      957845,
+      453447,
+      923811
+    ],
+    "reference_ids": [
+      708177,
+      701258,
+      565419,
+      236647,
+      565814,
+      36267,
+      886630,
+      957845,
+      453447,
+      923811
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 0,
+    "predicate": "category == 'Speaker'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 0,
+    "predicate": "category == 'Speaker'",
+    "selectivity": 0.124993,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 2020.247291,
+    "reference_latency_ms": 285.39475,
+    "recall": 1.0,
+    "returned_ids": [
+      708177,
+      701258,
+      565419,
+      236647,
+      565814,
+      36267,
+      886630,
+      957845,
+      453447,
+      923811
+    ],
+    "reference_ids": [
+      708177,
+      701258,
+      565419,
+      236647,
+      565814,
+      36267,
+      886630,
+      957845,
+      453447,
+      923811
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 0,
+    "predicate": "category == 'Speaker'",
+    "selectivity": 0.124993,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 103.80125,
+    "reference_latency_ms": 64.263834,
+    "recall": 0.9,
+    "returned_ids": [
+      708177,
+      701258,
+      565419,
+      236647,
+      565814,
+      36267,
+      886630,
+      453447,
+      923811,
+      710644
+    ],
+    "reference_ids": [
+      708177,
+      701258,
+      565419,
+      236647,
+      565814,
+      36267,
+      886630,
+      957845,
+      453447,
+      923811
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 1,
+    "predicate": "category == 'Watch'",
+    "selectivity": 0.124962,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 72.884958,
+    "reference_latency_ms": 76.361625,
+    "recall": 1.0,
+    "returned_ids": [
+      942339,
+      987636,
+      420802,
+      202612,
+      517238,
+      541805,
+      974930,
+      14836,
+      957556,
+      956542
+    ],
+    "reference_ids": [
+      942339,
+      987636,
+      420802,
+      202612,
+      517238,
+      541805,
+      974930,
+      14836,
+      957556,
+      956542
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 1,
+    "predicate": "category == 'Watch'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 1,
+    "predicate": "category == 'Watch'",
+    "selectivity": 0.124962,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 1074.866583,
+    "reference_latency_ms": 215.49625,
+    "recall": 0.9,
+    "returned_ids": [
+      942339,
+      987636,
+      202612,
+      517238,
+      541805,
+      974930,
+      14836,
+      957556,
+      956542,
+      214501
+    ],
+    "reference_ids": [
+      942339,
+      987636,
+      420802,
+      202612,
+      517238,
+      541805,
+      974930,
+      14836,
+      957556,
+      956542
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 1,
+    "predicate": "category == 'Watch'",
+    "selectivity": 0.124962,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 55.959958,
+    "reference_latency_ms": 65.571667,
+    "recall": 0.5,
+    "returned_ids": [
+      942339,
+      987636,
+      517238,
+      957556,
+      956542,
+      214501,
+      974481,
+      509041,
+      275502,
+      741996
+    ],
+    "reference_ids": [
+      942339,
+      987636,
+      420802,
+      202612,
+      517238,
+      541805,
+      974930,
+      14836,
+      957556,
+      956542
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 2,
+    "predicate": "category == 'TV'",
+    "selectivity": 0.125467,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 64.536666,
+    "reference_latency_ms": 57.961583,
+    "recall": 1.0,
+    "returned_ids": [
+      408462,
+      406273,
+      402106,
+      239766,
+      401804,
+      905339,
+      150588,
+      716686,
+      529249,
+      115312
+    ],
+    "reference_ids": [
+      408462,
+      406273,
+      402106,
+      239766,
+      401804,
+      905339,
+      150588,
+      716686,
+      529249,
+      115312
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 2,
+    "predicate": "category == 'TV'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 2,
+    "predicate": "category == 'TV'",
+    "selectivity": 0.125467,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 1022.000542,
+    "reference_latency_ms": 297.362709,
+    "recall": 1.0,
+    "returned_ids": [
+      408462,
+      406273,
+      402106,
+      239766,
+      401804,
+      905339,
+      150588,
+      716686,
+      529249,
+      115312
+    ],
+    "reference_ids": [
+      408462,
+      406273,
+      402106,
+      239766,
+      401804,
+      905339,
+      150588,
+      716686,
+      529249,
+      115312
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 2,
+    "predicate": "category == 'TV'",
+    "selectivity": 0.125467,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 47.473916,
+    "reference_latency_ms": 63.967917,
+    "recall": 1.0,
+    "returned_ids": [
+      408462,
+      406273,
+      402106,
+      239766,
+      401804,
+      905339,
+      150588,
+      716686,
+      529249,
+      115312
+    ],
+    "reference_ids": [
+      408462,
+      406273,
+      402106,
+      239766,
+      401804,
+      905339,
+      150588,
+      716686,
+      529249,
+      115312
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 3,
+    "predicate": "category == 'Camera'",
+    "selectivity": 0.124977,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 65.544,
+    "reference_latency_ms": 58.401833,
+    "recall": 1.0,
+    "returned_ids": [
+      889039,
+      190692,
+      722075,
+      546122,
+      190728,
+      889916,
+      886001,
+      996934,
+      867686,
+      855019
+    ],
+    "reference_ids": [
+      889039,
+      190692,
+      722075,
+      546122,
+      190728,
+      889916,
+      886001,
+      996934,
+      867686,
+      855019
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 3,
+    "predicate": "category == 'Camera'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 3,
+    "predicate": "category == 'Camera'",
+    "selectivity": 0.124977,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 236.820291,
+    "reference_latency_ms": 59.632417,
+    "recall": 1.0,
+    "returned_ids": [
+      889039,
+      190692,
+      722075,
+      546122,
+      190728,
+      889916,
+      886001,
+      996934,
+      867686,
+      855019
+    ],
+    "reference_ids": [
+      889039,
+      190692,
+      722075,
+      546122,
+      190728,
+      889916,
+      886001,
+      996934,
+      867686,
+      855019
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 3,
+    "predicate": "category == 'Camera'",
+    "selectivity": 0.124977,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 60.746083,
+    "reference_latency_ms": 81.661333,
+    "recall": 1.0,
+    "returned_ids": [
+      889039,
+      190692,
+      722075,
+      546122,
+      190728,
+      889916,
+      886001,
+      996934,
+      867686,
+      855019
+    ],
+    "reference_ids": [
+      889039,
+      190692,
+      722075,
+      546122,
+      190728,
+      889916,
+      886001,
+      996934,
+      867686,
+      855019
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 4,
+    "predicate": "category == 'Monitor'",
+    "selectivity": 0.125095,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 70.852958,
+    "reference_latency_ms": 65.255959,
+    "recall": 1.0,
+    "returned_ids": [
+      716433,
+      112586,
+      107281,
+      30116,
+      101436,
+      305983,
+      421011,
+      201628,
+      293118,
+      292815
+    ],
+    "reference_ids": [
+      716433,
+      112586,
+      107281,
+      30116,
+      101436,
+      305983,
+      421011,
+      201628,
+      293118,
+      292815
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 4,
+    "predicate": "category == 'Monitor'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 4,
+    "predicate": "category == 'Monitor'",
+    "selectivity": 0.125095,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 699.513166,
+    "reference_latency_ms": 224.003625,
+    "recall": 1.0,
+    "returned_ids": [
+      716433,
+      112586,
+      107281,
+      30116,
+      101436,
+      305983,
+      421011,
+      201628,
+      293118,
+      292815
+    ],
+    "reference_ids": [
+      716433,
+      112586,
+      107281,
+      30116,
+      101436,
+      305983,
+      421011,
+      201628,
+      293118,
+      292815
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 4,
+    "predicate": "category == 'Monitor'",
+    "selectivity": 0.125095,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 127.07975,
+    "reference_latency_ms": 106.288667,
+    "recall": 0.8,
+    "returned_ids": [
+      716433,
+      112586,
+      107281,
+      30116,
+      305983,
+      201628,
+      293118,
+      292815,
+      306702,
+      109870
+    ],
+    "reference_ids": [
+      716433,
+      112586,
+      107281,
+      30116,
+      101436,
+      305983,
+      421011,
+      201628,
+      293118,
+      292815
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 5,
+    "predicate": "category == 'Phone'",
+    "selectivity": 0.125051,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 60.928583,
+    "reference_latency_ms": 103.500417,
+    "recall": 1.0,
+    "returned_ids": [
+      943689,
+      221336,
+      893231,
+      426199,
+      167626,
+      275329,
+      464669,
+      14279,
+      564657,
+      599042
+    ],
+    "reference_ids": [
+      943689,
+      221336,
+      893231,
+      426199,
+      167626,
+      275329,
+      464669,
+      14279,
+      564657,
+      599042
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 5,
+    "predicate": "category == 'Phone'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 5,
+    "predicate": "category == 'Phone'",
+    "selectivity": 0.125051,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 441.966208,
+    "reference_latency_ms": 124.127417,
+    "recall": 1.0,
+    "returned_ids": [
+      943689,
+      221336,
+      893231,
+      426199,
+      167626,
+      275329,
+      464669,
+      14279,
+      564657,
+      599042
+    ],
+    "reference_ids": [
+      943689,
+      221336,
+      893231,
+      426199,
+      167626,
+      275329,
+      464669,
+      14279,
+      564657,
+      599042
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 5,
+    "predicate": "category == 'Phone'",
+    "selectivity": 0.125051,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 69.870042,
+    "reference_latency_ms": 68.155833,
+    "recall": 0.4,
+    "returned_ids": [
+      943689,
+      221336,
+      893231,
+      564657,
+      126433,
+      767710,
+      861573,
+      368116,
+      700494,
+      171311
+    ],
+    "reference_ids": [
+      943689,
+      221336,
+      893231,
+      426199,
+      167626,
+      275329,
+      464669,
+      14279,
+      564657,
+      599042
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 6,
+    "predicate": "category == 'Tablet'",
+    "selectivity": 0.124703,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 67.751792,
+    "reference_latency_ms": 69.680709,
+    "recall": 1.0,
+    "returned_ids": [
+      598221,
+      842282,
+      415400,
+      877113,
+      839672,
+      565415,
+      565610,
+      170076,
+      891908,
+      912216
+    ],
+    "reference_ids": [
+      598221,
+      842282,
+      415400,
+      877113,
+      839672,
+      565415,
+      565610,
+      170076,
+      891908,
+      912216
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 6,
+    "predicate": "category == 'Tablet'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 6,
+    "predicate": "category == 'Tablet'",
+    "selectivity": 0.124703,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 285.879209,
+    "reference_latency_ms": 76.047583,
+    "recall": 0.9,
+    "returned_ids": [
+      598221,
+      842282,
+      415400,
+      877113,
+      839672,
+      565415,
+      565610,
+      170076,
+      891908,
+      223504
+    ],
+    "reference_ids": [
+      598221,
+      842282,
+      415400,
+      877113,
+      839672,
+      565415,
+      565610,
+      170076,
+      891908,
+      912216
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 6,
+    "predicate": "category == 'Tablet'",
+    "selectivity": 0.124703,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 49.682167,
+    "reference_latency_ms": 121.789417,
+    "recall": 0.7,
+    "returned_ids": [
+      598221,
+      415400,
+      877113,
+      565415,
+      565610,
+      170076,
+      912216,
+      223504,
+      881007,
+      918545
+    ],
+    "reference_ids": [
+      598221,
+      842282,
+      415400,
+      877113,
+      839672,
+      565415,
+      565610,
+      170076,
+      891908,
+      912216
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 7,
+    "predicate": "category == 'Laptop'",
+    "selectivity": 0.124752,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 282.120875,
+    "reference_latency_ms": 219.185917,
+    "recall": 1.0,
+    "returned_ids": [
+      207868,
+      543133,
+      280624,
+      258018,
+      768332,
+      153004,
+      472169,
+      692410,
+      57655,
+      53230
+    ],
+    "reference_ids": [
+      207868,
+      543133,
+      280624,
+      258018,
+      768332,
+      153004,
+      472169,
+      692410,
+      57655,
+      53230
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 7,
+    "predicate": "category == 'Laptop'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 7,
+    "predicate": "category == 'Laptop'",
+    "selectivity": 0.124752,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 195.476958,
+    "reference_latency_ms": 137.466708,
+    "recall": 1.0,
+    "returned_ids": [
+      207868,
+      543133,
+      280624,
+      258018,
+      768332,
+      153004,
+      472169,
+      692410,
+      57655,
+      53230
+    ],
+    "reference_ids": [
+      207868,
+      543133,
+      280624,
+      258018,
+      768332,
+      153004,
+      472169,
+      692410,
+      57655,
+      53230
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 7,
+    "predicate": "category == 'Laptop'",
+    "selectivity": 0.124752,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 76.651708,
+    "reference_latency_ms": 87.1765,
+    "recall": 0.9,
+    "returned_ids": [
+      207868,
+      543133,
+      280624,
+      258018,
+      768332,
+      153004,
+      472169,
+      692410,
+      57655,
+      819353
+    ],
+    "reference_ids": [
+      207868,
+      543133,
+      280624,
+      258018,
+      768332,
+      153004,
+      472169,
+      692410,
+      57655,
+      53230
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 8,
+    "predicate": "brand == 'Apple'",
+    "selectivity": 0.125152,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 62.412292,
+    "reference_latency_ms": 55.881041,
+    "recall": 1.0,
+    "returned_ids": [
+      695175,
+      285272,
+      678764,
+      340986,
+      967581,
+      307306,
+      699682,
+      376619,
+      481098,
+      464793
+    ],
+    "reference_ids": [
+      695175,
+      285272,
+      678764,
+      340986,
+      967581,
+      307306,
+      699682,
+      376619,
+      481098,
+      464793
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 8,
+    "predicate": "brand == 'Apple'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 8,
+    "predicate": "brand == 'Apple'",
+    "selectivity": 0.125152,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 993.248584,
+    "reference_latency_ms": 191.601209,
+    "recall": 0.9,
+    "returned_ids": [
+      695175,
+      285272,
+      678764,
+      340986,
+      967581,
+      307306,
+      699682,
+      376619,
+      464793,
+      557601
+    ],
+    "reference_ids": [
+      695175,
+      285272,
+      678764,
+      340986,
+      967581,
+      307306,
+      699682,
+      376619,
+      481098,
+      464793
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 8,
+    "predicate": "brand == 'Apple'",
+    "selectivity": 0.125152,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 102.649959,
+    "reference_latency_ms": 56.360459,
+    "recall": 0.8,
+    "returned_ids": [
+      285272,
+      678764,
+      340986,
+      967581,
+      699682,
+      376619,
+      481098,
+      464793,
+      312430,
+      171641
+    ],
+    "reference_ids": [
+      695175,
+      285272,
+      678764,
+      340986,
+      967581,
+      307306,
+      699682,
+      376619,
+      481098,
+      464793
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 9,
+    "predicate": "brand == 'Asus'",
+    "selectivity": 0.125072,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 57.714208,
+    "reference_latency_ms": 56.170916,
+    "recall": 1.0,
+    "returned_ids": [
+      177646,
+      292077,
+      322138,
+      261319,
+      151491,
+      182520,
+      732351,
+      521119,
+      314657,
+      771950
+    ],
+    "reference_ids": [
+      177646,
+      292077,
+      322138,
+      261319,
+      151491,
+      182520,
+      732351,
+      521119,
+      314657,
+      771950
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 9,
+    "predicate": "brand == 'Asus'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 9,
+    "predicate": "brand == 'Asus'",
+    "selectivity": 0.125072,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 198.752334,
+    "reference_latency_ms": 62.984208,
+    "recall": 1.0,
+    "returned_ids": [
+      177646,
+      292077,
+      322138,
+      261319,
+      151491,
+      182520,
+      732351,
+      521119,
+      314657,
+      771950
+    ],
+    "reference_ids": [
+      177646,
+      292077,
+      322138,
+      261319,
+      151491,
+      182520,
+      732351,
+      521119,
+      314657,
+      771950
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 9,
+    "predicate": "brand == 'Asus'",
+    "selectivity": 0.125072,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 24.995375,
+    "reference_latency_ms": 50.906083,
+    "recall": 0.8,
+    "returned_ids": [
+      177646,
+      292077,
+      322138,
+      261319,
+      151491,
+      732351,
+      314657,
+      771950,
+      611164,
+      514893
+    ],
+    "reference_ids": [
+      177646,
+      292077,
+      322138,
+      261319,
+      151491,
+      182520,
+      732351,
+      521119,
+      314657,
+      771950
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 10,
+    "predicate": "brand == 'Lenovo'",
+    "selectivity": 0.125057,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 53.223666,
+    "reference_latency_ms": 54.606916,
+    "recall": 1.0,
+    "returned_ids": [
+      297239,
+      433270,
+      689997,
+      930391,
+      169528,
+      366974,
+      941307,
+      827391,
+      947449,
+      291507
+    ],
+    "reference_ids": [
+      297239,
+      433270,
+      689997,
+      930391,
+      169528,
+      366974,
+      941307,
+      827391,
+      947449,
+      291507
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 10,
+    "predicate": "brand == 'Lenovo'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 10,
+    "predicate": "brand == 'Lenovo'",
+    "selectivity": 0.125057,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 224.651083,
+    "reference_latency_ms": 98.3425,
+    "recall": 1.0,
+    "returned_ids": [
+      297239,
+      433270,
+      689997,
+      930391,
+      169528,
+      366974,
+      941307,
+      827391,
+      947449,
+      291507
+    ],
+    "reference_ids": [
+      297239,
+      433270,
+      689997,
+      930391,
+      169528,
+      366974,
+      941307,
+      827391,
+      947449,
+      291507
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 10,
+    "predicate": "brand == 'Lenovo'",
+    "selectivity": 0.125057,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 91.118,
+    "reference_latency_ms": 176.543,
+    "recall": 0.5,
+    "returned_ids": [
+      689997,
+      930391,
+      366974,
+      827391,
+      291507,
+      465687,
+      549922,
+      15054,
+      434533,
+      286882
+    ],
+    "reference_ids": [
+      297239,
+      433270,
+      689997,
+      930391,
+      169528,
+      366974,
+      941307,
+      827391,
+      947449,
+      291507
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 11,
+    "predicate": "brand == 'HP'",
+    "selectivity": 0.124562,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 59.651833,
+    "reference_latency_ms": 55.833708,
+    "recall": 1.0,
+    "returned_ids": [
+      762035,
+      923824,
+      814743,
+      257002,
+      806212,
+      390146,
+      130733,
+      69850,
+      852385,
+      413147
+    ],
+    "reference_ids": [
+      762035,
+      923824,
+      814743,
+      257002,
+      806212,
+      390146,
+      130733,
+      69850,
+      852385,
+      413147
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 11,
+    "predicate": "brand == 'HP'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 11,
+    "predicate": "brand == 'HP'",
+    "selectivity": 0.124562,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 179.882,
+    "reference_latency_ms": 66.199333,
+    "recall": 0.9,
+    "returned_ids": [
+      762035,
+      923824,
+      814743,
+      257002,
+      806212,
+      390146,
+      130733,
+      69850,
+      852385,
+      180816
+    ],
+    "reference_ids": [
+      762035,
+      923824,
+      814743,
+      257002,
+      806212,
+      390146,
+      130733,
+      69850,
+      852385,
+      413147
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 11,
+    "predicate": "brand == 'HP'",
+    "selectivity": 0.124562,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 66.050333,
+    "reference_latency_ms": 86.096292,
+    "recall": 0.8,
+    "returned_ids": [
+      762035,
+      923824,
+      814743,
+      806212,
+      390146,
+      130733,
+      852385,
+      413147,
+      180816,
+      389423
+    ],
+    "reference_ids": [
+      762035,
+      923824,
+      814743,
+      257002,
+      806212,
+      390146,
+      130733,
+      69850,
+      852385,
+      413147
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 12,
+    "predicate": "brand == 'Sony'",
+    "selectivity": 0.125233,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 96.694167,
+    "reference_latency_ms": 130.171916,
+    "recall": 1.0,
+    "returned_ids": [
+      390776,
+      564042,
+      224306,
+      216184,
+      756088,
+      932968,
+      957511,
+      855040,
+      853890,
+      842692
+    ],
+    "reference_ids": [
+      390776,
+      564042,
+      224306,
+      216184,
+      756088,
+      932968,
+      957511,
+      855040,
+      853890,
+      842692
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 12,
+    "predicate": "brand == 'Sony'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 12,
+    "predicate": "brand == 'Sony'",
+    "selectivity": 0.125233,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 405.179833,
+    "reference_latency_ms": 212.661792,
+    "recall": 0.9,
+    "returned_ids": [
+      390776,
+      564042,
+      224306,
+      216184,
+      756088,
+      932968,
+      957511,
+      853890,
+      842692,
+      215972
+    ],
+    "reference_ids": [
+      390776,
+      564042,
+      224306,
+      216184,
+      756088,
+      932968,
+      957511,
+      855040,
+      853890,
+      842692
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 12,
+    "predicate": "brand == 'Sony'",
+    "selectivity": 0.125233,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 52.323542,
+    "reference_latency_ms": 61.660292,
+    "recall": 0.8,
+    "returned_ids": [
+      390776,
+      564042,
+      224306,
+      216184,
+      932968,
+      957511,
+      853890,
+      842692,
+      215972,
+      2113
+    ],
+    "reference_ids": [
+      390776,
+      564042,
+      224306,
+      216184,
+      756088,
+      932968,
+      957511,
+      855040,
+      853890,
+      842692
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 13,
+    "predicate": "brand == 'LG'",
+    "selectivity": 0.124969,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 112.685167,
+    "reference_latency_ms": 93.928125,
+    "recall": 1.0,
+    "returned_ids": [
+      596084,
+      582149,
+      481526,
+      170030,
+      942769,
+      942665,
+      376097,
+      15015,
+      918545,
+      265106
+    ],
+    "reference_ids": [
+      596084,
+      582149,
+      481526,
+      170030,
+      942769,
+      942665,
+      376097,
+      15015,
+      918545,
+      265106
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 13,
+    "predicate": "brand == 'LG'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 13,
+    "predicate": "brand == 'LG'",
+    "selectivity": 0.124969,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 192.549959,
+    "reference_latency_ms": 65.810875,
+    "recall": 1.0,
+    "returned_ids": [
+      596084,
+      582149,
+      481526,
+      170030,
+      942769,
+      942665,
+      376097,
+      15015,
+      918545,
+      265106
+    ],
+    "reference_ids": [
+      596084,
+      582149,
+      481526,
+      170030,
+      942769,
+      942665,
+      376097,
+      15015,
+      918545,
+      265106
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 13,
+    "predicate": "brand == 'LG'",
+    "selectivity": 0.124969,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 25.919917,
+    "reference_latency_ms": 61.883917,
+    "recall": 0.6,
+    "returned_ids": [
+      481526,
+      170030,
+      942769,
+      942665,
+      376097,
+      15015,
+      248427,
+      710374,
+      825865,
+      561211
+    ],
+    "reference_ids": [
+      596084,
+      582149,
+      481526,
+      170030,
+      942769,
+      942665,
+      376097,
+      15015,
+      918545,
+      265106
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 14,
+    "predicate": "brand == 'Samsung'",
+    "selectivity": 0.125146,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 56.509291,
+    "reference_latency_ms": 59.562084,
+    "recall": 1.0,
+    "returned_ids": [
+      565920,
+      528271,
+      649785,
+      983167,
+      155663,
+      289330,
+      860104,
+      452493,
+      501457,
+      551817
+    ],
+    "reference_ids": [
+      565920,
+      528271,
+      649785,
+      983167,
+      155663,
+      289330,
+      860104,
+      452493,
+      501457,
+      551817
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 14,
+    "predicate": "brand == 'Samsung'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 14,
+    "predicate": "brand == 'Samsung'",
+    "selectivity": 0.125146,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 190.56025,
+    "reference_latency_ms": 106.446375,
+    "recall": 0.9,
+    "returned_ids": [
+      565920,
+      528271,
+      649785,
+      983167,
+      155663,
+      289330,
+      860104,
+      501457,
+      551817,
+      409538
+    ],
+    "reference_ids": [
+      565920,
+      528271,
+      649785,
+      983167,
+      155663,
+      289330,
+      860104,
+      452493,
+      501457,
+      551817
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 14,
+    "predicate": "brand == 'Samsung'",
+    "selectivity": 0.125146,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 26.735125,
+    "reference_latency_ms": 70.425791,
+    "recall": 0.9,
+    "returned_ids": [
+      565920,
+      528271,
+      983167,
+      155663,
+      289330,
+      860104,
+      452493,
+      501457,
+      551817,
+      409538
+    ],
+    "reference_ids": [
+      565920,
+      528271,
+      649785,
+      983167,
+      155663,
+      289330,
+      860104,
+      452493,
+      501457,
+      551817
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 15,
+    "predicate": "brand == 'Dell'",
+    "selectivity": 0.124809,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 65.423542,
+    "reference_latency_ms": 55.989625,
+    "recall": 1.0,
+    "returned_ids": [
+      918194,
+      961400,
+      261934,
+      57481,
+      781626,
+      255150,
+      946854,
+      124232,
+      337440,
+      674773
+    ],
+    "reference_ids": [
+      918194,
+      961400,
+      261934,
+      57481,
+      781626,
+      255150,
+      946854,
+      124232,
+      337440,
+      674773
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 15,
+    "predicate": "brand == 'Dell'",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 15,
+    "predicate": "brand == 'Dell'",
+    "selectivity": 0.124809,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 414.7625,
+    "reference_latency_ms": 255.133625,
+    "recall": 1.0,
+    "returned_ids": [
+      918194,
+      961400,
+      261934,
+      57481,
+      781626,
+      255150,
+      946854,
+      124232,
+      337440,
+      674773
+    ],
+    "reference_ids": [
+      918194,
+      961400,
+      261934,
+      57481,
+      781626,
+      255150,
+      946854,
+      124232,
+      337440,
+      674773
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 15,
+    "predicate": "brand == 'Dell'",
+    "selectivity": 0.124809,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 87.356917,
+    "reference_latency_ms": 95.171708,
+    "recall": 0.9,
+    "returned_ids": [
+      918194,
+      961400,
+      57481,
+      781626,
+      255150,
+      946854,
+      124232,
+      337440,
+      674773,
+      502174
+    ],
+    "reference_ids": [
+      918194,
+      961400,
+      261934,
+      57481,
+      781626,
+      255150,
+      946854,
+      124232,
+      337440,
+      674773
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 16,
+    "predicate": "price < 200",
+    "selectivity": 0.076848,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 719.563875,
+    "reference_latency_ms": 440.818334,
+    "recall": 1.0,
+    "returned_ids": [
+      684893,
+      223703,
+      967417,
+      392160,
+      925011,
+      869205,
+      349167,
+      929950,
+      682947,
+      725090
+    ],
+    "reference_ids": [
+      684893,
+      223703,
+      967417,
+      392160,
+      925011,
+      869205,
+      349167,
+      929950,
+      682947,
+      725090
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 16,
+    "predicate": "price < 200",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"price\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"price\" < ...\n                                                             ^"
+  },
+  {
+    "query_id": 16,
+    "predicate": "price < 200",
+    "selectivity": 0.076848,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 760.618292,
+    "reference_latency_ms": 644.853625,
+    "recall": 0.9,
+    "returned_ids": [
+      684893,
+      223703,
+      967417,
+      392160,
+      925011,
+      869205,
+      349167,
+      929950,
+      682947,
+      683503
+    ],
+    "reference_ids": [
+      684893,
+      223703,
+      967417,
+      392160,
+      925011,
+      869205,
+      349167,
+      929950,
+      682947,
+      725090
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 16,
+    "predicate": "price < 200",
+    "selectivity": 0.076848,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 59.581458,
+    "reference_latency_ms": 214.555459,
+    "recall": 0.6,
+    "returned_ids": [
+      223703,
+      967417,
+      392160,
+      869205,
+      929950,
+      725090,
+      683503,
+      902031,
+      142467,
+      161240
+    ],
+    "reference_ids": [
+      684893,
+      223703,
+      967417,
+      392160,
+      925011,
+      869205,
+      349167,
+      929950,
+      682947,
+      725090
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 17,
+    "predicate": "price < 500",
+    "selectivity": 0.230466,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 87.86475,
+    "reference_latency_ms": 63.967333,
+    "recall": 1.0,
+    "returned_ids": [
+      394163,
+      117181,
+      268236,
+      874263,
+      17874,
+      104866,
+      200755,
+      265033,
+      394280,
+      58507
+    ],
+    "reference_ids": [
+      394163,
+      117181,
+      268236,
+      874263,
+      17874,
+      104866,
+      200755,
+      265033,
+      394280,
+      58507
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 17,
+    "predicate": "price < 500",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"price\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"price\" < ...\n                                                             ^"
+  },
+  {
+    "query_id": 17,
+    "predicate": "price < 500",
+    "selectivity": 0.230466,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 147.868833,
+    "reference_latency_ms": 68.361667,
+    "recall": 1.0,
+    "returned_ids": [
+      394163,
+      117181,
+      268236,
+      874263,
+      17874,
+      104866,
+      265033,
+      200755,
+      394280,
+      58507
+    ],
+    "reference_ids": [
+      394163,
+      117181,
+      268236,
+      874263,
+      17874,
+      104866,
+      200755,
+      265033,
+      394280,
+      58507
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 17,
+    "predicate": "price < 500",
+    "selectivity": 0.230466,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 19.455667,
+    "reference_latency_ms": 75.69375,
+    "recall": 0.8,
+    "returned_ids": [
+      394163,
+      117181,
+      268236,
+      17874,
+      200755,
+      265033,
+      394280,
+      58507,
+      989070,
+      158608
+    ],
+    "reference_ids": [
+      394163,
+      117181,
+      268236,
+      874263,
+      17874,
+      104866,
+      200755,
+      265033,
+      394280,
+      58507
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 18,
+    "predicate": "price < 800",
+    "selectivity": 0.385065,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 68.737542,
+    "reference_latency_ms": 99.912875,
+    "recall": 1.0,
+    "returned_ids": [
+      247250,
+      434884,
+      170737,
+      466326,
+      126762,
+      63379,
+      864195,
+      503525,
+      63762,
+      840385
+    ],
+    "reference_ids": [
+      247250,
+      434884,
+      170737,
+      466326,
+      126762,
+      63379,
+      864195,
+      503525,
+      63762,
+      840385
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 18,
+    "predicate": "price < 800",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"price\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"price\" < ...\n                                                             ^"
+  },
+  {
+    "query_id": 18,
+    "predicate": "price < 800",
+    "selectivity": 0.385065,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 161.99625,
+    "reference_latency_ms": 136.785792,
+    "recall": 1.0,
+    "returned_ids": [
+      247250,
+      434884,
+      170737,
+      466326,
+      126762,
+      63379,
+      864195,
+      503525,
+      63762,
+      840385
+    ],
+    "reference_ids": [
+      247250,
+      434884,
+      170737,
+      466326,
+      126762,
+      63379,
+      864195,
+      503525,
+      63762,
+      840385
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 18,
+    "predicate": "price < 800",
+    "selectivity": 0.385065,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 53.859708,
+    "reference_latency_ms": 174.688583,
+    "recall": 0.8,
+    "returned_ids": [
+      247250,
+      434884,
+      466326,
+      63379,
+      864195,
+      503525,
+      63762,
+      840385,
+      149847,
+      721699
+    ],
+    "reference_ids": [
+      247250,
+      434884,
+      170737,
+      466326,
+      126762,
+      63379,
+      864195,
+      503525,
+      63762,
+      840385
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 19,
+    "predicate": "price < 1200",
+    "selectivity": 0.589991,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 95.537958,
+    "reference_latency_ms": 112.710333,
+    "recall": 1.0,
+    "returned_ids": [
+      272436,
+      394974,
+      905999,
+      629123,
+      224830,
+      885665,
+      840629,
+      395043,
+      514347,
+      563976
+    ],
+    "reference_ids": [
+      272436,
+      394974,
+      905999,
+      629123,
+      224830,
+      885665,
+      840629,
+      395043,
+      514347,
+      563976
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 19,
+    "predicate": "price < 1200",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"price\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"price\" < ...\n                                                             ^"
+  },
+  {
+    "query_id": 19,
+    "predicate": "price < 1200",
+    "selectivity": 0.589991,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 128.305375,
+    "reference_latency_ms": 186.860209,
+    "recall": 1.0,
+    "returned_ids": [
+      272436,
+      394974,
+      905999,
+      629123,
+      224830,
+      885665,
+      840629,
+      395043,
+      514347,
+      563976
+    ],
+    "reference_ids": [
+      272436,
+      394974,
+      905999,
+      629123,
+      224830,
+      885665,
+      840629,
+      395043,
+      514347,
+      563976
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 19,
+    "predicate": "price < 1200",
+    "selectivity": 0.589991,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 23.12575,
+    "reference_latency_ms": 513.499834,
+    "recall": 0.8,
+    "returned_ids": [
+      272436,
+      394974,
+      905999,
+      224830,
+      840629,
+      395043,
+      514347,
+      563976,
+      885687,
+      391453
+    ],
+    "reference_ids": [
+      272436,
+      394974,
+      905999,
+      629123,
+      224830,
+      885665,
+      840629,
+      395043,
+      514347,
+      563976
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 20,
+    "predicate": "price < 1600",
+    "selectivity": 0.795149,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 243.837209,
+    "reference_latency_ms": 144.588125,
+    "recall": 1.0,
+    "returned_ids": [
+      587404,
+      666481,
+      929092,
+      860624,
+      481713,
+      448233,
+      475757,
+      359780,
+      546573,
+      195737
+    ],
+    "reference_ids": [
+      587404,
+      666481,
+      929092,
+      860624,
+      481713,
+      448233,
+      475757,
+      359780,
+      546573,
+      195737
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 20,
+    "predicate": "price < 1600",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"price\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"price\" < ...\n                                                             ^"
+  },
+  {
+    "query_id": 20,
+    "predicate": "price < 1600",
+    "selectivity": 0.795149,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 118.04925,
+    "reference_latency_ms": 171.397458,
+    "recall": 1.0,
+    "returned_ids": [
+      587404,
+      666481,
+      929092,
+      860624,
+      481713,
+      448233,
+      475757,
+      359780,
+      546573,
+      195737
+    ],
+    "reference_ids": [
+      587404,
+      666481,
+      929092,
+      860624,
+      481713,
+      448233,
+      475757,
+      359780,
+      546573,
+      195737
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 20,
+    "predicate": "price < 1600",
+    "selectivity": 0.795149,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 53.466542,
+    "reference_latency_ms": 131.124584,
+    "recall": 1.0,
+    "returned_ids": [
+      587404,
+      666481,
+      929092,
+      860624,
+      481713,
+      448233,
+      475757,
+      359780,
+      546573,
+      195737
+    ],
+    "reference_ids": [
+      587404,
+      666481,
+      929092,
+      860624,
+      481713,
+      448233,
+      475757,
+      359780,
+      546573,
+      195737
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 21,
+    "predicate": "rating > 2.5",
+    "selectivity": 0.612283,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 140.282,
+    "reference_latency_ms": 89.2835,
+    "recall": 1.0,
+    "returned_ids": [
+      4490,
+      214449,
+      559990,
+      497354,
+      337027,
+      306259,
+      59773,
+      365266,
+      776961,
+      261517
+    ],
+    "reference_ids": [
+      4490,
+      214449,
+      559990,
+      497354,
+      337027,
+      306259,
+      59773,
+      365266,
+      776961,
+      261517
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 21,
+    "predicate": "rating > 2.5",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"rating\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"rating\" >...\n                                                             ^"
+  },
+  {
+    "query_id": 21,
+    "predicate": "rating > 2.5",
+    "selectivity": 0.612283,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 177.773708,
+    "reference_latency_ms": 278.296875,
+    "recall": 1.0,
+    "returned_ids": [
+      4490,
+      214449,
+      559990,
+      497354,
+      337027,
+      306259,
+      59773,
+      365266,
+      776961,
+      261517
+    ],
+    "reference_ids": [
+      4490,
+      214449,
+      559990,
+      497354,
+      337027,
+      306259,
+      59773,
+      365266,
+      776961,
+      261517
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 21,
+    "predicate": "rating > 2.5",
+    "selectivity": 0.612283,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 63.645375,
+    "reference_latency_ms": 208.187083,
+    "recall": 1.0,
+    "returned_ids": [
+      4490,
+      214449,
+      559990,
+      497354,
+      337027,
+      306259,
+      59773,
+      365266,
+      776961,
+      261517
+    ],
+    "reference_ids": [
+      4490,
+      214449,
+      559990,
+      497354,
+      337027,
+      306259,
+      59773,
+      365266,
+      776961,
+      261517
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 22,
+    "predicate": "rating > 3.0",
+    "selectivity": 0.487262,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 172.964,
+    "reference_latency_ms": 109.769,
+    "recall": 1.0,
+    "returned_ids": [
+      31629,
+      68360,
+      426465,
+      558357,
+      4784,
+      633279,
+      536469,
+      776801,
+      5408,
+      94976
+    ],
+    "reference_ids": [
+      31629,
+      68360,
+      426465,
+      558357,
+      4784,
+      633279,
+      536469,
+      776801,
+      5408,
+      94976
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 22,
+    "predicate": "rating > 3.0",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"rating\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"rating\" >...\n                                                             ^"
+  },
+  {
+    "query_id": 22,
+    "predicate": "rating > 3.0",
+    "selectivity": 0.487262,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 120.384,
+    "reference_latency_ms": 382.274583,
+    "recall": 1.0,
+    "returned_ids": [
+      31629,
+      68360,
+      426465,
+      558357,
+      4784,
+      633279,
+      536469,
+      776801,
+      5408,
+      94976
+    ],
+    "reference_ids": [
+      31629,
+      68360,
+      426465,
+      558357,
+      4784,
+      633279,
+      536469,
+      776801,
+      5408,
+      94976
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 22,
+    "predicate": "rating > 3.0",
+    "selectivity": 0.487262,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 42.653625,
+    "reference_latency_ms": 148.45775,
+    "recall": 0.9,
+    "returned_ids": [
+      31629,
+      68360,
+      426465,
+      558357,
+      4784,
+      633279,
+      536469,
+      776801,
+      94976,
+      305045
+    ],
+    "reference_ids": [
+      31629,
+      68360,
+      426465,
+      558357,
+      4784,
+      633279,
+      536469,
+      776801,
+      5408,
+      94976
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 23,
+    "predicate": "rating > 3.5",
+    "selectivity": 0.362073,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 87.276083,
+    "reference_latency_ms": 111.468209,
+    "recall": 1.0,
+    "returned_ids": [
+      364790,
+      526788,
+      219735,
+      176512,
+      290169,
+      122772,
+      350527,
+      364660,
+      902789,
+      607007
+    ],
+    "reference_ids": [
+      364790,
+      526788,
+      219735,
+      176512,
+      290169,
+      122772,
+      350527,
+      364660,
+      902789,
+      607007
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 23,
+    "predicate": "rating > 3.5",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"rating\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"rating\" >...\n                                                             ^"
+  },
+  {
+    "query_id": 23,
+    "predicate": "rating > 3.5",
+    "selectivity": 0.362073,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 117.956875,
+    "reference_latency_ms": 273.700334,
+    "recall": 1.0,
+    "returned_ids": [
+      364790,
+      526788,
+      219735,
+      176512,
+      290169,
+      122772,
+      350527,
+      364660,
+      902789,
+      607007
+    ],
+    "reference_ids": [
+      364790,
+      526788,
+      219735,
+      176512,
+      290169,
+      122772,
+      350527,
+      364660,
+      902789,
+      607007
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 23,
+    "predicate": "rating > 3.5",
+    "selectivity": 0.362073,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 21.415417,
+    "reference_latency_ms": 140.062625,
+    "recall": 0.9,
+    "returned_ids": [
+      364790,
+      526788,
+      219735,
+      176512,
+      122772,
+      350527,
+      364660,
+      902789,
+      607007,
+      585383
+    ],
+    "reference_ids": [
+      364790,
+      526788,
+      219735,
+      176512,
+      290169,
+      122772,
+      350527,
+      364660,
+      902789,
+      607007
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 24,
+    "predicate": "rating > 4.0",
+    "selectivity": 0.236721,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 155.814792,
+    "reference_latency_ms": 96.730291,
+    "recall": 1.0,
+    "returned_ids": [
+      784790,
+      279489,
+      4623,
+      242430,
+      292781,
+      188768,
+      278674,
+      172451,
+      515459,
+      188787
+    ],
+    "reference_ids": [
+      784790,
+      279489,
+      4623,
+      242430,
+      292781,
+      188768,
+      278674,
+      172451,
+      515459,
+      188787
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 24,
+    "predicate": "rating > 4.0",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"rating\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"rating\" >...\n                                                             ^"
+  },
+  {
+    "query_id": 24,
+    "predicate": "rating > 4.0",
+    "selectivity": 0.236721,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 192.976625,
+    "reference_latency_ms": 470.477208,
+    "recall": 1.0,
+    "returned_ids": [
+      784790,
+      279489,
+      4623,
+      242430,
+      292781,
+      188768,
+      278674,
+      172451,
+      515459,
+      188787
+    ],
+    "reference_ids": [
+      784790,
+      279489,
+      4623,
+      242430,
+      292781,
+      188768,
+      278674,
+      172451,
+      515459,
+      188787
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 24,
+    "predicate": "rating > 4.0",
+    "selectivity": 0.236721,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 31.516167,
+    "reference_latency_ms": 122.16275,
+    "recall": 0.7,
+    "returned_ids": [
+      4623,
+      242430,
+      188768,
+      278674,
+      172451,
+      515459,
+      188787,
+      305019,
+      292201,
+      305330
+    ],
+    "reference_ids": [
+      784790,
+      279489,
+      4623,
+      242430,
+      292781,
+      188768,
+      278674,
+      172451,
+      515459,
+      188787
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 25,
+    "predicate": "rating > 4.5",
+    "selectivity": 0.112086,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 61.139916,
+    "reference_latency_ms": 97.344583,
+    "recall": 1.0,
+    "returned_ids": [
+      514508,
+      292181,
+      474871,
+      252643,
+      249846,
+      465958,
+      497622,
+      717049,
+      684686,
+      569078
+    ],
+    "reference_ids": [
+      514508,
+      292181,
+      474871,
+      252643,
+      249846,
+      465958,
+      497622,
+      717049,
+      684686,
+      569078
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 25,
+    "predicate": "rating > 4.5",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"rating\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"rating\" >...\n                                                             ^"
+  },
+  {
+    "query_id": 25,
+    "predicate": "rating > 4.5",
+    "selectivity": 0.112086,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 160.743125,
+    "reference_latency_ms": 133.817167,
+    "recall": 1.0,
+    "returned_ids": [
+      514508,
+      292181,
+      474871,
+      252643,
+      249846,
+      465958,
+      497622,
+      717049,
+      684686,
+      569078
+    ],
+    "reference_ids": [
+      514508,
+      292181,
+      474871,
+      252643,
+      249846,
+      465958,
+      497622,
+      717049,
+      684686,
+      569078
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 25,
+    "predicate": "rating > 4.5",
+    "selectivity": 0.112086,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 31.194625,
+    "reference_latency_ms": 279.839458,
+    "recall": 0.8,
+    "returned_ids": [
+      474871,
+      252643,
+      249846,
+      465958,
+      497622,
+      717049,
+      684686,
+      569078,
+      381049,
+      299014
+    ],
+    "reference_ids": [
+      514508,
+      292181,
+      474871,
+      252643,
+      249846,
+      465958,
+      497622,
+      717049,
+      684686,
+      569078
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 26,
+    "predicate": "stock == True",
+    "selectivity": 0.500146,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 159.804834,
+    "reference_latency_ms": 141.504333,
+    "recall": 1.0,
+    "returned_ids": [
+      426756,
+      525190,
+      910741,
+      475114,
+      321539,
+      515955,
+      321507,
+      525650,
+      514648,
+      794330
+    ],
+    "reference_ids": [
+      426756,
+      525190,
+      910741,
+      475114,
+      321539,
+      515955,
+      321507,
+      525650,
+      514648,
+      794330
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 26,
+    "predicate": "stock == True",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"stock\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"stock\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 26,
+    "predicate": "stock == True",
+    "selectivity": 0.500146,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 186.520834,
+    "reference_latency_ms": 323.54775,
+    "recall": 1.0,
+    "returned_ids": [
+      426756,
+      525190,
+      910741,
+      475114,
+      321539,
+      515955,
+      321507,
+      525650,
+      514648,
+      794330
+    ],
+    "reference_ids": [
+      426756,
+      525190,
+      910741,
+      475114,
+      321539,
+      515955,
+      321507,
+      525650,
+      514648,
+      794330
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 26,
+    "predicate": "stock == True",
+    "selectivity": 0.500146,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 80.442458,
+    "reference_latency_ms": 371.917667,
+    "recall": 0.7,
+    "returned_ids": [
+      426756,
+      525190,
+      475114,
+      515955,
+      321507,
+      525650,
+      794330,
+      634527,
+      241053,
+      10487
+    ],
+    "reference_ids": [
+      426756,
+      525190,
+      910741,
+      475114,
+      321539,
+      515955,
+      321507,
+      525650,
+      514648,
+      794330
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 27,
+    "predicate": "stock == False",
+    "selectivity": 0.499854,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 74.405916,
+    "reference_latency_ms": 72.599,
+    "recall": 1.0,
+    "returned_ids": [
+      955277,
+      363739,
+      176295,
+      366495,
+      58968,
+      802361,
+      717049,
+      364341,
+      925261,
+      955312
+    ],
+    "reference_ids": [
+      955277,
+      363739,
+      176295,
+      366495,
+      58968,
+      802361,
+      717049,
+      364341,
+      925261,
+      955312
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 27,
+    "predicate": "stock == False",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"stock\" does not exist\nLINE 1: ...:vector LIMIT $3) SELECT id FROM candidates WHERE \"stock\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 27,
+    "predicate": "stock == False",
+    "selectivity": 0.499854,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 222.259791,
+    "reference_latency_ms": 267.105708,
+    "recall": 1.0,
+    "returned_ids": [
+      955277,
+      363739,
+      176295,
+      366495,
+      58968,
+      802361,
+      717049,
+      364341,
+      925261,
+      955312
+    ],
+    "reference_ids": [
+      955277,
+      363739,
+      176295,
+      366495,
+      58968,
+      802361,
+      717049,
+      364341,
+      925261,
+      955312
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 27,
+    "predicate": "stock == False",
+    "selectivity": 0.499854,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 47.913334,
+    "reference_latency_ms": 94.979209,
+    "recall": 1.0,
+    "returned_ids": [
+      955277,
+      363739,
+      176295,
+      366495,
+      58968,
+      802361,
+      717049,
+      364341,
+      925261,
+      955312
+    ],
+    "reference_ids": [
+      955277,
+      363739,
+      176295,
+      366495,
+      58968,
+      802361,
+      717049,
+      364341,
+      925261,
+      955312
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 28,
+    "predicate": "category == 'Laptop' and price < 500",
+    "selectivity": 0.028864,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 1826.427958,
+    "reference_latency_ms": 1586.118417,
+    "recall": 1.0,
+    "returned_ids": [
+      103826,
+      907104,
+      521880,
+      423008,
+      265138,
+      886127,
+      703845,
+      785002,
+      742810,
+      66976
+    ],
+    "reference_ids": [
+      103826,
+      907104,
+      521880,
+      423008,
+      265138,
+      886127,
+      703845,
+      785002,
+      742810,
+      66976
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 28,
+    "predicate": "category == 'Laptop' and price < 500",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...vector LIMIT $3) SELECT id FROM candidates WHERE (\"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 28,
+    "predicate": "category == 'Laptop' and price < 500",
+    "selectivity": 0.028864,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 491.973,
+    "reference_latency_ms": 197.852667,
+    "recall": 1.0,
+    "returned_ids": [
+      103826,
+      907104,
+      521880,
+      423008,
+      265138,
+      886127,
+      703845,
+      785002,
+      742810,
+      66976
+    ],
+    "reference_ids": [
+      103826,
+      907104,
+      521880,
+      423008,
+      265138,
+      886127,
+      703845,
+      785002,
+      742810,
+      66976
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 28,
+    "predicate": "category == 'Laptop' and price < 500",
+    "selectivity": 0.028864,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 94.62,
+    "reference_latency_ms": 553.327583,
+    "recall": 0.8,
+    "returned_ids": [
+      907104,
+      423008,
+      265138,
+      886127,
+      703845,
+      785002,
+      742810,
+      66976,
+      559780,
+      791507
+    ],
+    "reference_ids": [
+      103826,
+      907104,
+      521880,
+      423008,
+      265138,
+      886127,
+      703845,
+      785002,
+      742810,
+      66976
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 29,
+    "predicate": "brand == 'Apple' and rating > 4",
+    "selectivity": 0.029805,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 299.748917,
+    "reference_latency_ms": 482.870625,
+    "recall": 1.0,
+    "returned_ids": [
+      637976,
+      602775,
+      770465,
+      667296,
+      568015,
+      102666,
+      535118,
+      7766,
+      963972,
+      820522
+    ],
+    "reference_ids": [
+      637976,
+      602775,
+      770465,
+      667296,
+      568015,
+      102666,
+      535118,
+      7766,
+      963972,
+      820522
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 29,
+    "predicate": "brand == 'Apple' and rating > 4",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"brand\" does not exist\nLINE 1: ...vector LIMIT $3) SELECT id FROM candidates WHERE (\"brand\" = ...\n                                                             ^"
+  },
+  {
+    "query_id": 29,
+    "predicate": "brand == 'Apple' and rating > 4",
+    "selectivity": 0.029805,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 585.636583,
+    "reference_latency_ms": 511.353584,
+    "recall": 1.0,
+    "returned_ids": [
+      637976,
+      602775,
+      770465,
+      667296,
+      568015,
+      102666,
+      535118,
+      7766,
+      963972,
+      820522
+    ],
+    "reference_ids": [
+      637976,
+      602775,
+      770465,
+      667296,
+      568015,
+      102666,
+      535118,
+      7766,
+      963972,
+      820522
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 29,
+    "predicate": "brand == 'Apple' and rating > 4",
+    "selectivity": 0.029805,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 46.440625,
+    "reference_latency_ms": 175.144958,
+    "recall": 1.0,
+    "returned_ids": [
+      637976,
+      602775,
+      770465,
+      667296,
+      568015,
+      102666,
+      535118,
+      7766,
+      963972,
+      820522
+    ],
+    "reference_ids": [
+      637976,
+      602775,
+      770465,
+      667296,
+      568015,
+      102666,
+      535118,
+      7766,
+      963972,
+      820522
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 30,
+    "predicate": "category == 'Phone' and stock == True",
+    "selectivity": 0.062437,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 60.789375,
+    "reference_latency_ms": 73.520333,
+    "recall": 1.0,
+    "returned_ids": [
+      516922,
+      502151,
+      823965,
+      525648,
+      117162,
+      285066,
+      518323,
+      329033,
+      719126,
+      440932
+    ],
+    "reference_ids": [
+      516922,
+      502151,
+      823965,
+      525648,
+      117162,
+      285066,
+      518323,
+      329033,
+      719126,
+      440932
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 30,
+    "predicate": "category == 'Phone' and stock == True",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...vector LIMIT $3) SELECT id FROM candidates WHERE (\"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 30,
+    "predicate": "category == 'Phone' and stock == True",
+    "selectivity": 0.062437,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 254.651167,
+    "reference_latency_ms": 56.124375,
+    "recall": 0.9,
+    "returned_ids": [
+      516922,
+      502151,
+      823965,
+      525648,
+      117162,
+      518323,
+      329033,
+      719126,
+      440932,
+      468280
+    ],
+    "reference_ids": [
+      516922,
+      502151,
+      823965,
+      525648,
+      117162,
+      285066,
+      518323,
+      329033,
+      719126,
+      440932
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 30,
+    "predicate": "category == 'Phone' and stock == True",
+    "selectivity": 0.062437,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 29.70925,
+    "reference_latency_ms": 53.648958,
+    "recall": 0.8,
+    "returned_ids": [
+      516922,
+      502151,
+      823965,
+      285066,
+      518323,
+      329033,
+      719126,
+      440932,
+      80078,
+      403461
+    ],
+    "reference_ids": [
+      516922,
+      502151,
+      823965,
+      525648,
+      117162,
+      285066,
+      518323,
+      329033,
+      719126,
+      440932
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 31,
+    "predicate": "category == 'TV' and price < 1000",
+    "selectivity": 0.061215,
+    "top_k": 10,
+    "strategy": "PGVECTOR_SQL_FIRST_EXACT",
+    "status": "completed",
+    "strategy_latency_ms": 93.382083,
+    "reference_latency_ms": 58.643833,
+    "recall": 1.0,
+    "returned_ids": [
+      5559,
+      4995,
+      401179,
+      633839,
+      787668,
+      323878,
+      458050,
+      489718,
+      697926,
+      619377
+    ],
+    "reference_ids": [
+      5559,
+      4995,
+      401179,
+      633839,
+      787668,
+      323878,
+      458050,
+      489718,
+      697926,
+      619377
+    ],
+    "ann_parameters": {
+      "enable_indexscan": "off"
+    },
+    "index_configuration": {
+      "index": "exact-l2-sequential",
+      "index_name": null,
+      "session_settings": {
+        "enable_indexscan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": null
+  },
+  {
+    "query_id": 31,
+    "predicate": "category == 'TV' and price < 1000",
+    "selectivity": null,
+    "top_k": 10,
+    "strategy": "vector_first_post_filter",
+    "status": "failed",
+    "strategy_latency_ms": null,
+    "reference_latency_ms": null,
+    "recall": null,
+    "returned_ids": [],
+    "reference_ids": [],
+    "ann_parameters": {},
+    "index_configuration": {},
+    "postgres_version": null,
+    "pgvector_version": null,
+    "plan_verification_status": null,
+    "plan_index_names": [],
+    "error": "UndefinedColumn: column \"category\" does not exist\nLINE 1: ...vector LIMIT $3) SELECT id FROM candidates WHERE (\"category\"...\n                                                             ^"
+  },
+  {
+    "query_id": 31,
+    "predicate": "category == 'TV' and price < 1000",
+    "selectivity": 0.061215,
+    "top_k": 10,
+    "strategy": "PGVECTOR_HNSW_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 188.399542,
+    "reference_latency_ms": 54.321083,
+    "recall": 1.0,
+    "returned_ids": [
+      5559,
+      4995,
+      401179,
+      633839,
+      787668,
+      323878,
+      458050,
+      489718,
+      697926,
+      619377
+    ],
+    "reference_ids": [
+      5559,
+      4995,
+      401179,
+      633839,
+      787668,
+      323878,
+      458050,
+      489718,
+      697926,
+      619377
+    ],
+    "ann_parameters": {
+      "hnsw.ef_search": 100,
+      "ivfflat.probes": 1000,
+      "hnsw.iterative_scan": "strict_order",
+      "hnsw.max_scan_tuples": 20000
+    },
+    "index_configuration": {
+      "index": "hnsw",
+      "index_name": "sift1m_items_embedding_hnsw_l2_idx",
+      "session_settings": {
+        "hnsw.ef_search": 100,
+        "ivfflat.probes": 1000,
+        "hnsw.iterative_scan": "strict_order",
+        "hnsw.max_scan_tuples": 20000
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_hnsw_l2_idx"
+    ],
+    "error": null
+  },
+  {
+    "query_id": 31,
+    "predicate": "category == 'TV' and price < 1000",
+    "selectivity": 0.061215,
+    "top_k": 10,
+    "strategy": "PGVECTOR_IVFFLAT_HYBRID",
+    "status": "completed",
+    "strategy_latency_ms": 35.33875,
+    "reference_latency_ms": 56.8775,
+    "recall": 0.9,
+    "returned_ids": [
+      5559,
+      4995,
+      401179,
+      633839,
+      787668,
+      323878,
+      458050,
+      697926,
+      619377,
+      573782
+    ],
+    "reference_ids": [
+      5559,
+      4995,
+      401179,
+      633839,
+      787668,
+      323878,
+      458050,
+      489718,
+      697926,
+      619377
+    ],
+    "ann_parameters": {
+      "ivfflat.probes": 10,
+      "hnsw.ef_search": 1000,
+      "ivfflat.iterative_scan": "off"
+    },
+    "index_configuration": {
+      "index": "ivfflat",
+      "index_name": "sift1m_items_embedding_ivfflat_l2_idx",
+      "session_settings": {
+        "ivfflat.probes": 10,
+        "hnsw.ef_search": 1000,
+        "ivfflat.iterative_scan": "off"
+      }
+    },
+    "postgres_version": "16.14 (Debian 16.14-1.pgdg12+1)",
+    "pgvector_version": "0.8.5",
+    "plan_verification_status": "verified",
+    "plan_index_names": [
+      "sift1m_items_embedding_ivfflat_l2_idx"
+    ],
+    "error": null
+  }
+]

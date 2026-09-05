@@ -1,0 +1,13 @@
+{
+  "started_at_utc": "2026-08-30T19:26:52.584+00:00",
+  "config_path": "final/results/main_run/config.json",
+  "n_queries": 250,
+  "n_calibration": 125,
+  "n_test": 125,
+  "reps": 3,
+  "warmup": true,
+  "admission_policy": "min_recall",
+  "hnsw_ef_search": 100,
+  "ivfflat_probes": 10,
+  "vector_first_budget": 100
+}

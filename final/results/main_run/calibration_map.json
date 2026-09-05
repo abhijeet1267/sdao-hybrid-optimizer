@@ -1,0 +1,182 @@
+{
+  "('SQL_FIRST', '[0.10,0.25)')": {
+    "median_latency_ms": 12.828375,
+    "mean_latency_ms": 15.375603370370369,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 27
+  },
+  "('VECTOR_FIRST_HNSW', '[0.10,0.25)')": {
+    "median_latency_ms": 24.6155,
+    "mean_latency_ms": 25.711685111111116,
+    "min_recall": 0.6,
+    "mean_recall": 0.9185185185185185,
+    "p05_recall": 0.63,
+    "frac_above_target": 0.6296296296296297,
+    "n": 27
+  },
+  "('HNSW_HYBRID', '[0.10,0.25)')": {
+    "median_latency_ms": 12.7175,
+    "mean_latency_ms": 15.312476962962963,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 27
+  },
+  "('IVFFLAT_HYBRID', '[0.10,0.25)')": {
+    "median_latency_ms": 12.798292,
+    "mean_latency_ms": 15.105021777777777,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 27
+  },
+  "('SQL_FIRST', '[0.25,0.50)')": {
+    "median_latency_ms": 18.125375,
+    "mean_latency_ms": 19.777484190476187,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 21
+  },
+  "('VECTOR_FIRST_HNSW', '[0.25,0.50)')": {
+    "median_latency_ms": 23.412791,
+    "mean_latency_ms": 24.929674571428574,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 21
+  },
+  "('HNSW_HYBRID', '[0.25,0.50)')": {
+    "median_latency_ms": 18.063709,
+    "mean_latency_ms": 21.56753571428571,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 21
+  },
+  "('IVFFLAT_HYBRID', '[0.25,0.50)')": {
+    "median_latency_ms": 18.327583,
+    "mean_latency_ms": 19.599720238095237,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 21
+  },
+  "('SQL_FIRST', '[0.00,0.05)')": {
+    "median_latency_ms": 2.652458,
+    "mean_latency_ms": 4.267831769230769,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('VECTOR_FIRST_HNSW', '[0.00,0.05)')": {
+    "median_latency_ms": 23.9787505,
+    "mean_latency_ms": 24.84900157692308,
+    "min_recall": 0.0,
+    "mean_recall": 0.1423076923076923,
+    "p05_recall": 0.0,
+    "frac_above_target": 0.0,
+    "n": 26
+  },
+  "('HNSW_HYBRID', '[0.00,0.05)')": {
+    "median_latency_ms": 2.786813,
+    "mean_latency_ms": 4.556931153846154,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('IVFFLAT_HYBRID', '[0.00,0.05)')": {
+    "median_latency_ms": 2.5624165,
+    "mean_latency_ms": 4.258799730769232,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('SQL_FIRST', '[0.50,1.00)')": {
+    "median_latency_ms": 23.0712085,
+    "mean_latency_ms": 31.00995357692308,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('VECTOR_FIRST_HNSW', '[0.50,1.00)')": {
+    "median_latency_ms": 24.318292,
+    "mean_latency_ms": 26.02003846153846,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('HNSW_HYBRID', '[0.50,1.00)')": {
+    "median_latency_ms": 22.7490625,
+    "mean_latency_ms": 24.492288500000004,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('IVFFLAT_HYBRID', '[0.50,1.00)')": {
+    "median_latency_ms": 22.1715415,
+    "mean_latency_ms": 24.233267653846156,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 26
+  },
+  "('SQL_FIRST', '[0.05,0.10)')": {
+    "median_latency_ms": 11.079584,
+    "mean_latency_ms": 11.63154496,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 25
+  },
+  "('VECTOR_FIRST_HNSW', '[0.05,0.10)')": {
+    "median_latency_ms": 23.817666,
+    "mean_latency_ms": 24.70420504,
+    "min_recall": 0.4,
+    "mean_recall": 0.8759999999999999,
+    "p05_recall": 0.6,
+    "frac_above_target": 0.6,
+    "n": 25
+  },
+  "('HNSW_HYBRID', '[0.05,0.10)')": {
+    "median_latency_ms": 11.2395,
+    "mean_latency_ms": 11.42351,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 25
+  },
+  "('IVFFLAT_HYBRID', '[0.05,0.10)')": {
+    "median_latency_ms": 11.159792,
+    "mean_latency_ms": 11.3715134,
+    "min_recall": 1.0,
+    "mean_recall": 1.0,
+    "p05_recall": 1.0,
+    "frac_above_target": 1.0,
+    "n": 25
+  }
+}

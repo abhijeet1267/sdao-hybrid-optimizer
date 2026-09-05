@@ -1,0 +1,37 @@
+{
+  "started_at_utc": "2026-08-26T06:16:56.621+00:00",
+  "finished_at_utc": "2026-08-26T06:20:51.478+00:00",
+  "seed": 20260820,
+  "split_seed": 20260821,
+  "query_count": 500,
+  "calibration_count": 250,
+  "heldout_count": 250,
+  "repetitions": 5,
+  "top_k": 10,
+  "target_recall": 0.95,
+  "vector_first_budget": 100,
+  "postgres_version": "PostgreSQL 16.14 (Debian 16.14-1.pgdg12+1) on aarch64-unknown-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+  "pgvector_version": "0.8.5",
+  "calibration_executions": 1000,
+  "heldout_executions": 5000,
+  "per_query_records": 1000,
+  "plans_verified": 978,
+  "sql_first_nondeterministic_queries": 0,
+  "access_path_by_strategy": {
+    "SQL_FIRST": {
+      "exact_seq": 176,
+      "exact_bitmap": 74
+    },
+    "VECTOR_FIRST_HNSW": {
+      "hnsw_index": 250
+    },
+    "HNSW_HYBRID": {
+      "hnsw_index": 238,
+      "exact_bitmap": 12
+    },
+    "IVFFLAT_HYBRID": {
+      "ivfflat_index": 240,
+      "exact_bitmap": 10
+    }
+  }
+}

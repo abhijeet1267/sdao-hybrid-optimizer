@@ -1,0 +1,73 @@
+{
+  "dataset_name": "SIFT1M",
+  "dataset_size": 200000,
+  "vector_dimension": 128,
+  "distance_metric": "L2",
+  "base_vector_path": "dataset/sift/sift_base.fvecs",
+  "query_vector_path": "dataset/sift/sift_query.fvecs",
+  "table_name": "sift_hybrid_200k",
+  "predicate_columns": [
+    "category",
+    "price",
+    "in_stock"
+  ],
+  "n_categories": 10,
+  "n_brands": 8,
+  "price_min": 10,
+  "price_max": 1000,
+  "seed": 20260820,
+  "split_seed": 20260821,
+  "query_count": 250,
+  "calibration_count": 125,
+  "tuning_count": 0,
+  "test_count": 125,
+  "top_k": 10,
+  "repetitions_calibration": 1,
+  "repetitions_heldout": 3,
+  "warmup_repetitions": 1,
+  "target_distribution": "uniform_5_buckets",
+  "selectivity_buckets": [
+    [
+      0.0,
+      0.05
+    ],
+    [
+      0.05,
+      0.1
+    ],
+    [
+      0.1,
+      0.25
+    ],
+    [
+      0.25,
+      0.5
+    ],
+    [
+      0.5,
+      1.01
+    ]
+  ],
+  "bucket_target_counts": [
+    50,
+    50,
+    50,
+    50,
+    50
+  ],
+  "hnsw_m": 16,
+  "hnsw_ef_construction": 200,
+  "hnsw_ef_search": 400,
+  "ivfflat_lists": 100,
+  "ivfflat_probes": 50,
+  "vector_first_budget": 100,
+  "target_recall": 0.95,
+  "admission_policy": "min_recall",
+  "admission_confidence": 0.95,
+  "admission_quantile": 0.05,
+  "min_calibration_observations": 1,
+  "execution_order": "sequential_strategy",
+  "cache_condition": "warm",
+  "results_dir": "final/results/sweep_ef400_probes50",
+  "experiment_label": "main_run"
+}

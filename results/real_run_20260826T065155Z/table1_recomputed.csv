@@ -1,0 +1,6 @@
+Strategy,Mean_ms,Median_ms,P95_ms,Recall@10,Min_recall,Frac_ge_.95
+Adaptive,99.0,94.7,179.0,1.0,1.0,1.0
+SQL_FIRST,99.0,94.7,179.0,1.0,1.0,1.0
+VECTOR_FIRST_HNSW,3.5,2.4,9.2,0.763,0.0,0.656
+HNSW_HYBRID,2.3,1.4,3.8,0.81,0.0,0.7
+IVFFLAT_HYBRID,5.7,4.7,13.9,0.813,0.1,0.352

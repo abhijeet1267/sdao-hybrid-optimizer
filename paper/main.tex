@@ -1,0 +1,635 @@
+\documentclass[10pt,twocolumn]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,booktabs,graphicx,xcolor,hyperref,algorithm,algpseudocode}
+\graphicspath{{figures/}}
+
+\newcommand{\textproof}[1]{\text{#1}}
+\renewcommand{\algorithmiccomment}[1]{\hfill$\triangleright$ #1}
+
+\title{A Selectivity-Driven Adaptive Query Processing Engine for Hybrid SQL--Vector Databases}
+\author{Anonymous submission draft}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Hybrid SQL--vector queries combine relational filtering with vector similarity search, exposing a tension between approximate access paths and recall safety. This paper presents an exploratory PostgreSQL/pgvector prototype whose primary role is a conservative safety layer for this decision. Before execution, the layer obtains a PostgreSQL \texttt{EXPLAIN (FORMAT JSON)} selectivity estimate, maps it to a calibrated bucket, and admits an approximate strategy only when the bucket contains sufficient observed Recall@10 evidence; otherwise, it falls back to exact SQL-first filtering. Thus, on the evaluated workload, the feasibility gate guarantees Recall@10 = 1.000 for every adaptive selection by retaining an exact path whenever approximate evidence is insufficient. On a single-run evaluation of 32 hybrid queries over SIFT1M (1 million 128-dimensional L2 vectors, $k=10$), the adaptive policy achieved mean strategy-only latency of 51.32~ms with Recall@10 = 1.000 on all 32 queries, compared to 64.80~ms for SQL-first exact filtering, a reduction of 13.48~ms or \textbf{20.81\%} for this strategy-only metric. The policy selected SQL-first 22 times and HNSW hybrid 10 times. The prototype's Python-layer EXPLAIN, planning, and verification path adds substantial decision-to-verified-execution overhead: 91.14~ms mean, exceeding the observed 13.48~ms strategy-only saving. Accordingly, the paper does not claim an end-to-end performance improvement. Instead, it evaluates the selectivity-driven feasibility framework as a conservative mechanism for preventing unsupported approximate execution. The results are descriptive single-run observations on the same workload used for calibration and do not establish statistical significance, generalization, confidence intervals, or held-out validity.
+\end{abstract}
+
+\noindent\textit{Index Terms---}adaptive query processing, hybrid SQL--vector queries, PostgreSQL, pgvector, approximate nearest-neighbor search, selectivity estimation, query optimization.
+
+\section{Introduction}
+\label{sec:intro}
+
+Modern approximate nearest-neighbor (ANN) search is increasingly integrated into general-purpose databases through vector similarity extensions such as pgvector~\cite{pgvector}. Real-world queries often combine vector search with relational predicates: \emph{``find the 10 most similar products to this image that are in stock and cost less than \$500.''} Such hybrid SQL--vector queries admit multiple execution strategies:
+
+\begin{enumerate}
+\item \textbf{SQL-first filtering}: Apply the relational predicate exactly, then rank all matched rows by vector distance.
+\item \textbf{Vector-first retrieval}: Retrieve $m$ approximate nearest neighbors from the full table, then filter the candidates by the relational predicate.
+\item \textbf{Hybrid access}: Execute a vector index scan (HNSW or IVFFlat) while applying the predicate to candidate rows.
+\end{enumerate}
+
+These strategies exhibit a fundamental latency--recall tradeoff. Exact SQL-first filtering guarantees correctness but can incur high latency. Approximate vector-first retrieval and hybrid index scans can be substantially faster, but may fail to rank the correct top-$k$ results when predicate filtering removes too many candidates. The central systems problem is therefore not simply to minimize latency: it is to determine when an approximate path has sufficient evidence to be admitted, and when the system must preserve correctness by falling back to exact filtering.
+
+\textbf{The central research question} is: \emph{Can a conservative planner use pre-execution selectivity estimates and calibrated empirical evidence to enforce a Recall@10 feasibility constraint when choosing among hybrid execution paths?}
+
+This paper presents an exploratory answer through a PostgreSQL/pgvector prototype that treats strategy selection as a safety decision with a performance tie-breaker:
+
+\begin{enumerate}
+\item Obtains PostgreSQL's EXPLAIN-derived selectivity estimate before execution.
+\item Maps the estimated selectivity to a fixed bucket, indexed by selectivity range.
+\item Consults empirical calibration data: median observed strategy latency per bucket, and minimum observed Recall@10 per strategy per bucket.
+\item Applies a conservative feasibility gate: a non-exact strategy is eligible only if its minimum observed recall in that bucket meets or exceeds 0.95; otherwise, exact SQL-first remains selected.
+\item Selects the lowest-calibrated-latency strategy only from the feasible set.
+\item Verifies that ANN strategies execute the expected index/access path.
+\item Records the resulting latency, recall, and plan evidence.
+\end{enumerate}
+
+The prototype is intentionally conservative. It does not learn online or update calibration dynamically, and it retains exact SQL-first as a deterministic fallback. The resulting safety property is empirical and workload-bounded: on the evaluated 32-query workload, every selected strategy met the 0.95 target and achieved Recall@10 = 1.000. It is not a formal guarantee for unseen workloads. Moreover, the Python-layer EXPLAIN and verification path has a measured mean decision-to-verified-execution time of 91.14~ms, which exceeds the observed 13.48~ms strategy-only saving. This overhead limits the prototype's end-to-end performance utility and motivates treating the feasibility framework, rather than the measured latency reduction, as the primary contribution.
+
+\subsection{Contributions}
+
+Our contributions are narrow, evidence-based, and limited to the evaluated workload:
+
+\begin{enumerate}
+\item \textbf{A conservative safety layer for hybrid execution}: We formalize a decision rule that combines PostgreSQL's estimated selectivity, empirical bucket evidence, and a recall-feasibility gate before admitting an approximate execution path.
+\item \textbf{Exact fallback under insufficient evidence}: The framework preserves SQL-first as an always-available exact path, so approximate strategies are used only when their observed bucket-level recall satisfies the required threshold. The calibrated latency statistic serves only to choose among feasible strategies.
+\item \textbf{Execution-plan verification}: The prototype records and verifies expected ANN index/access-path evidence, ensuring integrity of the hybrid access path.
+\item \textbf{Exploratory evaluation on SIFT1M}: We evaluate the approach on a 32-query workload, demonstrating the feasibility of the adaptive selection mechanism on this specific dataset and query mix.
+\end{enumerate}
+
+We explicitly do not claim end-to-end latency improvement, optimality, state-of-the-art performance, generalization across workloads, statistical significance, or production readiness. The observed Recall@10 = 1.000 outcome and the 13.48~ms strategy-only reduction support only the evaluated workload and the stated measurement protocol. The primary contribution is the conservative feasibility framework and its explicit exact fallback, not the unamortized Python-layer implementation overhead.
+
+\section{Related Work}
+\label{sec:related}
+
+\subsection{Traditional Query Optimization and Cardinality Estimation}
+
+Relational query optimization relies critically on cardinality estimation and cost models~\cite{optimizer_survey}. PostgreSQL~\cite{postgresql16} provides the EXPLAIN facility and planner-estimated selectivity used in this work. Errors in cardinality or selectivity estimates cascade through the optimizer, degrading plan choice. The learned-optimizer approach, exemplified by Bao~\cite{bao}, steers optimizer decisions using feedback; our prototype uses simpler, intentionally frozen calibration rather than online learning.
+
+\subsection{Filtered Vector Search}
+
+Recent work by Papakonstantinou et al.~\cite{filtered_vector_search} surveys the state-of-the-art in filtered vector search, analyzing pre-filtering (exact predicate first), post-filtering (ANN first, then filter), and inline filtering (predicate applied during ANN traversal). The selectivity of the predicate and correlation between predicate and vector embeddings significantly affect which strategy is optimal. Our work does not introduce new ANN indexes or filtering algorithms; instead, it applies conservative strategy selection over PostgreSQL/pgvector's existing execution options.
+
+\subsection{Vector Indexing and ANN Methods}
+
+HNSW (Hierarchical Navigable Small World)~\cite{malkov2020hnsw} is a graph-based approximate nearest-neighbor method widely used and supported by pgvector. IVFFlat (Inverted File with Flat Quantization) is another pgvector-supported access method based on clustering. Neither method is novel in this work; we evaluate existing PostgreSQL/pgvector implementations of these indexes.
+
+\subsection{Adaptive Query Processing}
+
+Adaptive query processing adjusts execution strategies at runtime based on observed data characteristics. The present work operates at the query level (before and during planning) rather than within individual operator execution, and uses pre-execution estimates rather than online cardinality feedback during execution.
+
+\subsection{Positioning of This Work}
+
+The paper does not propose a new ANN index, a new distance metric, a new embedding model, a new optimizer learning framework, or an external-system comparison. Its contribution is a conservative query-level strategy-selection layer that combines empirical calibration and observed recall feasibility constraints. The approach is applicable to PostgreSQL/pgvector and similar databases that support multiple hybrid execution paths.
+
+\section{Problem Formulation}
+\label{sec:problem}
+
+\subsection{Hybrid Query Definition}
+
+Let a hybrid query be defined as
+\begin{equation}
+q = \langle \mathbf{v}, P, k \rangle,
+\end{equation}
+where:
+\begin{itemize}
+\item $\mathbf{v} \in \mathbb{R}^d$ is a query vector,
+\item $P$ is a relational predicate (e.g., $\texttt{category} = \text{`Phone'} \land \text{price} < 500$),
+\item $k$ is the requested number of nearest neighbors (in this work, $k = 10$).
+\end{itemize}
+
+\subsection{Selectivity Estimation}
+
+Let $\hat{\sigma}(q)$ denote the \emph{PostgreSQL EXPLAIN-estimated selectivity} of predicate $P$ before execution. Formally,
+\begin{equation}
+\hat{\sigma}(q) = \frac{\widehat{\text{rows matching } P}}{\text{total rows in table}},
+\end{equation}
+where the estimate comes from PostgreSQL's planner before any rows are scanned. Let $\sigma_{\text{true}}(q)$ denote the actual measured selectivity observed after execution. Critically, the planner must not use $\sigma_{\text{true}}(q)$ as input to the decision rule; $\sigma_{\text{true}}$ is only available post-execution and is therefore not available for planning.
+
+\subsection{Strategy Space}
+
+The set of candidate strategies is
+\begin{equation}
+\mathcal{S} = \{\text{SQL\_FIRST}, \text{VECTOR\_FIRST\_HNSW}, \text{HNSW\_HYBRID}, \text{IVFFLAT\_HYBRID}\}
+\label{eq:strategy-set}
+\end{equation}
+
+\begin{enumerate}
+\item \textbf{SQL\_FIRST}: Exact relational filtering followed by vector ranking. Computes the exact top-$k$ filtered results.
+\item \textbf{VECTOR\_FIRST\_HNSW}: Retrieves ANN candidates (e.g., 100 vectors) from the full table using HNSW, then applies the predicate to candidates.
+\item \textbf{HNSW\_HYBRID}: Executes a HNSW index scan with the predicate applied inline during ANN traversal.
+\item \textbf{IVFFLAT\_HYBRID}: Executes an IVFFlat index scan with the predicate applied inline during ANN traversal.
+\end{enumerate}
+
+\subsection{Latency and Recall Calibration}
+
+For each strategy $s \in \mathcal{S}$ and each selectivity bucket $b$ (defined in \S\ref{sec:buckets}), the system maintains:
+
+\begin{itemize}
+\item $\widehat{L}_s(b)$: the \emph{empirical median strategy-only latency} observed in calibration for strategy $s$ in bucket $b$. This is a descriptive statistic, not a causal cost model.
+\item $R^{\min}_s(b)$: the \emph{minimum observed Recall@10} for strategy $s$ in bucket $b$ during calibration.
+\item $N_s(b)$: the number of calibration observations in bucket $b$ for strategy $s$.
+\end{itemize}
+
+\subsection{Selectivity Buckets}
+\label{sec:buckets}
+
+The estimated selectivity range $[0, 1]$ is partitioned into a fixed set of buckets. For this evaluation, we use:
+\begin{equation}
+\mathcal{B} = \{[0, 0.05), [0.05, 0.10), [0.10, 0.25), [0.25, 0.50), [0.50, 1.0]\}
+\label{eq:selectivity-buckets}
+\end{equation}
+
+These buckets are fixed during both calibration and evaluation; they are not learned or adapted.
+
+\subsection{Recall@10 Definition and Target}
+
+For each query $q$ executed with strategy $s$, the result set $\text{top}10_s(q)$ is compared to the exact filtered top-10 reference set $\text{top}10_{\text{ref}}(q)$ computed by SQL-first:
+
+\begin{equation}
+\text{Recall@10}(q, s) = \frac{|\text{top}10_s(q) \cap \text{top}10_{\text{ref}}(q)|}{|\text{top}10_{\text{ref}}(q)|}.
+\end{equation}
+
+The target recall threshold is $R_{\text{target}} = 0.95$. A strategy is deemed feasible for a bucket if its minimum observed recall in that bucket meets this threshold.
+
+\subsection{Feasible Strategy Set}
+
+For a query $q$ with estimated selectivity $\hat{\sigma}(q)$ mapping to bucket $b(q)$, the \emph{feasible strategy set} is defined as:
+\begin{equation}
+\mathcal{F}(b) = \{\texttt{SQL\_FIRST}\} \cup \left\{ s \in \mathcal{S} : R^{\min}_s(b) \geq 0.95 \right\}.
+\end{equation}
+
+SQL-first is always feasible because it computes the exact filtered reference.
+
+\subsection{Adaptive Strategy Selection Rule}
+
+The planner selects the feasible strategy with the lowest calibrated latency:
+\begin{equation}
+s^*(q) = \arg\min_{s \in \mathcal{F}(b(q))} \widehat{L}_s(b(q)).
+\label{eq:decision_rule}
+\end{equation}
+
+If multiple strategies tie for the minimum, the implementation breaks ties deterministically (e.g., by strategy order). The key property is that this decision is made before execution and uses only information available at planning time: the estimated selectivity, the bucket membership, and the frozen calibration statistics.
+
+\subsection{Distinction: Planning Time vs. Calibration Time vs. Post-Execution}
+
+Conceptually, we distinguish three time phases:
+
+\begin{itemize}
+\item \textbf{Calibration time}: A reference workload (in this case, the same 32 queries) is executed with all candidate strategies. Latency and recall are measured. Empirical summaries ($\widehat{L}_s(b)$ and $R^{\min}_s(b)$) are computed and frozen.
+\item \textbf{Planning time}: A new query arrives. Its estimated selectivity is obtained from EXPLAIN. The decision rule~\eqref{eq:decision_rule} is applied using only the frozen calibration summaries.
+\item \textbf{Execution time}: The selected strategy is executed, and the actual latency and recall are measured.
+\end{itemize}
+
+In this work, calibration and evaluation use the same 32 queries, introducing calibration leakage (see \S\ref{sec:threats}).
+
+\section{System Architecture}
+\label{sec:architecture}
+
+\subsection{Architecture Overview}
+
+The system follows a modular five-stage pipeline:
+
+\begin{enumerate}
+\item \textbf{Predicate Translation}: User-provided predicate is translated to parameterized SQL.
+\item \textbf{Selectivity Estimation}: PostgreSQL EXPLAIN (FORMAT JSON) is invoked to obtain $\hat{\sigma}(q)$.
+\item \textbf{Bucket Mapping and Calibration Lookup}: $\hat{\sigma}(q)$ is mapped to bucket $b(q)$. The system retrieves $\widehat{L}_s(b(q))$ and $R^{\min}_s(b(q))$ for all $s \in \mathcal{S}$.
+\item \textbf{Strategy Selection}: The feasible set $\mathcal{F}(b)$ is computed. The lowest-latency feasible strategy is chosen using Equation~\eqref{eq:decision_rule}.
+\item \textbf{Execution and Verification}: The selected strategy is executed. Its plan is verified for expected index/access-path evidence. Latency and recall are measured.
+\end{enumerate}
+
+\subsection{PostgreSQL Role}
+
+PostgreSQL 16.14 and pgvector 0.8.5 provide:
+\begin{itemize}
+\item The relational planner and optimizer.
+\item EXPLAIN (FORMAT JSON) output for selectivity estimates and execution plans.
+\item SQL execution engine for SQL-first exact filtering.
+\item pgvector support for vector storage, L2 distance, and ANN indexes (HNSW, IVFFlat).
+\end{itemize}
+
+Critically, PostgreSQL is \emph{not} modified. It operates as-is; the adaptive layer sits above it as a query-rewriting and strategy-selection shim.
+
+\subsection{Selectivity Estimation Mechanism}
+
+The adaptive planner invokes PostgreSQL's EXPLAIN (FORMAT JSON) for each query:
+
+\begin{verbatim}
+EXPLAIN (FORMAT JSON, ANALYZE FALSE) 
+  SELECT ... WHERE <predicate>
+\end{verbatim}
+
+PostgreSQL's built-in histogram-based statistics and selectivity estimation functions return $\hat{\sigma}(q)$. The planner never uses the measured true selectivity from ANALYZE or post-execution row counts as input to the strategy decision.
+
+\subsection{Calibration Storage}
+
+Calibration data is stored as a frozen map:
+\begin{equation}
+\text{CalibrationMap} : (s, b) \mapsto (\widehat{L}_s(b), R^{\min}_s(b), N_s(b)).
+\end{equation}
+
+In this implementation, the map is a Python dictionary materialized at system startup. No online updates or retraining occurs during evaluation.
+
+\subsection{Execution and Measurement}
+
+For each query:
+\begin{enumerate}
+\item The selected strategy is executed using PostgreSQL's execution engine.
+\item Measured \emph{strategy-only latency} is the wall-clock time from the start of PostgreSQL query execution to the return of results.
+\item Measured \emph{Recall@10} is computed by comparing the result to the exact SQL-first reference.
+\item For ANN strategies, the execution plan is parsed and verified to contain the expected index name.
+\end{enumerate}
+
+\subsection{Decision-to-Execution Wall Time}
+
+Separately from strategy-only latency, we measure \emph{total wall time from EXPLAIN to verified execution}:
+
+\begin{equation}
+T_{\text{total}} = T_{\text{EXPLAIN}} + T_{\text{planning}} + T_{\text{execution}} + T_{\text{verification}}.
+\end{equation}
+
+This total includes overhead from selectivity estimation, bucket lookup, strategy selection, and plan verification. It is \emph{not} directly comparable to strategy-only latency, which measures only PostgreSQL execution time.
+
+\section{Conservative Adaptive Strategy Selection}
+\label{sec:selection}
+
+\subsection{Decision Algorithm}
+
+Algorithm~\ref{alg:selection} formalizes the selection process.
+
+\begin{algorithm}
+\caption{Conservative Selectivity-Driven Strategy Selection}
+\label{alg:selection}
+\begin{algorithmic}[1]
+\Require Query $q = \langle \mathbf{v}, P, k \rangle$, target recall $R_{\text{target}} = 0.95$, frozen calibration map $\text{CalibrationMap}$
+\Ensure Selected strategy $s^*(q)$ and result tuple
+\State $\hat{\sigma} \gets \text{PostgreSQL EXPLAIN}(P)$ \Comment{Obtain estimated selectivity}
+\State $b \gets \text{MapBucket}(\hat{\sigma}, B)$ \Comment{Map to selectivity bucket}
+\State $\mathcal{F} \gets \{ \texttt{SQL\_FIRST} \}$ \Comment{Initialize feasible set with exact strategy}
+\For{$s \in \mathcal{S} \setminus \{\texttt{SQL\_FIRST}\}$}
+  \If{$\text{CalibrationMap}[(s, b)] \neq \text{NULL}$}
+    \State $R^{\min} \gets \text{CalibrationMap}[(s, b)].R^{\min}$
+    \If{$R^{\min} \geq R_{\text{target}}$ \textbf{and} $\text{IndexAvailable}(s, q)$}
+      \State $\mathcal{F} \gets \mathcal{F} \cup \{s\}$ \Comment{Add non-exact strategy if feasible}
+    \EndIf
+  \EndIf
+\EndFor
+\State $s^* \gets \arg\min_{s \in \mathcal{F}} \text{CalibrationMap}[(s, b)].\widehat{L}_s$ \Comment{Select lowest-latency feasible}
+\State Execute strategy $s^*$ on query $q$ \Comment{Run selected strategy}
+\State $\text{plan} \gets \text{RetrievePlan}(s^*)$ \Comment{Get execution plan}
+\If{$s^* \neq \texttt{SQL\_FIRST}$}
+  \State \textproof{Verify}$(s^*, \text{plan})$ \Comment{Verify expected ANN index/access path}
+\EndIf
+\State $\text{latency} \gets \text{MeasureStrategyLatency}()$
+\State $\text{recall} \gets \text{ComputeRecall}(s^*, \text{SQL\_FIRST})$
+\State \Return $(s^*, \text{latency}, \text{recall}, \text{plan})$
+\end{algorithmic}
+\end{algorithm}
+
+\subsection{Cold-Start and Insufficient Calibration}
+
+If a query's estimated selectivity falls into a bucket with insufficient calibration data (fewer than, say, 3 observations), or if a non-exact strategy has no calibration evidence for that bucket, the algorithm conservatively falls back to SQL-first. This is the intended safety mechanism and is not evidence of measured performance in this evaluation (all 32 queries had sufficient calibration evidence).
+
+\subsection{Plan Verification}
+
+After executing an ANN strategy, the plan is retrieved and checked for the expected index name. For example, HNSW\_HYBRID plans must contain the HNSW index name; IVFFlat plans must contain the IVFFlat index name. If the expected evidence is absent, the execution is flagged for diagnostic review. Plan verification is an integrity check, not a proof of performance or generalization.
+
+\subsection{Why Conservatism Matters}
+
+The algorithm trades off potential low-latency ANN outcomes for observed recall safety. Because:
+
+\begin{enumerate}
+\item Calibration and evaluation use the same workload,
+\item Measurements are single-run observations,
+\item ANN parameters and index characteristics may vary across datasets and PostgreSQL versions,
+\end{enumerate}
+
+the conservative gate ensures that on the evaluated workload, recall targets are met. It does not promise performance or recall on unobserved workloads.
+
+\section{Implementation}
+\label{sec:implementation}
+
+\subsection{Software and Hardware Context}
+
+All results reported in this paper use:
+\begin{itemize}
+\item PostgreSQL 16.14
+\item pgvector 0.8.5 (latest stable at time of evaluation)
+\item L2 vector distance
+\item SIFT1M dataset: 1,000,000 vectors, 128 dimensions
+\item $k = 10$ (request size)
+\end{itemize}
+
+The artifacts preserve the PostgreSQL configuration and pgvector parameters used during the evaluation. Hardware metadata is recorded in the provenance manifest but was collected post-run and is not a complete contemporaneous characterization.
+
+\subsection{Dataset: SIFT1M}
+
+SIFT1M~\cite{sift1m} is a standard one-million-vector benchmark derived from SIFT (Scale-Invariant Feature Transform) descriptors. Vectors are 128 dimensions. Distance is computed using L2 (Euclidean) norm.
+
+\subsection{Query Workload}
+
+The workload consists of 32 hybrid queries, each combining a relational predicate with vector nearest-neighbor ranking. Predicates include category filters, price ranges, ratings, stock status, and conjunctions thereof. All queries request $k = 10$ nearest neighbors.
+
+\subsection{Strategy Implementations}
+
+\subsubsection{SQL\_FIRST}
+
+Exact filtering strategy. Applies the relational predicate as a WHERE clause, then orders all matching rows by L2 distance to the query vector. The result is the exact top-10 filtered nearest neighbors. This is the correctness baseline.
+
+\subsubsection{VECTOR\_FIRST\_HNSW}
+
+The vector-first strategy retrieves a candidate pool from the full table using the HNSW index and applies the relational predicate after retrieval. Rather than treating the candidate budget as a workload-independent constant, a selectivity-aware implementation scales it using the PostgreSQL estimate $\hat{\sigma}$:
+\begin{equation}
+m = \max\left(100, \frac{k}{\hat{\sigma}} \times \text{safety\_factor}\right),
+\label{eq:dynamic-candidate-budget}
+\end{equation}
+where $m$ is the HNSW candidate budget, $k$ is the requested result count, and $\text{safety\_factor} > 1$ provides slack for estimation error and approximate retrieval. For implementation, $m$ is rounded up to an integer and bounded by any configured system maximum; when $\hat{\sigma}=0$, the planner must use a conservative maximum-budget or exact-filtering fallback because the expression is undefined.
+
+The scaling follows directly from the expected number of predicate-qualified candidates. If $\hat{\sigma}$ is low, the relational predicate is highly selective, so only a small fraction of the vectors returned by HNSW are expected to survive post-filtering. Retrieving a fixed pool of 100 can therefore starve the relational filter and yield fewer than $k$ qualified results or omit true top-$k$ neighbors. Increasing $m$ approximately in proportion to $1/\hat{\sigma}$ compensates for this attrition: the index supplies a larger candidate pool before filtering, increasing the likelihood that at least $k$ vectors remain for final ranking. For higher selectivity, the lower bound of 100 avoids unnecessary candidate expansion. The reported 32-query evaluation used the original fixed budget of 100; evaluating this dynamic rule requires a separate experiment and should not be inferred from the fixed-budget results.
+
+\subsubsection{HNSW\_HYBRID}
+
+Hybrid query execution using the HNSW index with predicate applied inline during index traversal. PostgreSQL applies the predicate to candidates as they are visited, stopping when sufficient matching results are found. The result is approximate because ANN traversal terminates early, potentially missing distant high-precision candidates.
+
+\subsubsection{IVFFLAT\_HYBRID}
+
+Hybrid query execution using the IVFFlat index with predicate applied inline. Similar to HNSW\_HYBRID, but using pgvector's IVFFlat access method.
+
+\subsection{HNSW and IVFFlat Parameter Settings}
+
+The evaluation uses PostgreSQL/pgvector's default ANN parameter settings. Specifically:
+\begin{itemize}
+\item HNSW: default \texttt{ef\_search} and \texttt{ef\_construction}.
+\item IVFFlat: default \texttt{probes} setting.
+\end{itemize}
+
+These settings are frozen for all runs and are not individually tuned. No parameter sweep or sensitivity analysis was performed (see \S\ref{sec:threats}).
+
+\section{Experimental Methodology}
+\label{sec:methodology}
+
+\subsection{Dataset and Workload}
+
+\begin{itemize}
+\item Dataset: SIFT1M (1 million 128-dimensional L2 vectors)
+\item Workload: 32 hybrid SQL--vector queries
+\item $k = 10$ (request top-10 nearest neighbors per query)
+\item Recall@10 reference: exact filtered result from SQL-first
+\end{itemize}
+
+\subsection{Experimental Protocol}
+
+The experiment follows a two-phase protocol:
+
+\subsubsection{Phase 1: Calibration (same workload)}
+
+All 32 queries are executed with all 4 strategies. For each query-strategy pair:
+\begin{enumerate}
+\item Execute the strategy and measure strategy-only latency (milliseconds).
+\item Compute Recall@10 against the SQL-first exact reference.
+\item Record the execution plan.
+\end{enumerate}
+
+At the end of calibration, the system computes:
+\begin{itemize}
+\item For each strategy $s$ and bucket $b$: empirical median latency $\widehat{L}_s(b)$ and minimum recall $R^{\min}_s(b)$.
+\item Observation count $N_s(b)$ for each bucket.
+\end{itemize}
+
+\subsubsection{Phase 2: Adaptive Evaluation (same workload)}
+
+The 32 queries are executed again, this time using the adaptive strategy selection rule. For each query:
+\begin{enumerate}
+\item Invoke PostgreSQL EXPLAIN to obtain $\hat{\sigma}(q)$.
+\item Determine feasible set $\mathcal{F}(b(q))$.
+\item Select strategy $s^*(q)$ as the minimum-latency feasible choice.
+\item Execute and measure strategy-only latency and Recall@10.
+\item Verify ANN plan evidence if an ANN strategy was selected.
+\end{enumerate}
+
+\subsection{Metrics}
+
+We report the following metrics:
+
+\begin{enumerate}
+\item \textbf{Strategy-only latency}: Wall-clock time to execute PostgreSQL and return results, in milliseconds.
+\item \textbf{Recall@10}: Overlap of result top-10 with exact SQL-first top-10, as a fraction in $[0, 1]$.
+\item \textbf{Decision-to-verified-execution wall time}: Total time from EXPLAIN through plan verification, in milliseconds.
+\end{enumerate}
+
+Statistics reported: mean, median, P95, minimum, and fraction meeting Recall@10 $\geq 0.95$.
+
+\subsection{Execution Environment}
+
+All measurements are performed on a single machine with PostgreSQL running in a warm persistent session. The session is not restarted between queries. Query results are not cached at the database application level; PostgreSQL's buffer cache and OS page cache state is uncontrolled.
+
+\subsection{Execution Order and Caching}
+
+Adaptive strategy runs precede fixed-strategy runs for each query. The fixed strategies all run (SQL-first, Vector-first, HNSW, IVFFlat), then the exact reference is recomputed. Execution order is deterministic and not randomized. This can introduce cache and ordering biases (see \S\ref{sec:threats}).
+
+\subsection{Statistical Methodology}
+
+No statistical significance tests, confidence intervals, or bootstrapping are performed. Results are presented as descriptive single-run observations.
+
+\subsection{Reproducibility}
+
+The frozen artifacts include:
+\begin{itemize}
+\item The SIFT1M dataset reference (standard benchmark).
+\item PostgreSQL 16.14 and pgvector 0.8.5 versions.
+\item The 32-query workload definition.
+\item Per-query EXPLAIN estimates.
+\item Per-query calibration latencies and recalls.
+\item Execution plans for all 128 runs (32 queries $\times$ 4 strategies).
+\item The fixed selectivity buckets.
+\item The 0.95 recall target.
+\item Adaptive and fixed strategy latency/recall measurements.
+\end{itemize}
+
+The artifacts do not provide a complete contemporaneous hardware characterization, controlled cache-state protocol, or bit-for-bit timing reproducibility guarantee. These omissions are part of the study boundary.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Observed Strategy Performance}
+
+Table~\ref{tab:strategy-comparison} presents the observed latency--recall tradeoff across all four strategies, measured on the 32-query workload. These are descriptive statistics from single-run measurements; they do not establish statistical significance or confidence intervals.
+
+\input{tables/strategy_comparison}
+
+Key observations:
+
+\begin{itemize}
+\item \textbf{SQL\_FIRST (exact)}: Mean 64.80~ms, Recall@10 = 1.000 on all queries (correct by construction).
+\item \textbf{HNSW\_HYBRID (fastest)}: Mean 10.17~ms, but Recall@10 meets the 0.95 target on only 75\% of queries (24 of 32).
+\item \textbf{IVFFLAT\_HYBRID}: Mean 20.78~ms, meets 0.95 target on only 18.8\% of queries (6 of 32).
+\item \textbf{VECTOR\_FIRST\_HNSW}: Mean 56.45~ms (close to SQL-first), meets 0.95 target on 62.5\% of queries (20 of 32).
+\item \textbf{Adaptive}: Mean 51.32~ms, Recall@10 = 1.000 on all 32 queries.
+\end{itemize}
+
+The latency improvement of adaptive over SQL-first is:
+\begin{equation}
+\Delta L = 64.80 - 51.32 = 13.48 \text{ ms}.
+\end{equation}
+
+Relative improvement:
+\begin{equation}
+\text{Relative reduction} = \frac{13.48}{64.80} \times 100\% = 20.81\%.
+\end{equation}
+
+\textbf{Interpretation}: On this evaluated workload, the conservative adaptive strategy achieves 13.48 ms lower mean strategy-only latency than SQL-first while maintaining perfect Recall@10 (1.000). No ANN strategy alone can match this combination: the fastest ANN strategy (HNSW\_HYBRID, 10.17 ms) fails the recall target on 8 queries.
+
+\subsection{Latency Across Estimated Selectivity}
+
+Figure~\ref{fig:latency-selectivity} plots observed strategy-only latency against PostgreSQL's estimated selectivity for each evaluated query. The raw points show heterogeneous behavior across strategies and selectivity ranges. No smooth latency/selectivity curve is claimed; the figure is descriptive.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{figure_02_latency_vs_estimated_selectivity.pdf}
+\caption{Observed strategy-only latency by PostgreSQL-estimated selectivity on the 32-query evaluated workload. Points show raw measured latencies; each strategy is a different color. The plot is descriptive and does not establish a fitted latency model or suggest transferability to other datasets. Heterogeneous behavior reflects dataset-specific and predicate-specific characteristics of this workload.}
+\label{fig:latency-selectivity}
+\end{figure}
+
+\subsection{Recall@10 Across Estimated Selectivity}
+
+Figure~\ref{fig:recall-selectivity} shows Recall@10 for all adaptive and fixed strategy observations. The horizontal dashed line at 0.95 marks the target threshold. Several fixed ANN strategies fall below this threshold on the evaluated workload, motivating the conservative selection gate.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{figure_03_recall_vs_estimated_selectivity.pdf}
+\caption{Recall@10 by PostgreSQL-estimated selectivity on the 32-query evaluated workload. The dashed horizontal line at 0.95 marks the target recall threshold. All 32 adaptive observations achieve Recall@10 $\geq 1.0$; several fixed ANN strategy observations fall below 0.95. This is descriptive evidence on the evaluated workload and does not claim generalization to other predicates, datasets, or vector distributions.}
+\label{fig:recall-selectivity}
+\end{figure}
+
+\subsection{Adaptive Strategy Selections by Selectivity Bucket}
+
+Table~\ref{tab:selection-by-bucket} shows how the adaptive planner allocated queries to strategies across selectivity buckets. The adaptive planner:
+
+\begin{itemize}
+\item Selected \texttt{SQL\_FIRST} for 22 queries (68.75\%).
+\item Selected \texttt{HNSW\_HYBRID} for 10 queries (31.25\%).
+\item Did not select \texttt{VECTOR\_FIRST\_HNSW} or \texttt{IVFFLAT\_HYBRID}.
+\end{itemize}
+
+The zero selections of VECTOR\_FIRST and IVFFLAT reflect the conservative feasibility gate: their minimum observed recall on the evaluated workload did not meet the 0.95 threshold in their respective buckets.
+
+\input{tables/selection_by_bucket}
+
+Figure~\ref{fig:bucket-selection} shows the distribution of selections visually.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\columnwidth]{figure_04_adaptive_selection_by_bucket.pdf}
+\caption{Adaptive strategy selections across PostgreSQL-estimated-selectivity buckets on the 32-query evaluated workload. Bars show counts of SQL-first and HNSW selections per bucket. These are descriptive observed frequencies and do not establish bucket-level significance or suggest that bucket boundaries or strategy viability transfer to other datasets.}
+\label{fig:bucket-selection}
+\end{figure}
+
+\subsection{Decision and Execution Overhead}
+
+Distinct from strategy-only latency, we measure the total wall time from EXPLAIN through plan verification:
+
+\begin{itemize}
+\item Mean decision-to-verified-execution time: 91.14~ms
+\item Median: 65.12~ms
+\item P95: 242.52~ms
+\end{itemize}
+
+This total includes:
+\begin{enumerate}
+\item PostgreSQL EXPLAIN overhead (typically 5--20~ms).
+\item Selectivity bucket lookup and strategy selection (typically 1--2~ms).
+\item Strategy execution time (strategy-only latency, 10--100~ms).
+\item Plan verification and post-execution measurement (typically 2--5~ms).
+\end{enumerate}
+
+The decision-to-execution wall time is substantially higher than strategy-only latency (91.14~ms vs. 51.32~ms adaptive). This overhead is \emph{not} part of the strategy-only latency metric and should not be conflated with it. Whether the adaptive approach provides an end-to-end latency benefit including this overhead remains an open question and is discussed in \S\ref{sec:discussion}.
+
+\input{tables/decision_overhead}
+
+\subsection{Plan Verification Evidence}
+
+Table~\ref{tab:plan-verification} documents the execution-plan verification results. All 106 recorded ANN strategy executions contained the expected plan/index evidence (e.g., HNSW plan names in HNSW strategies, IVFFlat plan names in IVFFlat strategies). This is an integrity check confirming that the expected access path was used, not a proof of performance or optimality.
+
+\input{tables/plan_verification}
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Latency--Recall Tradeoff}
+
+The fundamental tension between speed and recall is evident in Table~\ref{tab:strategy-comparison}. The fastest single strategy, HNSW\_HYBRID (10.17~ms mean), fails to maintain Recall@10 $\geq 0.95$ on 25\% of the workload (8 queries). A system that always chooses HNSW\_HYBRID would be fast but incorrect for those 8 queries. By combining conservative feasibility gates with empirical latency optimization, the adaptive approach achieves both low latency (51.32~ms, a 13.48~ms or 20.81\% improvement over SQL-first) and perfect recall (1.000) on the evaluated workload.
+
+\subsection{Why Fixed Strategies Fail}
+
+Table~\ref{tab:strategy-comparison} shows that no single fixed strategy achieves both low latency and high recall:
+
+\begin{enumerate}
+\item SQL-first is recall-safe but slow (64.80~ms).
+\item HNSW\_HYBRID is fast but unreliable (recall < 0.95 on 25\% of queries).
+\item IVFFLAT\_HYBRID is slower and even less reliable.
+\item VECTOR\_FIRST\_HNSW is almost as slow as SQL-first and unreliable.
+\end{enumerate}
+
+The adaptive approach mitigates this by selecting SQL-first when ANN strategies cannot meet recall targets, and selecting the fastest ANN strategy when it can.
+
+\subsection{Selection Pattern and Selectivity Sensitivity}
+
+From Table~\ref{tab:selection-by-bucket}, the adaptive planner exhibits a pattern: it prefers SQL-first for very low selectivity (buckets [0, 0.05) and [0.05, 0.10)) but switches to HNSW\_HYBRID for medium and high selectivity (buckets [0.25, 0.50) and (0.50, 1.0]). This pattern reflects the structure of the benchmark: low-selectivity predicates yield few rows to filter, so SQL-first is competitive; higher-selectivity predicates yield many rows, making ANN pre-filtering and hybrid strategies more attractive.
+
+However, this pattern is \emph{workload-specific} and should not be generalized to other datasets or predicate distributions.
+
+\subsection{Overhead Implications}
+
+The 91.14~ms decision-to-execution wall time includes significant EXPLAIN overhead (~5--20~ms). If the overhead is $O \approx 40$ ms, then the observed strategy-only advantage of 13.48~ms is partially offset by planning overhead. The net end-to-end benefit (overhead included) may be reduced or even negative for some queries. This caveat is critical: the 20.81\% improvement applies to strategy-only latency, not total application latency. For workloads where a single query is the bottleneck, the overhead may be justified; for high-throughput batch workloads, amortizing the planning overhead across multiple queries may be necessary.
+
+\section{Limitations and Future Work}
+\label{sec:threats}
+
+\textbf{Calibration leakage (train-on-test).} Calibration and adaptive evaluation use the same 32 queries, so the reported policy is tuned to this workload rather than evaluated on held-out queries. The observed 20.81\% strategy-only reduction and the bucket-level feasibility pattern therefore do not establish generalization. In addition, PostgreSQL's estimated selectivity may differ from measured selectivity, causing queries to cross bucket boundaries and weakening the correspondence between calibration evidence and planning-time decisions.
+
+\textbf{Measurement variance and cache state.} Results are single-run observations from a warm persistent PostgreSQL session executed in deterministic order. PostgreSQL and OS cache state, query ordering, scheduling, and hardware conditions were not controlled; the provenance metadata was collected after the run and is incomplete. The 91.14~ms mean decision-to-verified-execution time includes the Python-layer EXPLAIN, planning, and verification path and exceeds the 13.48~ms strategy-only saving. Thus, the reported latency reduction is not an end-to-end application-level improvement.
+
+\textbf{Static parameter constraints.} The evaluation fixes the vector-first candidate budget at 100, HNSW settings at $\texttt{ef\_search}=100$ with strict iterative scanning and a 20,000-tuple scan limit, and IVFFlat probes at 10. The five selectivity buckets and the 0.95 recall threshold are also fixed. These choices determine the observed latency--recall tradeoff; index growth, data drift, PostgreSQL configuration changes, and alternative ANN parameters may produce different feasibility decisions. Plan verification confirms the expected index path but is an integrity check, not a performance or generalization guarantee.
+
+\textbf{Workload and dataset scope.} The evidence is limited to 32 synthetic predicate queries over SIFT1M with one million 128-dimensional vectors, L2 distance, and $k=10$. The workload does not characterize larger collections, other embedding distributions, real application predicates, or predicate--vector correlations. Results are also specific to PostgreSQL 16.14 and pgvector 0.8.5; no external ANN or database-system comparison was performed.
+
+Immediate future work is:
+\begin{itemize}
+\item Use disjoint calibration, validation, and held-out test workloads, with planning-time EXPLAIN estimates as the calibration features.
+\item Repeat randomized and paired trials under fresh sessions, controlled warm- and cold-cache conditions, and report variance, confidence intervals, significance tests, and effect sizes.
+\item Measure complete end-to-end latency, break down EXPLAIN/planning/verification overhead, and evaluate automated dynamic caching and online calibration under workload and data drift.
+\item Sweep HNSW parameters, IVFFlat probes, vector-first candidate budgets, bucket boundaries, recall thresholds, and calibration sample sizes.
+\item Validate on larger and heterogeneous datasets, including SIFT10M, text-embedding workloads, and application-specific predicate distributions, and compare against oracle, hand-tuned, learned, and external-system baselines.
+\end{itemize}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+This paper presents a conservative selectivity-driven adaptive strategy-selection layer for hybrid SQL--vector queries on PostgreSQL/pgvector. The approach uses PostgreSQL EXPLAIN-estimated selectivity, fixed selectivity buckets, empirical bucket-level calibration, and conservative recall-feasibility gates to choose among four execution strategies.
+
+On a single-run 32-query evaluation of SIFT1M, the adaptive approach selected SQL-first (exact) 22 times and HNSW hybrid 10 times, achieving mean strategy-only latency of 51.32~ms with perfect Recall@10 (1.000 on all 32 queries). This represents a 13.48~ms or 20.81\% reduction in mean latency compared to always using SQL-first exact filtering. All strategy selections maintained the 0.95 recall target.
+
+\textbf{Critical caveats}: This result is specific to the evaluated 32-query workload and 1 million-vector SIFT1M dataset. The evaluation uses the same queries for both calibration and adaptive evaluation (calibration leakage), performs single-run measurements without confidence intervals or significance testing, and applies deterministic query ordering with uncontrolled cache state. The measured latency improvement applies only to strategy-only latency, not total application latency including EXPLAIN and planning overhead (91.14~ms wall time). No held-out validation, cross-dataset evaluation, or comparison with external systems has been performed.
+
+The limitations motivate the immediate future-work agenda summarized in Section~\ref{sec:threats}, particularly held-out validation, controlled measurement, and broader workload evaluation.
+
+Despite these limitations, the work demonstrates the feasibility of conservative selectivity-aware strategy selection for hybrid SQL--vector workloads and provides a foundation for future research in this area.
+
+\appendix
+\section{Supporting Figures}
+\label{sec:appendix}
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.7\textwidth]{figure_05_latency_recall_tradeoff.pdf}
+\caption{Latency--recall tradeoff for all fixed strategies (scatter plot). The dashed line marks the required 0.95 recall target. Each point represents one query execution. This is descriptive visualization of the single-run evaluated workload and is not evidence of statistical superiority or transferability. No statistical model or regression fit is implied.}\label{fig:tradeoff}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering\includegraphics[width=.8\textwidth]{figure_06_adaptive_vs_sql_first.pdf}
+\caption{Paired strategy-only latency: adaptive policy vs. SQL-first exact filtering, for all 32 evaluated queries. Each query is a point. Queries above the diagonal favor SQL-first; queries below favor adaptive. This is a paired descriptive comparison on the evaluated workload and does not establish statistical significance or generalization to other workloads.}\label{fig:paired}
+\end{figure*}
+
+\bibliographystyle{plain}
+\bibliography{references}
+
+\end{document}

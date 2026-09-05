@@ -1,0 +1,35 @@
+{
+  "finding": "QUERY MISMATCH DETECTED",
+  "evidence": {
+    "current_query_0": {
+      "category": "category_00",
+      "price_limit": 346.01,
+      "in_stock": false,
+      "target_selectivity": 0.339406,
+      "predicate_template": "((category = %s AND price < %s) OR in_stock = %s)",
+      "expected_explain_selectivity": 0.516460
+    },
+    "original_baseline_query_0": {
+      "estimated_selectivity": 0.130278,
+      "bucket": "[0.10,0.25)"
+    }
+  },
+  "analysis": "The original baseline's query 0 had est_sel=0.130278 (bucket [0.10,0.25)), but the current environment cannot produce this selectivity with the current schema (10 categories, 1M rows) and the original predicate templates. The maximum achievable selectivity with template 1 (AND of 3) is 0.05. Template 2 produces 0.50+. The 0.130 value is inconsistent with the current schema and templates.",
+  "possible_causes": [
+    "The original baseline was run with a different schema (e.g., different number of categories, different attribute distribution)",
+    "The original baseline used a different version of load_sift_hybrid.py",
+    "The original baseline used a different query generator",
+    "The current environment's PostgreSQL planner produces different row estimates for the same predicate"
+  ],
+  "implication": "The 100% SQL_FIRST outcome from the original baseline may be specific to a workload that cannot be reproduced with the current code. The query workload itself is a confounder that makes direct comparison impossible.",
+  "verification_of_dataset_integrity": {
+    "dataset_sha256": "21f66e2975057b5728ba56de1c825bac4f4d89d596609ae985741c6242631816",
+    "n_vectors": 1000000,
+    "vector_dimension": 128,
+    "first_vector_first_5_dims": [0.0, 16.0, 35.0, 5.0, 32.0],
+    "last_vector_first_5_dims": [114.0, 31.0, 0.0, 0.0, 0.0],
+    "status": "DATASET INTEGRITY CONFIRMED - SIFT1M file is correct"
+  },
+  "query_determinism_check": "With seed=20260820, generate_queries() produces identical results when called twice (deterministic for a given NumPy version)",
+  "conclusion": "The dataset is correct and the query generator is deterministic, but the original baseline's query workload cannot be reproduced because the current schema/templates cannot produce the observed selectivity values. The original baseline was run with a different configuration that is not fully documented in the repository."
+}

@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Adaptive selections across estimated-selectivity buckets on the 250-query held-out test set. The feasibility gate admitted only \texttt{SQL\_FIRST}; two buckets received no queries (see Section~\ref{sec:limitations}).}
+\label{tab:selection-by-bucket}
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Bucket & Queries & SQL\_FIRST & VECTOR\_FIRST\_HNSW & HNSW\_HYBRID & IVFFLAT\_HYBRID \\
+\midrule
+$\leq5\%$ & 60 & 60 & 0 & 0 & 0 \\
+$5$--$10\%$ & 0 & 0 & 0 & 0 & 0 \\
+$10$--$25\%$ & 37 & 37 & 0 & 0 & 0 \\
+$25$--$50\%$ & 0 & 0 & 0 & 0 & 0 \\
+$>50\%$ & 153 & 153 & 0 & 0 & 0 \\
+\midrule
+Total & 250 & 250 & 0 & 0 & 0 \\
+\bottomrule
+\end{tabular}}
+\end{table}

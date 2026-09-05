@@ -1,0 +1,344 @@
+{
+  "analysis_script": "sdao.db.paper_analysis",
+  "analysis_created_at_utc": "2026-08-14T16:36:25.926391+00:00",
+  "canonical_artifacts": {
+    "baseline": "sdao/results/db_baseline_20260814Tfinal/db_baseline_results.json",
+    "calibration": "sdao/results/db_calibration_20260814/db_strategy_calibration.json",
+    "explain": "sdao/results/db_explain_selectivity_20260814T142459Z/postgres_explain_selectivity.json",
+    "final": "sdao/results/db_final_adaptive_20260814T145013Z/final_adaptive_results.json",
+    "adaptive_csv": "sdao/results/db_final_adaptive_20260814T145013Z/adaptive_per_query.csv",
+    "fixed_csv": "sdao/results/db_final_adaptive_20260814T145013Z/fixed_strategies_per_query.csv"
+  },
+  "canonical_sha256": {
+    "baseline": "5db40f15d07f7ea2bd1d985e4401825b34ddcb6286dae38865ccf0c8a3568c71",
+    "calibration": "09cbeeb42f502950d95736a65920f1afc5b39c19db8e268bb573bcd075ce0496",
+    "explain": "6f6e351128b53e7f70e6fdd4592c53eeb9e8cc38ca206d5381d1f9834a22c198",
+    "final": "fc1eb55945d40a97064792aa0465879b748ce763930f650fbd454d5bc5c2f770",
+    "adaptive_csv": "502e419d52aaba51cb5192f3a6ce22b507b784ae900a2a1395ceb577bb207349",
+    "fixed_csv": "1575f7a02dbec4cceddfa006f2e51700f174c187f3f7f9648e110e7b84dfea76"
+  },
+  "query_count": 32,
+  "strategy_distribution": {
+    "HNSW_HYBRID": 10,
+    "SQL_FIRST": 22
+  },
+  "strategy_metrics": [
+    {
+      "strategy": "ADAPTIVE",
+      "query_count": 32,
+      "mean_latency_ms": 51.31626946875,
+      "median_latency_ms": 48.914499500000005,
+      "p95_latency_ms": 98.03579754999994,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0
+    },
+    {
+      "strategy": "SQL_FIRST",
+      "query_count": 32,
+      "mean_latency_ms": 64.80287496875,
+      "median_latency_ms": 51.5512705,
+      "p95_latency_ms": 152.96037095,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0
+    },
+    {
+      "strategy": "VECTOR_FIRST_HNSW",
+      "query_count": 32,
+      "mean_latency_ms": 56.45314056250001,
+      "median_latency_ms": 28.731603999999997,
+      "p95_latency_ms": 202.61344984999994,
+      "mean_recall": 0.884375,
+      "minimum_recall": 0.1,
+      "fraction_recall_at_least_095": 0.625
+    },
+    {
+      "strategy": "HNSW_HYBRID",
+      "query_count": 32,
+      "mean_latency_ms": 10.1667488125,
+      "median_latency_ms": 2.9978955000000003,
+      "p95_latency_ms": 43.28982119999999,
+      "mean_recall": 0.975,
+      "minimum_recall": 0.9,
+      "fraction_recall_at_least_095": 0.75
+    },
+    {
+      "strategy": "IVFFLAT_HYBRID",
+      "query_count": 32,
+      "mean_latency_ms": 20.781946750000003,
+      "median_latency_ms": 17.8354165,
+      "p95_latency_ms": 50.0810022,
+      "mean_recall": 0.80625,
+      "minimum_recall": 0.4,
+      "fraction_recall_at_least_095": 0.1875
+    }
+  ],
+  "adaptive_vs_fixed": [
+    {
+      "fixed_strategy": "SQL_FIRST",
+      "mean_latency_difference_ms": -13.486605500000003,
+      "adaptive_latency_change_percent": 20.81173945832445,
+      "mean_recall_difference": 0.0
+    },
+    {
+      "fixed_strategy": "VECTOR_FIRST_HNSW",
+      "mean_latency_difference_ms": -5.13687109375001,
+      "adaptive_latency_change_percent": 9.099353982021448,
+      "mean_recall_difference": 0.11562499999999998
+    },
+    {
+      "fixed_strategy": "HNSW_HYBRID",
+      "mean_latency_difference_ms": 41.149520656250004,
+      "adaptive_latency_change_percent": -404.7461131886798,
+      "mean_recall_difference": 0.025000000000000022
+    },
+    {
+      "fixed_strategy": "IVFFLAT_HYBRID",
+      "mean_latency_difference_ms": 30.534322718749998,
+      "adaptive_latency_change_percent": -146.92715310104427,
+      "mean_recall_difference": 0.19374999999999998
+    }
+  ],
+  "selectivity_buckets": [
+    {
+      "selectivity_bucket": "<=0.05",
+      "query_count": 2,
+      "mean_latency_ms": 47.151396,
+      "median_latency_ms": 47.151396,
+      "p95_latency_ms": 53.2041021,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0,
+      "strategy_distribution": "{\"HNSW_HYBRID\": 2}"
+    },
+    {
+      "selectivity_bucket": ">0.05_to_0.10",
+      "query_count": 3,
+      "mean_latency_ms": 107.30195833333333,
+      "median_latency_ms": 53.542917,
+      "p95_latency_ms": 199.9169667,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0,
+      "strategy_distribution": "{\"SQL_FIRST\": 3}"
+    },
+    {
+      "selectivity_bucket": ">0.10_to_0.25",
+      "query_count": 19,
+      "mean_latency_ms": 55.347657842105264,
+      "median_latency_ms": 49.411125,
+      "p95_latency_ms": 65.8289868999998,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0,
+      "strategy_distribution": "{\"SQL_FIRST\": 19}"
+    },
+    {
+      "selectivity_bucket": ">0.25_to_0.50",
+      "query_count": 4,
+      "mean_latency_ms": 24.459520500000004,
+      "median_latency_ms": 24.695062,
+      "p95_latency_ms": 31.304181149999998,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0,
+      "strategy_distribution": "{\"HNSW_HYBRID\": 4}"
+    },
+    {
+      "selectivity_bucket": ">0.50",
+      "query_count": 4,
+      "mean_latency_ms": 19.117093750000002,
+      "median_latency_ms": 19.386042,
+      "p95_latency_ms": 21.53831615,
+      "mean_recall": 1.0,
+      "minimum_recall": 1.0,
+      "fraction_recall_at_least_095": 1.0,
+      "strategy_distribution": "{\"HNSW_HYBRID\": 4}"
+    }
+  ],
+  "recall_safety": {
+    "below_target": 0,
+    "fraction_at_least_target": 1.0
+  },
+  "oracle": {
+    "recall_feasible_mean_regret_ms": 30.32624725,
+    "recall_feasible_median_regret_ms": 26.294562499999998,
+    "recall_feasible_p95_regret_ms": 50.9571436,
+    "recall_feasible_worst_regret_ms": 145.657667,
+    "recall_feasible_exact_matches": 13,
+    "fastest_exact_matches": 5,
+    "fastest_exact_match_fraction": 0.15625
+  },
+  "plan_verification": [
+    {
+      "scope": "adaptive_hnsw",
+      "executions": 10,
+      "verified": 10,
+      "all_verified": true
+    },
+    {
+      "scope": "fixed_hnsw",
+      "executions": 32,
+      "verified": 32,
+      "all_verified": true
+    },
+    {
+      "scope": "fixed_vector_first",
+      "executions": 32,
+      "verified": 32,
+      "all_verified": true
+    },
+    {
+      "scope": "fixed_ivfflat",
+      "executions": 32,
+      "verified": 32,
+      "all_verified": true
+    },
+    {
+      "scope": "all_ann",
+      "executions": 106,
+      "verified": 106,
+      "all_verified": true
+    },
+    {
+      "scope": "sql_first",
+      "executions": 54,
+      "verified": 54,
+      "all_verified": true
+    }
+  ],
+  "decision_overhead": {
+    "metric": "decision_to_execution_latency_ms",
+    "mean_ms": 91.1379740625,
+    "median_ms": 65.118563,
+    "p95_ms": 242.51846129999998,
+    "explain_mean_ms": 1.4936536875,
+    "planning_mean_ms": 0.09766812500000001
+  },
+  "environment_manifest": {
+    "collected_at_utc": "2026-08-14T16:36:07.997640+00:00",
+    "collection_scope": "read-only; excludes passwords and secrets",
+    "hardware": {
+      "cpu_model": "arm",
+      "cpu_model_reason": "CalledProcessError: Command '['sysctl', '-n', 'machdep.cpu.brand_string']' returned non-zero exit status 1.",
+      "architecture": "arm64",
+      "logical_cpu_count": 8,
+      "ram": null,
+      "ram_reason": "CalledProcessError: Command '['sysctl', '-n', 'hw.memsize']' returned non-zero exit status 1."
+    },
+    "operating_system": {
+      "name": "Darwin",
+      "version": "Darwin Kernel Version 25.5.0: Tue Jun  9 22:26:46 PDT 2026; root:xnu-12377.121.10~1/RELEASE_ARM64_T8103",
+      "release": "25.5.0"
+    },
+    "python": {
+      "version": "3.12.13 (main, Mar  3 2026, 12:39:30) [Clang 21.0.0 (clang-2100.0.123.102)]",
+      "executable": "/Users/abhijeetmiskin/AppData/MyProject/venv/bin/python",
+      "prefix": "/Users/abhijeetmiskin/AppData/MyProject/venv",
+      "virtual_env": null
+    },
+    "packages": {
+      "psycopg": {
+        "version": "3.3.4",
+        "reason": null
+      },
+      "pandas": {
+        "version": "3.0.5",
+        "reason": null
+      },
+      "numpy": {
+        "version": "2.5.1",
+        "reason": null
+      },
+      "matplotlib": {
+        "version": "3.11.1",
+        "reason": null
+      },
+      "scikit-learn": {
+        "version": "1.9.0",
+        "reason": null
+      },
+      "python-dotenv": {
+        "version": "1.2.2",
+        "reason": null
+      },
+      "PyPDF2": {
+        "version": null,
+        "reason": "not installed"
+      }
+    },
+    "docker": {
+      "server_version": null,
+      "server_version_reason": "CalledProcessError: Command '['docker', 'version', '--format', '{{.Server.Version}}']' returned non-zero exit status 1.",
+      "image": "pgvector/pgvector:0.8.5-pg16",
+      "image_digest": null,
+      "image_digest_reason": "CalledProcessError: Command '['docker', 'image', 'inspect', 'pgvector/pgvector:0.8.5-pg16', '--format', '{{index .RepoDigests 0}}']' returned non-zero exit status 1."
+    },
+    "postgresql": {
+      "server_version": null,
+      "pgvector_version": null,
+      "reason": "OperationalError: connection is bad: connection to server at \"127.0.0.1\", port 5433 failed: Operation not permitted\n\tIs the server running on that host and accepting TCP/IP connections?\nMultiple connection attempts failed. All failures were:\n- host: 'localhost', port: 5433, hostaddr: '::1': connection is bad: connection to server at \"::1\", port 5433 failed: Operation not permitted\n\tIs the server running on that host and accepting TCP/IP connections?\n- host: 'localhost', port: 5433, hostaddr: '127.0.0.1': connection is bad: connection to server at \"127.0.0.1\", port 5433 failed: Operation not permitted\n\tIs the server running on that host and accepting TCP/IP connections?"
+    },
+    "dataset": {
+      "name": "SIFT1M",
+      "row_count": 1000000,
+      "embedding_dimension": 128,
+      "base_vectors_path": "dataset/sift/sift_base.fvecs",
+      "base_vectors_sha256": "21f66e2975057b5728ba56de1c825bac4f4d89d596609ae985741c6242631816",
+      "attributes_path": "attributes.csv",
+      "attributes_sha256": "316ad69956db4e2da5566a50f3c3229af026d476f8dd7c9bce2a20efb21961ac"
+    },
+    "queries": {
+      "path": "queries.csv",
+      "sha256": "fcbced425b8ae01e97cb77faa2917431dca2aeccfeab62b8d25d9bb1975d6746",
+      "query_count": 32,
+      "generator": "generate_queries.py",
+      "seed": 42,
+      "seed_source": "np.random.seed(42) in generate_queries.py"
+    },
+    "git": {
+      "git_repository": false,
+      "git_commit": null,
+      "reason": "CalledProcessError: Command '['git', 'rev-parse', 'HEAD']' returned non-zero exit status 128."
+    }
+  },
+  "protocol": {
+    "dataset": {
+      "name": "SIFT1M",
+      "rows": 1000000,
+      "embedding_dimension": 128,
+      "distance_metric": "L2"
+    },
+    "fixed_strategies": [
+      "SQL_FIRST",
+      "VECTOR_FIRST_HNSW",
+      "HNSW_HYBRID",
+      "IVFFLAT_HYBRID"
+    ],
+    "adaptive_planner": {
+      "selectivity_source": "live PostgreSQL EXPLAIN (FORMAT JSON) estimate only",
+      "calibration": "empirical bucket-median latency with conservative observed minimum-recall feasibility",
+      "target_recall": 0.95,
+      "fallback": "SQL_FIRST"
+    },
+    "execution": {
+      "workload_queries": 32,
+      "top_k": 10,
+      "warm_persistent_session": true,
+      "execution_order": "for each query: adaptive selected strategy, then four fixed strategies; exact filtered reference after each strategy",
+      "plan_verification": "separate EXPLAIN JSON evidence; ANN execution requires intended index"
+    },
+    "latency_metrics": {
+      "comparable": "timed selected SQL execution only; comparable across adaptive and fixed rows",
+      "decision_overhead": "EXPLAIN estimate + planner + verified executor wall time; excludes exact reference evaluation"
+    },
+    "limitations": {
+      "cold_cache_control": false,
+      "repeated_trials": false,
+      "random_interleaving": false,
+      "held_out_evaluation": false,
+      "calibration_evaluation_dependence": true
+    }
+  }
+}

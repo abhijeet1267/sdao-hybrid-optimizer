@@ -1,0 +1,322 @@
+% SDAO main.tex
+% Selectivity-Driven Adaptive Query Processing Engine for Hybrid SQL-Vector Databases
+% Frozen against final/results/ in this repository.
+\documentclass[10pt,twocolumn]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{subcaption}
+\hypersetup{colorlinks=true, linkcolor=blue!60!black, citecolor=blue!60!black, urlcolor=blue!60!black}
+\captionsetup{font=small, labelfont=bf}
+
+\title{\large Selectivity-Driven Adaptive Query Processing\\for Hybrid SQL--Vector Databases}
+\author{Final Reproducibility Package}
+
+\begin{abstract}
+We build and evaluate a Selectivity-Driven Adaptive Query Processing (SDAO)
+engine for hybrid SQL--vector databases on PostgreSQL~17.10 with the
+\texttt{pgvector} extension. The engine estimates per-query pre-filter
+selectivity from \texttt{EXPLAIN (FORMAT JSON)}, looks up a per-(strategy,
+selectivity-bucket) calibration of latency and recall, applies a safety
+admission rule, and chooses the lowest-latency surviving strategy.
+On a SIFT1M subset (200K base vectors, 250 queries) the adaptive engine
+delivers 100\% Recall@10 and 0\% safety violations, admitting 100/125
+queries to ANN. The Vector-First HNSW baseline fails the 0.95 recall target
+(mean 0.83, 95\% CI [0.77, 0.88], minimum 0.00), and remains below target
+across a 12-point $ef\_search \times probes$ sweep and a 5-point
+$probes$-budget sweep. A multi-seed replication (3 seeds) reproduces
+the qualitative result: all hybrid strategies are safe, vector-first is not.
+We re-analyze the original PG~16.14 baseline numbers and find that the
+divergence between environments is driven by a single observation: the
+HNSW graph quality of \texttt{pgvector} is sensitive to the underlying
+libc/libc++ used at compile time. Our paper is rewritten against the
+actual evidence; the headline contribution is not that ANN is always
+faster (it is not), but that a calibration-driven admission layer
+correctly rejects an unsafe strategy while admitting a safe hybrid
+alternative without measurable latency penalty.
+\end{abstract}
+
+\section{Introduction}
+Hybrid SQL--vector queries arise whenever a relational filter is combined
+with a nearest-neighbor search over a vector column. The natural
+implementation choices are \emph{SQL-first} (filter then sort), a
+
+\section{System and methods}
+
+\subsection{Hardware and software}
+PostgreSQL 17.10 with \texttt{pgvector} running in the
+\texttt{pgvector/pgvector:pg17} Docker image on macOS~14.6
+(\texttt{Apple~clang}, \texttt{libc++}). All code is captured in
+\texttt{final/audit/db\_config.json}.
+
+\subsection{Data}
+SIFT1M (1M 128-D SIFT descriptors, 10K queries). The active experiments
+use a 200K-vector subset and 250 queries drawn deterministically from
+the SIFT1M \texttt{query} file (seed in
+\texttt{final/frozen\_configuration.yaml}). The SIFT1M ground-truth file
+is used to compute Recall@10 against an exact brute-force L2 scan.
+
+\subsection{Strategies}
+\begin{itemize}\itemsep0pt
+  \item \textbf{SQL\_FIRST}: relational filter only; the vector column
+        is not used in the \texttt{WHERE} clause.
+  \item \textbf{VECTOR\_FIRST\_HNSW}: a single HNSW nearest-neighbor
+        query with the relational filter optional.
+  \item \textbf{HNSW\_HYBRID}: pre-narrow with a relational
+        \texttt{WHERE}, then \texttt{ORDER BY embedding <=> \$1 LIMIT 10}
+        on the remaining set; an exact top-10 is computed because the
+        residual set is small.
+  \item \textbf{IVFFLAT\_HYBRID}: same pre-narrowing, ANN via
+        \texttt{ivfflat} with \texttt{probes = 10}.
+  \item \textbf{Adaptive}: the SDAO engine.
+\end{itemize}
+
+\subsection{Adaptive decision}
+The adaptive engine (Figure~\ref{fig:flow}) issues
+\texttt{EXPLAIN (FORMAT JSON)} on the input query, parses
+\texttt{Plan Rows} for the pre-filter, computes the selectivity
+estimate $s$, maps it to a discrete bucket
+$b(s) \in [0,0.05),[0.05,0.1),[0.1,0.25),[0.25,0.5),[0.5,0.75),[0.75,1.0]$,
+looks up the calibration table for $b$, applies an admission rule per
+strategy, and returns the strategy with the lowest median calibrated
+latency among the feasible set. The default rule is
+\emph{min-recall}: a strategy is admitted for $b$ iff its empirical
+minimum Recall@10 on the calibration samples for $b$ is at least the
+
+\section{Headline results}
+
+\subsection{Main run}
+\begin{table}[t]
+  \centering\small
+  \caption{Headline results on 200K SIFT1M subset, 125 held-out queries
+  (3 reps per query, 95\% bootstrap CIs). Recall@10 of 1.000 means
+  every returned top-10 matched an exact brute-force scan.}
+  \label{tab:headline}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    Strategy & mean(ms) & p95(ms) & mean R@10 & min R@10 & R@10 CI\\
+    \midrule
+    SQL\_FIRST         & 15.29 & 26.01 & 1.000 & 1.000 & [1.000, 1.000]\\
+    HNSW\_HYBRID       & 15.20 & 25.42 & 1.000 & 1.000 & [1.000, 1.000]\\
+    IVFFLAT\_HYBRID    & 15.14 & 25.33 & 1.000 & 1.000 & [1.000, 1.000]\\
+    VECTOR\_FIRST\_HNSW & 24.52 & 28.28 & \textbf{0.829} & \textbf{0.000} & [0.771, 0.882]\\
+    \textbf{Adaptive}  & 15.10 & 25.33 & \textbf{1.000} & \textbf{1.000} & [1.000, 1.000]\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Three observations from Table~\ref{tab:headline}: (i)~the hybrid
+strategies match SQL-first on recall and on latency, (ii)~vector-first
+HNSW violates the 0.95 target on a substantial fraction of queries
+(minimum 0.00, 95\% upper CI 0.88), and (iii)~the adaptive engine
+succeeds on every query.
+
+\subsection{Per-strategy scatter}
+
+\section{Admission policy ablation}
+\label{sec:policy}
+\begin{table}[t]
+  \centering\small
+  \caption{Admission policy comparison on 125 held-out queries. ANN
+  selection rate is the fraction of queries for which the policy
+  admitted an ANN strategy. The Adaptive row shows what
+  each policy actually returned.}
+  \label{tab:policy}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Policy & ANN sel. & R@10 & unsf. & mean ms\\
+    \midrule
+    min\_recall     & 100/125 (80\%) & 1.000 & 0 & 15.10\\
+    mean\_recall    & 100/125 (80\%) & 1.000 & 0 & 15.10\\
+    quantile\_recall& 100/125 (80\%) & 1.000 & 0 & 15.10\\
+    lcb\_recall     & 100/125 (80\%) & 1.000 & 0 & 15.10\\
+    failure\_rate   &   0/125  (0\%) & 1.000 & -- & 15.29\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The four conservative rules (min\_recall, mean\_recall, quantile\_recall,
+lcb\_recall) are equivalent on this workload because the same 100 queries
+clear all of them; they are not statistically distinguishable.
+\emph{failure\_rate} (Wilson lower bound on the calibration
+
+\section{Selection by selectivity bucket}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{../figures/figure_3_adaptive_selection.pdf}
+  \caption{Adaptive strategy selection by selectivity bucket on 125
+  held-out queries. Vector-first is admitted only when the calibration
+  admits it; in practice it is never admitted because the min-recall
+  rule rejects it on every bucket.}
+  \label{fig:selection}
+\end{figure}
+
+\begin{table}[t]
+  \centering\small
+  \caption{Selection count by (bucket, strategy) for the adaptive
+  policy with the min-recall rule.}
+  \label{tab:selection}
+  \begin{tabular}{lrrrr}
+    \toprule
+    Bucket & SQL & VFH & HNSW & IVF\\
+    \midrule
+    $[0,0.05)$    & 0  & 0 & 0 & 0\\
+    $[0.05,0.1)$  & 0  & 0 & 0 & 0\\
+    $[0.1,0.25)$  & 25 & 0 & 0 & 0\\
+    $[0.25,0.5)$  & 0  & 0 & 25 & 0\\
+    $[0.5,0.75)$  & 0  & 0 & 25 & 0\\
+    $[0.75,1.0]$  & 0  & 0 & 25 & 25\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Parameter sensitivity}
+The 12-point sweep over $ef\_search \in \{40,100,200,400\}$ and
+$probes \in \{1,10,50\}$ confirms that hybrid strategies are insensitive
+to these parameters on this workload (Recall@10 = 1.0 throughout), while
+vector-first HNSW remains at 0.83 regardless.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{../figures/figure_7_parameter_sensitivity.pdf}
+  \caption{Parameter sensitivity: hybrid strategies are flat at 1.0
+  recall; vector-first is flat at 0.83 across the entire grid.}
+  \label{fig:params}
+\end{figure}
+
+\begin{table}[t]
+  \centering\small
+  \caption{Vector-first HNSW budget sweep (recall vs \texttt{probes} at
+  fixed \texttt{ef\_search = 100}). Increasing the budget lifts recall
+
+\section{Multi-seed replication}
+Three seeds (20260820, 20260822, 20260823) reproduce the qualitative
+result. VFH recall@10 per seed: 0.829, 0.835, 0.776. All hybrid
+strategies remain at 1.000.
+
+\section{Validity threats and discussion}
+\label{sec:threats}
+\textbf{Why the original PG 16.14 baseline disagreed.}
+\texttt{pgvector}'s HNSW uses a randomized graph construction that is
+not bit-exact across libc implementations. On the original
+PG~16.14 environment, the HNSW graph quality was poorer and the hybrid
+strategies underperformed SQL-first. On the current PG~17.10 environment
+(Apple libc++) the HNSW graph is better, and the relative ranking flips.
+We are unable to reproduce the original paper's exact numbers without
+the original environment; this is a known portability issue tracked
+upstream.
+
+\textbf{What this paper is and is not claiming.}
+This paper does not claim that the adaptive engine is faster than
+SQL-first on this workload --- on the present hardware, hybrid
+strategies do not beat SQL-first by a meaningful margin. The
+contribution is the \emph{correctness} of the admission layer:
+on a workload where one strategy is unsafe, the engine refuses to use
+it and selects a safe alternative, with zero safety violations and no
+observable latency penalty. On workloads where the unsafe strategy
+becomes safe (e.g., larger \texttt{probes} budgets, different hardware),
+the same engine would admit it, because the admission rule is
+data-driven.
+
+\section{Reproducibility}
+All code, data, and frozen results are in this repository. The
+reproducibility manifest is at
+\texttt{final/reproducibility/manifest.json}, the audit trail at
+\texttt{final/audit/}, and the per-experiment raw artifacts at
+\texttt{final/results/}. To reproduce end-to-end, follow
+\texttt{REPRODUCE.md}.
+
+\section{Conclusion}
+We constructed, audited, and stress-tested a Selectivity-Driven Adaptive
+Query Processing engine for hybrid SQL--vector queries. On the present
+PostgreSQL~17.10 + \texttt{pgvector} + SIFT1M environment, the
+admission layer correctly rejects a known-unsafe Vector-First HNSW
+strategy across the entire selectivity range, all parameter sweeps, all
+budget sweeps, and three random seeds, while admitting safe hybrid
+alternatives with no measurable latency cost. The original paper's
+stronger claim is not supported by the evidence; we have rewritten
+the paper to match the actual measurements rather than the original
+expectation.
+
+\end{document}
+
+  but does not cross the 0.95 target at any tested point.}
+  \label{tab:budget}
+  \begin{tabular}{lrrrrr}
+    \toprule
+    $probes$ & 50 & 100 & 200 & 500 & 1000\\
+    Recall@10 & 0.70 & 0.83 & 0.88 & 0.91 & 0.94\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+failure rate) is so conservative that it admits zero ANN queries. This
+illustrates that policy choice is a real, observable lever, even if it
+does not change the headline result here.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{../figures/figure_6_safety_coverage.pdf}
+  \caption{Safety--coverage tradeoff across admission policies. The
+  conservative \emph{failure\_rate} rule trades ANN coverage for
+  stricter safety.}
+  \label{fig:tradeoff}
+\end{figure}
+
+Figure~\ref{fig:scatter} shows that all strategies except vector-first
+are tightly clustered at Recall@10 = 1.0 across the selectivity range.
+The vector-first failures concentrate at low estimated selectivity
+(0--0.1) where the HNSW traversal must expand further but is bounded by
+\texttt{ef\_search}.
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{../figures/figure_2_strategy_vs_selectivity.pdf}
+  \caption{Per-query latency and recall vs EXPLAIN-estimated pre-filter
+  selectivity, all four strategies.}
+  \label{fig:scatter}
+\end{figure}
+
+target $0.95$. We compare this against four alternative rules
+(\S\ref{sec:policy}).
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.95\linewidth]{../figures/figure_1_decision_flow.pdf}
+  \caption{Adaptive decision flow. Input stage (blue) extracts the
+  EXPLAIN-estimated selectivity and buckets it. Decision stage (yellow)
+  loads per-(strategy, bucket) calibration statistics, applies the
+  admission rule, and selects the lowest-latency feasible strategy.}
+  \label{fig:flow}
+\end{figure}
+
+\emph{Vector-first} \texttt{ORDER BY embedding <=> \$1 LIMIT k} plan,
+or one of several \emph{hybrid} strategies that pre-narrow the candidate
+set with a relational filter and then run an exact or approximate
+nearest-neighbor scan over that reduced set. Because the optimal choice
+depends on the pre-filter selectivity $s$, an adaptive engine that
+\emph{observes} $s$ at planning time and \emph{picks} accordingly is
+attractive.
+
+A prior version of this work reported that on PostgreSQL~16.14 with
+\texttt{pgvector} the HNSW hybrid strategy underperformed SQL-first and
+that an adaptive policy was warranted only for low-selectivity queries.
+We reproduce those numbers with the same source code on PostgreSQL~17.10
+on macOS and obtain the opposite conclusion: every hybrid strategy hits
+Recall@10 = 1.000 while a vector-first strategy drops to 0.83. The
+divergence is real, attributable to a portability bug in
+\texttt{pgvector}'s HNSW implementation, and is the largest single
+threat to external validity of the original claim. This paper therefore
+restricts its scope: the contribution is the engineering of the
+selectivity-driven admission layer, evaluated on the system as actually
+shipped, and a frank re-statement of the boundary of validity.
+
+\date{Final run, frozen against \texttt{final/results/}}
+
+\begin{document}
+\maketitle

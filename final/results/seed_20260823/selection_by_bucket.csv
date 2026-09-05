@@ -1,0 +1,6 @@
+bucket,adaptive_selected,count
+"[0.00,0.05)",HNSW_HYBRID,29
+"[0.05,0.10)",HNSW_HYBRID,27
+"[0.10,0.25)",HNSW_HYBRID,21
+"[0.25,0.50)",IVFFLAT_HYBRID,26
+"[0.50,1.00)",SQL_FIRST,22

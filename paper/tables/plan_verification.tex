@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Named-access-path verification for the 250-query held-out test set. ANN strategies are verified against their own index type; planner-chosen exact bitmap fallbacks are logged separately via the access-path field rather than counted as failures.}
+\label{tab:plan-verification}
+\scriptsize
+\resizebox{\columnwidth}{!}{%
+\begin{tabular}{lrr}
+\toprule
+Execution scope & Records & Named path verified \\
+\midrule
+Adaptive ANN selections & 0 & 0 \\
+Fixed SQL\_FIRST & 250 & 250 \\
+Fixed VECTOR\_FIRST\_HNSW & 250 & 250 \\
+Fixed HNSW\_HYBRID & 250 & 238 \\
+Fixed IVFFLAT\_HYBRID & 250 & 240 \\
+All ANN executions & 750 & 728 \\
+SQL\_FIRST executions (no ANN required) & 250 & 250 \\
+\bottomrule
+\end{tabular}}
+\end{table}

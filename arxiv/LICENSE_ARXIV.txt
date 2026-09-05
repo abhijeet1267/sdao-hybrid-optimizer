@@ -1,0 +1,19 @@
+ARXIV SUBMISSION LICENSE NOTICE
+================================
+
+This work is submitted to arXiv under the arXiv non-exclusive license to
+distribute. This is the standard arXiv submission license, not a Creative
+Commons license.
+
+Specifically, the submitter (the author) grants arXiv a non-exclusive
+license to distribute the article in question, in accordance with arXiv's
+perpetual, non-exclusive license to arXiv. Full terms are available at:
+
+  https://arxiv.org/licenses/nonexclusive-distrib/1.0/
+
+No Creative Commons license (CC-BY, CC-BY-SA, CC-BY-NC, CC-BY-NC-SA, etc.)
+applies to this submission. Anyone wishing to reuse the work beyond
+arXiv's standard distribution must obtain permission directly from the
+copyright holder(s) listed in the author block of main.tex.
+
+================================================================================

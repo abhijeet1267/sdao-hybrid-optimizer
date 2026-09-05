@@ -1,0 +1,3612 @@
+{
+  "artifact_type": "postgres_explain_selectivity_and_offline_planner_evaluation",
+  "created_at_utc": "2026-08-14T14:19:16.466560+00:00",
+  "safety": {
+    "database_statements": "EXPLAIN (FORMAT JSON) only; one statement for each workload predicate",
+    "actual_strategy_queries_executed": 0,
+    "data_or_index_modifications": 0,
+    "persistent_postgresql_configuration_modifications": 0,
+    "planner_selectivity_input": "PostgreSQL EXPLAIN estimated_selectivity only",
+    "baseline_measured_selectivity_used_as_planner_input": false
+  },
+  "dataset": {
+    "table": "sift1m_items",
+    "assumed_row_count": 1000000,
+    "embedding_dimension": 128
+  },
+  "versions": {
+    "postgresql": "16.0.14",
+    "postgresql_source": "psycopg connection protocol metadata (no SQL version query)",
+    "pgvector": "0.8.5",
+    "pgvector_source": "preserved baseline metadata: /Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal"
+  },
+  "validation": {
+    "expected_query_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "captured_query_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31
+    ],
+    "all_32_queries_present": true
+  },
+  "query_estimates": [
+    {
+      "query_id": 0,
+      "predicate": "category == 'Speaker'",
+      "estimated_rows": 126534,
+      "estimated_selectivity": 0.126534,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1413.06,
+            "Total Cost": 81876.17,
+            "Plan Rows": 126534,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Speaker'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1381.43,
+                "Plan Rows": 126534,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Speaker'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 1,
+      "predicate": "category == 'Watch'",
+      "estimated_rows": 122234,
+      "estimated_selectivity": 0.122234,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1363.74,
+            "Total Cost": 82120.35,
+            "Plan Rows": 122234,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Watch'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1333.18,
+                "Plan Rows": 122234,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Watch'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 2,
+      "predicate": "category == 'TV'",
+      "estimated_rows": 124867,
+      "estimated_selectivity": 0.124867,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1396.14,
+            "Total Cost": 81977.94,
+            "Plan Rows": 124867,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'TV'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1364.93,
+                "Plan Rows": 124867,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'TV'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 3,
+      "predicate": "category == 'Camera'",
+      "estimated_rows": 127967,
+      "estimated_selectivity": 0.127967,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1428.17,
+            "Total Cost": 81784.05,
+            "Plan Rows": 127967,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Camera'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1396.18,
+                "Plan Rows": 127967,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Camera'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 4,
+      "predicate": "category == 'Monitor'",
+      "estimated_rows": 123601,
+      "estimated_selectivity": 0.123601,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1378.33,
+            "Total Cost": 82046.41,
+            "Plan Rows": 123601,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Monitor'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1347.43,
+                "Plan Rows": 123601,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Monitor'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 5,
+      "predicate": "category == 'Phone'",
+      "estimated_rows": 122567,
+      "estimated_selectivity": 0.122567,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1370.32,
+            "Total Cost": 82105.67,
+            "Plan Rows": 122567,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Phone'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1339.68,
+                "Plan Rows": 122567,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Phone'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 6,
+      "predicate": "category == 'Tablet'",
+      "estimated_rows": 123001,
+      "estimated_selectivity": 0.123001,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1373.68,
+            "Total Cost": 82081.23,
+            "Plan Rows": 123001,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Tablet'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1342.93,
+                "Plan Rows": 123001,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Tablet'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 7,
+      "predicate": "category == 'Laptop'",
+      "estimated_rows": 129234,
+      "estimated_selectivity": 0.129234,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1441.99,
+            "Total Cost": 81699.42,
+            "Plan Rows": 129234,
+            "Plan Width": 4,
+            "Recheck Cond": "(category = 'Laptop'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_category_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1409.68,
+                "Plan Rows": 129234,
+                "Plan Width": 0,
+                "Index Cond": "(category = 'Laptop'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 8,
+      "predicate": "brand == 'Apple'",
+      "estimated_rows": 125301,
+      "estimated_selectivity": 0.125301,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1399.51,
+            "Total Cost": 81951.07,
+            "Plan Rows": 125301,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'Apple'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1368.18,
+                "Plan Rows": 125301,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'Apple'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 9,
+      "predicate": "brand == 'Asus'",
+      "estimated_rows": 123434,
+      "estimated_selectivity": 0.123434,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1377.04,
+            "Total Cost": 82056.16,
+            "Plan Rows": 123434,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'Asus'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1346.18,
+                "Plan Rows": 123434,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'Asus'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 10,
+      "predicate": "brand == 'Lenovo'",
+      "estimated_rows": 121634,
+      "estimated_selectivity": 0.121634,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1359.09,
+            "Total Cost": 82152.88,
+            "Plan Rows": 121634,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'Lenovo'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1328.68,
+                "Plan Rows": 121634,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'Lenovo'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 11,
+      "predicate": "brand == 'HP'",
+      "estimated_rows": 124001,
+      "estimated_selectivity": 0.124001,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1385.43,
+            "Total Cost": 82026.68,
+            "Plan Rows": 124001,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'HP'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1354.43,
+                "Plan Rows": 124001,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'HP'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 12,
+      "predicate": "brand == 'Sony'",
+      "estimated_rows": 126534,
+      "estimated_selectivity": 0.126534,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1413.06,
+            "Total Cost": 81876.17,
+            "Plan Rows": 126534,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'Sony'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1381.43,
+                "Plan Rows": 126534,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'Sony'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 13,
+      "predicate": "brand == 'LG'",
+      "estimated_rows": 126801,
+      "estimated_selectivity": 0.126801,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1415.13,
+            "Total Cost": 81858.62,
+            "Plan Rows": 126801,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'LG'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1383.43,
+                "Plan Rows": 126801,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'LG'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 14,
+      "predicate": "brand == 'Samsung'",
+      "estimated_rows": 125234,
+      "estimated_selectivity": 0.125234,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1398.99,
+            "Total Cost": 81955.26,
+            "Plan Rows": 125234,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'Samsung'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1367.68,
+                "Plan Rows": 125234,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'Samsung'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 15,
+      "predicate": "brand == 'Dell'",
+      "estimated_rows": 127067,
+      "estimated_selectivity": 0.127067,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 1421.19,
+            "Total Cost": 81844.82,
+            "Plan Rows": 127067,
+            "Plan Width": 4,
+            "Recheck Cond": "(brand = 'Dell'::text)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_brand_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 1389.43,
+                "Plan Rows": 127067,
+                "Plan Width": 0,
+                "Index Cond": "(brand = 'Dell'::text)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 16,
+      "predicate": "price < 200",
+      "estimated_rows": 74157,
+      "estimated_selectivity": 0.074157,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 839.14,
+            "Total Cost": 75962.97,
+            "Plan Rows": 74157,
+            "Plan Width": 4,
+            "Recheck Cond": "(price < '200'::smallint)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_price_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 820.6,
+                "Plan Rows": 74157,
+                "Plan Width": 0,
+                "Index Cond": "(price < '200'::smallint)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 17,
+      "predicate": "price < 500",
+      "estimated_rows": 225585,
+      "estimated_selectivity": 0.225585,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 2548.71,
+            "Total Cost": 82036.97,
+            "Plan Rows": 225585,
+            "Plan Width": 4,
+            "Recheck Cond": "(price < '500'::smallint)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_price_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 2492.31,
+                "Plan Rows": 225585,
+                "Plan Width": 0,
+                "Index Cond": "(price < '500'::smallint)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 18,
+      "predicate": "price < 800",
+      "estimated_rows": 380960,
+      "estimated_selectivity": 0.38096,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 380960,
+            "Plan Width": 4,
+            "Filter": "(price < '800'::smallint)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 19,
+      "predicate": "price < 1200",
+      "estimated_rows": 589184,
+      "estimated_selectivity": 0.589184,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 589184,
+            "Plan Width": 4,
+            "Filter": "(price < '1200'::smallint)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 20,
+      "predicate": "price < 1600",
+      "estimated_rows": 792297,
+      "estimated_selectivity": 0.792297,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 792297,
+            "Plan Width": 4,
+            "Filter": "(price < '1600'::smallint)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 21,
+      "predicate": "rating > 2.5",
+      "estimated_rows": 614170,
+      "estimated_selectivity": 0.61417,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 614170,
+            "Plan Width": 4,
+            "Filter": "(rating > '2.5'::double precision)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 22,
+      "predicate": "rating > 3.0",
+      "estimated_rows": 488270,
+      "estimated_selectivity": 0.48827,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 488270,
+            "Plan Width": 4,
+            "Filter": "(rating > '3'::double precision)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 23,
+      "predicate": "rating > 3.5",
+      "estimated_rows": 364836,
+      "estimated_selectivity": 0.364836,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 364836,
+            "Plan Width": 4,
+            "Filter": "(rating > '3.5'::double precision)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 24,
+      "predicate": "rating > 4.0",
+      "estimated_rows": 240168,
+      "estimated_selectivity": 0.240168,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 83929.07,
+            "Plan Rows": 240168,
+            "Plan Width": 4,
+            "Filter": "(rating > '4'::double precision)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 25,
+      "predicate": "rating > 4.5",
+      "estimated_rows": 115434,
+      "estimated_selectivity": 0.115434,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 2167.04,
+            "Total Cost": 77908.12,
+            "Plan Rows": 115434,
+            "Plan Width": 4,
+            "Recheck Cond": "(rating > '4.5'::double precision)",
+            "Plans": [
+              {
+                "Node Type": "Bitmap Index Scan",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Index Name": "sift1m_items_rating_idx",
+                "Startup Cost": 0.0,
+                "Total Cost": 2138.18,
+                "Plan Rows": 115434,
+                "Plan Width": 0,
+                "Index Cond": "(rating > '4.5'::double precision)"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 26,
+      "predicate": "stock == True",
+      "estimated_rows": 502303,
+      "estimated_selectivity": 0.502303,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 81429.06,
+            "Plan Rows": 502303,
+            "Plan Width": 4,
+            "Filter": "stock"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 27,
+      "predicate": "stock == False",
+      "estimated_rows": 497703,
+      "estimated_selectivity": 0.497703,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Seq Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 0.0,
+            "Total Cost": 81429.06,
+            "Plan Rows": 497703,
+            "Plan Width": 4,
+            "Filter": "(NOT stock)"
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 28,
+      "predicate": "category == 'Laptop' and price < 500",
+      "estimated_rows": 29153,
+      "estimated_selectivity": 0.029153,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 3916.82,
+            "Total Cost": 58914.25,
+            "Plan Rows": 29153,
+            "Plan Width": 4,
+            "Recheck Cond": "((category = 'Laptop'::text) AND (price < '500'::smallint))",
+            "Plans": [
+              {
+                "Node Type": "BitmapAnd",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 3916.82,
+                "Total Cost": 3916.82,
+                "Plan Rows": 29153,
+                "Plan Width": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_category_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1409.68,
+                    "Plan Rows": 129234,
+                    "Plan Width": 0,
+                    "Index Cond": "(category = 'Laptop'::text)"
+                  },
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_price_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 2492.31,
+                    "Plan Rows": 225585,
+                    "Plan Width": 0,
+                    "Index Cond": "(price < '500'::smallint)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 29,
+      "predicate": "brand == 'Apple' and rating > 4",
+      "estimated_rows": 30093,
+      "estimated_selectivity": 0.030093,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 5829.16,
+            "Total Cost": 61718.25,
+            "Plan Rows": 30093,
+            "Plan Width": 4,
+            "Recheck Cond": "((brand = 'Apple'::text) AND (rating > '4'::double precision))",
+            "Plans": [
+              {
+                "Node Type": "BitmapAnd",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 5829.16,
+                "Total Cost": 5829.16,
+                "Plan Rows": 30093,
+                "Plan Width": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_brand_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1368.18,
+                    "Plan Rows": 125301,
+                    "Plan Width": 0,
+                    "Index Cond": "(brand = 'Apple'::text)"
+                  },
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_rating_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 4445.69,
+                    "Plan Rows": 240168,
+                    "Plan Width": 0,
+                    "Index Cond": "(rating > '4'::double precision)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 30,
+      "predicate": "category == 'Phone' and stock == True",
+      "estimated_rows": 61566,
+      "estimated_selectivity": 0.061566,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 6846.41,
+            "Total Cost": 79539.61,
+            "Plan Rows": 61566,
+            "Plan Width": 4,
+            "Recheck Cond": "((category = 'Phone'::text) AND stock)",
+            "Plans": [
+              {
+                "Node Type": "BitmapAnd",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 6846.41,
+                "Total Cost": 6846.41,
+                "Plan Rows": 61566,
+                "Plan Width": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_category_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1339.68,
+                    "Plan Rows": 122567,
+                    "Plan Width": 0,
+                    "Index Cond": "(category = 'Phone'::text)"
+                  },
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_stock_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 5475.7,
+                    "Plan Rows": 502303,
+                    "Plan Width": 0,
+                    "Index Cond": "(stock = true)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "query_id": 31,
+      "predicate": "category == 'TV' and price < 1000",
+      "estimated_rows": 60565,
+      "estimated_selectivity": 0.060565,
+      "explain_format": "JSON",
+      "plan": [
+        {
+          "Plan": {
+            "Node Type": "Bitmap Heap Scan",
+            "Parallel Aware": false,
+            "Async Capable": false,
+            "Relation Name": "sift1m_items",
+            "Alias": "sift1m_items",
+            "Startup Cost": 6749.64,
+            "Total Cost": 79327.66,
+            "Plan Rows": 60565,
+            "Plan Width": 4,
+            "Recheck Cond": "((category = 'TV'::text) AND (price < '1000'::smallint))",
+            "Plans": [
+              {
+                "Node Type": "BitmapAnd",
+                "Parent Relationship": "Outer",
+                "Parallel Aware": false,
+                "Async Capable": false,
+                "Startup Cost": 6749.64,
+                "Total Cost": 6749.64,
+                "Plan Rows": 60565,
+                "Plan Width": 0,
+                "Plans": [
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_category_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 1364.93,
+                    "Plan Rows": 124867,
+                    "Plan Width": 0,
+                    "Index Cond": "(category = 'TV'::text)"
+                  },
+                  {
+                    "Node Type": "Bitmap Index Scan",
+                    "Parent Relationship": "Member",
+                    "Parallel Aware": false,
+                    "Async Capable": false,
+                    "Index Name": "sift1m_items_price_idx",
+                    "Startup Cost": 0.0,
+                    "Total Cost": 5354.18,
+                    "Plan Rows": 485034,
+                    "Plan Width": 0,
+                    "Index Cond": "(price < '1000'::smallint)"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "estimated_selectivity_by_query": {
+    "0": 0.126534,
+    "1": 0.122234,
+    "2": 0.124867,
+    "3": 0.127967,
+    "4": 0.123601,
+    "5": 0.122567,
+    "6": 0.123001,
+    "7": 0.129234,
+    "8": 0.125301,
+    "9": 0.123434,
+    "10": 0.121634,
+    "11": 0.124001,
+    "12": 0.126534,
+    "13": 0.126801,
+    "14": 0.125234,
+    "15": 0.127067,
+    "16": 0.074157,
+    "17": 0.225585,
+    "18": 0.38096,
+    "19": 0.589184,
+    "20": 0.792297,
+    "21": 0.61417,
+    "22": 0.48827,
+    "23": 0.364836,
+    "24": 0.240168,
+    "25": 0.115434,
+    "26": 0.502303,
+    "27": 0.497703,
+    "28": 0.029153,
+    "29": 0.030093,
+    "30": 0.061566,
+    "31": 0.060565
+  },
+  "offline_planner": {
+    "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+    "target_recall": 0.95,
+    "decision_distribution": {
+      "SQL_FIRST": 22,
+      "HNSW_HYBRID": 10
+    },
+    "decisions": [
+      {
+        "query_id": 0,
+        "predicate": "category == 'Speaker'",
+        "top_k": 10,
+        "estimated_selectivity": 0.126534,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 1,
+        "predicate": "category == 'Watch'",
+        "top_k": 10,
+        "estimated_selectivity": 0.122234,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 2,
+        "predicate": "category == 'TV'",
+        "top_k": 10,
+        "estimated_selectivity": 0.124867,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 3,
+        "predicate": "category == 'Camera'",
+        "top_k": 10,
+        "estimated_selectivity": 0.127967,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 4,
+        "predicate": "category == 'Monitor'",
+        "top_k": 10,
+        "estimated_selectivity": 0.123601,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 5,
+        "predicate": "category == 'Phone'",
+        "top_k": 10,
+        "estimated_selectivity": 0.122567,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 6,
+        "predicate": "category == 'Tablet'",
+        "top_k": 10,
+        "estimated_selectivity": 0.123001,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 7,
+        "predicate": "category == 'Laptop'",
+        "top_k": 10,
+        "estimated_selectivity": 0.129234,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 8,
+        "predicate": "brand == 'Apple'",
+        "top_k": 10,
+        "estimated_selectivity": 0.125301,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 9,
+        "predicate": "brand == 'Asus'",
+        "top_k": 10,
+        "estimated_selectivity": 0.123434,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 10,
+        "predicate": "brand == 'Lenovo'",
+        "top_k": 10,
+        "estimated_selectivity": 0.121634,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 11,
+        "predicate": "brand == 'HP'",
+        "top_k": 10,
+        "estimated_selectivity": 0.124001,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 12,
+        "predicate": "brand == 'Sony'",
+        "top_k": 10,
+        "estimated_selectivity": 0.126534,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 13,
+        "predicate": "brand == 'LG'",
+        "top_k": 10,
+        "estimated_selectivity": 0.126801,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 14,
+        "predicate": "brand == 'Samsung'",
+        "top_k": 10,
+        "estimated_selectivity": 0.125234,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 15,
+        "predicate": "brand == 'Dell'",
+        "top_k": 10,
+        "estimated_selectivity": 0.127067,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 16,
+        "predicate": "price < 200",
+        "top_k": 10,
+        "estimated_selectivity": 0.074157,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 330.761417,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.400 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.600 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 330.761417,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 110.51025,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 175.575292,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.3333333333333333
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 27.591875,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.600 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.6,
+            "observed_fraction_meeting_target": 0.0
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.05_to_0.10; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 17,
+        "predicate": "price < 500",
+        "top_k": 10,
+        "estimated_selectivity": 0.225585,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 18,
+        "predicate": "price < 800",
+        "top_k": 10,
+        "estimated_selectivity": 0.38096,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 3.4165205,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.800 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 86.927063,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 115.3344375,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 3.4165205,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 51.243375,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.800 is below target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 0.8,
+            "observed_fraction_meeting_target": 0.25
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.25_to_0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 19,
+        "predicate": "price < 1200",
+        "top_k": 10,
+        "estimated_selectivity": 0.589184,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 4.225937500000001,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.700 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 89.71089599999999,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 116.00999999999999,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 4.225937500000001,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 50.994271,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.5
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 20,
+        "predicate": "price < 1600",
+        "top_k": 10,
+        "estimated_selectivity": 0.792297,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 4.225937500000001,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.700 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 89.71089599999999,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 116.00999999999999,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 4.225937500000001,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 50.994271,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.5
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 21,
+        "predicate": "rating > 2.5",
+        "top_k": 10,
+        "estimated_selectivity": 0.61417,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 4.225937500000001,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.700 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 89.71089599999999,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 116.00999999999999,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 4.225937500000001,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 50.994271,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.5
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 22,
+        "predicate": "rating > 3.0",
+        "top_k": 10,
+        "estimated_selectivity": 0.48827,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 3.4165205,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.800 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 86.927063,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 115.3344375,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 3.4165205,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 51.243375,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.800 is below target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 0.8,
+            "observed_fraction_meeting_target": 0.25
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.25_to_0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 23,
+        "predicate": "rating > 3.5",
+        "top_k": 10,
+        "estimated_selectivity": 0.364836,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 3.4165205,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.800 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 86.927063,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 115.3344375,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 3.4165205,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 51.243375,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.800 is below target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 0.8,
+            "observed_fraction_meeting_target": 0.25
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.25_to_0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 24,
+        "predicate": "rating > 4.0",
+        "top_k": 10,
+        "estimated_selectivity": 0.240168,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 25,
+        "predicate": "rating > 4.5",
+        "top_k": 10,
+        "estimated_selectivity": 0.115434,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 71.338875,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.700 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.400 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 71.338875,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 128.900958,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.631578947368421
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 3.834291,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.6842105263157895
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 54.889584,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.10_to_0.25",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.10526315789473684
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.10_to_0.25; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 26,
+        "predicate": "stock == True",
+        "top_k": 10,
+        "estimated_selectivity": 0.502303,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 4.225937500000001,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.700 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 89.71089599999999,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 116.00999999999999,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 4.225937500000001,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 50.994271,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.700 is below target 0.950.",
+            "bucket": ">0.50",
+            "observed_minimum_recall": 0.7,
+            "observed_fraction_meeting_target": 0.5
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 27,
+        "predicate": "stock == False",
+        "top_k": 10,
+        "estimated_selectivity": 0.497703,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 3.4165205,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.800 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 86.927063,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 115.3344375,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 3.4165205,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 51.243375,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.800 is below target 0.950.",
+            "bucket": ">0.25_to_0.50",
+            "observed_minimum_recall": 0.8,
+            "observed_fraction_meeting_target": 0.25
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, VECTOR_FIRST_HNSW, HNSW_HYBRID) in >0.25_to_0.50; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 28,
+        "predicate": "category == 'Laptop' and price < 500",
+        "top_k": 10,
+        "estimated_selectivity": 0.029153,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 263.4944375,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.100 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.800 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 523.07425,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 139.80264599999998,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.100 is below target 0.950.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 0.1,
+            "observed_fraction_meeting_target": 0.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 263.4944375,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 55.7631455,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.800 is below target 0.950.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 0.8,
+            "observed_fraction_meeting_target": 0.5
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, HNSW_HYBRID) in <=0.05; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 29,
+        "predicate": "brand == 'Apple' and rating > 4",
+        "top_k": 10,
+        "estimated_selectivity": 0.030093,
+        "target_recall": 0.95,
+        "selected_strategy": "HNSW_HYBRID",
+        "predicted_latency_ms": 263.4944375,
+        "candidate_strategies": [
+          "SQL_FIRST",
+          "HNSW_HYBRID"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.100 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.800 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 523.07425,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 139.80264599999998,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.100 is below target 0.950.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 0.1,
+            "observed_fraction_meeting_target": 0.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 263.4944375,
+            "eligible": true,
+            "reason": "Observed minimum recall 1.000 meets target 0.950.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 55.7631455,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.800 is below target 0.950.",
+            "bucket": "<=0.05",
+            "observed_minimum_recall": 0.8,
+            "observed_fraction_meeting_target": 0.5
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected HNSW_HYBRID: lowest predicted latency among eligible strategies (SQL_FIRST, HNSW_HYBRID) in <=0.05; Observed minimum recall 1.000 meets target 0.950."
+      },
+      {
+        "query_id": 30,
+        "predicate": "category == 'Phone' and stock == True",
+        "top_k": 10,
+        "estimated_selectivity": 0.061566,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 330.761417,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.400 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.600 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 330.761417,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 110.51025,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 175.575292,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.3333333333333333
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 27.591875,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.600 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.6,
+            "observed_fraction_meeting_target": 0.0
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.05_to_0.10; Exact SQL-first remains the recall-safe fallback."
+      },
+      {
+        "query_id": 31,
+        "predicate": "category == 'TV' and price < 1000",
+        "top_k": 10,
+        "estimated_selectivity": 0.060565,
+        "target_recall": 0.95,
+        "selected_strategy": "SQL_FIRST",
+        "predicted_latency_ms": 330.761417,
+        "candidate_strategies": [
+          "SQL_FIRST"
+        ],
+        "rejected_strategies": [
+          "VECTOR_FIRST_HNSW",
+          "HNSW_HYBRID",
+          "IVFFLAT_HYBRID"
+        ],
+        "rejection_reasons": {
+          "VECTOR_FIRST_HNSW": "Observed minimum recall 0.400 is below target 0.950.",
+          "HNSW_HYBRID": "Observed minimum recall 0.900 is below target 0.950.",
+          "IVFFLAT_HYBRID": "Observed minimum recall 0.600 is below target 0.950."
+        },
+        "recall_feasibility": {
+          "SQL_FIRST": "reliably_feasible",
+          "VECTOR_FIRST_HNSW": "not_reliably_feasible",
+          "HNSW_HYBRID": "not_reliably_feasible",
+          "IVFFLAT_HYBRID": "not_reliably_feasible"
+        },
+        "evidence": [
+          {
+            "strategy": "SQL_FIRST",
+            "feasibility": "reliably_feasible",
+            "predicted_latency_ms": 330.761417,
+            "eligible": true,
+            "reason": "Exact SQL-first remains the recall-safe fallback.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 1.0,
+            "observed_fraction_meeting_target": 1.0
+          },
+          {
+            "strategy": "VECTOR_FIRST_HNSW",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 110.51025,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.400 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.4,
+            "observed_fraction_meeting_target": 0.0
+          },
+          {
+            "strategy": "HNSW_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 175.575292,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.900 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.9,
+            "observed_fraction_meeting_target": 0.3333333333333333
+          },
+          {
+            "strategy": "IVFFLAT_HYBRID",
+            "feasibility": "not_reliably_feasible",
+            "predicted_latency_ms": 27.591875,
+            "eligible": false,
+            "reason": "Observed minimum recall 0.600 is below target 0.950.",
+            "bucket": ">0.05_to_0.10",
+            "observed_minimum_recall": 0.6,
+            "observed_fraction_meeting_target": 0.0
+          }
+        ],
+        "calibration_source": "/Users/abhijeetmiskin/AppData/MyProject/sdao/results/db_baseline_20260814Tfinal",
+        "calibration_model_version": "empirical_db_calibration_v1",
+        "decision_reason": "Selected SQL_FIRST: lowest predicted latency among eligible strategies (SQL_FIRST) in >0.05_to_0.10; Exact SQL-first remains the recall-safe fallback."
+      }
+    ]
+  }
+}

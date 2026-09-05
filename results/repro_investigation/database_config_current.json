@@ -1,0 +1,100 @@
+{
+  "current_postgres_config": [
+    {
+      "name": "max_connections",
+      "setting": "100",
+      "unit": "",
+      "category": "Connections and Authentication / Connection Settings"
+    },
+    {
+      "name": "default_statistics_target",
+      "setting": "100",
+      "unit": "",
+      "category": "Query Tuning / Other Planner Options"
+    },
+    {
+      "name": "cpu_index_tuple_cost",
+      "setting": "0.005",
+      "unit": "",
+      "category": "Query Tuning / Planner Cost Constants"
+    },
+    {
+      "name": "cpu_operator_cost",
+      "setting": "0.0025",
+      "unit": "",
+      "category": "Query Tuning / Planner Cost Constants"
+    },
+    {
+      "name": "cpu_tuple_cost",
+      "setting": "0.01",
+      "unit": "",
+      "category": "Query Tuning / Planner Cost Constants"
+    },
+    {
+      "name": "effective_cache_size",
+      "setting": "524288",
+      "unit": "8kB",
+      "category": "Query Tuning / Planner Cost Constants"
+    },
+    {
+      "name": "random_page_cost",
+      "setting": "4",
+      "unit": "",
+      "category": "Query Tuning / Planner Cost Constants"
+    },
+    {
+      "name": "seq_page_cost",
+      "setting": "1",
+      "unit": "",
+      "category": "Query Tuning / Planner Cost Constants"
+    },
+    {
+      "name": "effective_io_concurrency",
+      "setting": "0",
+      "unit": "",
+      "category": "Resource Usage / Asynchronous Behavior"
+    },
+    {
+      "name": "max_parallel_workers",
+      "setting": "8",
+      "unit": "",
+      "category": "Resource Usage / Asynchronous Behavior"
+    },
+    {
+      "name": "max_parallel_workers_per_gather",
+      "setting": "2",
+      "unit": "",
+      "category": "Resource Usage / Asynchronous Behavior"
+    },
+    {
+      "name": "maintenance_work_mem",
+      "setting": "65536",
+      "unit": "kB",
+      "category": "Resource Usage / Memory"
+    },
+    {
+      "name": "shared_buffers",
+      "setting": "16384",
+      "unit": "8kB",
+      "category": "Resource Usage / Memory"
+    },
+    {
+      "name": "work_mem",
+      "setting": "4096",
+      "unit": "kB",
+      "category": "Resource Usage / Memory"
+    },
+    {
+      "name": "checkpoint_completion_target",
+      "setting": "0.9",
+      "unit": "",
+      "category": "Write-Ahead Log / Checkpoints"
+    },
+    {
+      "name": "wal_buffers",
+      "setting": "512",
+      "unit": "8kB",
+      "category": "Write-Ahead Log / Settings"
+    }
+  ]
+}

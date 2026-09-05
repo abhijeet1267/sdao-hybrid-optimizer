@@ -1,0 +1,521 @@
+{
+  "source_path": "sdao/results/db_baseline_20260814Tfinal",
+  "source_observation_count": 128,
+  "expected_query_count": 32,
+  "target_recall": 0.95,
+  "selectivity_buckets": [
+    {
+      "name": "<=0.05",
+      "lower_exclusive": null,
+      "upper_inclusive": 0.05
+    },
+    {
+      "name": ">0.05_to_0.10",
+      "lower_exclusive": 0.05,
+      "upper_inclusive": 0.1
+    },
+    {
+      "name": ">0.10_to_0.25",
+      "lower_exclusive": 0.1,
+      "upper_inclusive": 0.25
+    },
+    {
+      "name": ">0.25_to_0.50",
+      "lower_exclusive": 0.25,
+      "upper_inclusive": 0.5
+    },
+    {
+      "name": ">0.50",
+      "lower_exclusive": 0.5,
+      "upper_inclusive": null
+    }
+  ],
+  "strategies": {
+    "SQL_FIRST": {
+      "strategy": "SQL_FIRST",
+      "observation_count": 32,
+      "latency_mean_ms": 138.72617459375,
+      "latency_median_ms": 82.16220849999999,
+      "latency_p95_ms": 354.023625,
+      "latency_stddev_ms": 153.8760607398553,
+      "latency_model": {
+        "model_type": "empirical_bucket_median",
+        "observation_count": 32,
+        "bucket_median_ms": {
+          "<=0.05": 523.07425,
+          ">0.05_to_0.10": 330.761417,
+          ">0.10_to_0.25": 71.338875,
+          ">0.25_to_0.50": 86.927063,
+          ">0.50": 89.71089599999999
+        },
+        "global_median_ms": 82.16220849999999,
+        "mae_ms": 57.09641803125,
+        "rmse_ms": 112.57770266348122,
+        "used_small_sample_fallback": false
+      },
+      "recall": {
+        "observation_count": 32,
+        "mean": 1.0,
+        "median": 1.0,
+        "minimum": 1.0,
+        "maximum": 1.0,
+        "p05": 1.0,
+        "p95": 1.0,
+        "fraction_meeting_target": 1.0
+      },
+      "buckets": [
+        {
+          "bucket": "<=0.05",
+          "observation_count": 2,
+          "latency_mean_ms": 523.07425,
+          "latency_median_ms": 523.07425,
+          "recall": {
+            "observation_count": 2,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.05_to_0.10",
+          "observation_count": 3,
+          "latency_mean_ms": 249.81418066666666,
+          "latency_median_ms": 330.761417,
+          "recall": {
+            "observation_count": 3,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.10_to_0.25",
+          "observation_count": 19,
+          "latency_mean_ms": 84.07732689473684,
+          "latency_median_ms": 71.338875,
+          "recall": {
+            "observation_count": 19,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.25_to_0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 149.30091675,
+          "latency_median_ms": 86.927063,
+          "recall": {
+            "observation_count": 4,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 112.24341675,
+          "latency_median_ms": 89.71089599999999,
+          "recall": {
+            "observation_count": 4,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        }
+      ]
+    },
+    "VECTOR_FIRST_HNSW": {
+      "strategy": "VECTOR_FIRST_HNSW",
+      "observation_count": 32,
+      "latency_mean_ms": 188.0543515,
+      "latency_median_ms": 120.10668749999999,
+      "latency_p95_ms": 510.2651472499999,
+      "latency_stddev_ms": 167.68145904205974,
+      "latency_model": {
+        "model_type": "empirical_bucket_median",
+        "observation_count": 32,
+        "bucket_median_ms": {
+          "<=0.05": 139.80264599999998,
+          ">0.05_to_0.10": 110.51025,
+          ">0.10_to_0.25": 128.900958,
+          ">0.25_to_0.50": 115.3344375,
+          ">0.50": 116.00999999999999
+        },
+        "global_median_ms": 120.10668749999999,
+        "mae_ms": 88.5865038125,
+        "rmse_ms": 177.700006623514,
+        "used_small_sample_fallback": false
+      },
+      "recall": {
+        "observation_count": 32,
+        "mean": 0.884375,
+        "median": 1.0,
+        "minimum": 0.1,
+        "maximum": 1.0,
+        "p05": 0.455,
+        "p95": 1.0,
+        "fraction_meeting_target": 0.625
+      },
+      "buckets": [
+        {
+          "bucket": "<=0.05",
+          "observation_count": 2,
+          "latency_mean_ms": 139.80264599999998,
+          "latency_median_ms": 139.80264599999998,
+          "recall": {
+            "observation_count": 2,
+            "mean": 0.3,
+            "median": 0.3,
+            "minimum": 0.1,
+            "maximum": 0.5,
+            "p05": 0.12000000000000001,
+            "p95": 0.48,
+            "fraction_meeting_target": 0.0
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.05_to_0.10",
+          "observation_count": 3,
+          "latency_mean_ms": 114.77056933333333,
+          "latency_median_ms": 110.51025,
+          "recall": {
+            "observation_count": 3,
+            "mean": 0.5666666666666667,
+            "median": 0.5,
+            "minimum": 0.4,
+            "maximum": 0.8,
+            "p05": 0.41000000000000003,
+            "p95": 0.77,
+            "fraction_meeting_target": 0.0
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.10_to_0.25",
+          "observation_count": 19,
+          "latency_mean_ms": 233.21235515789473,
+          "latency_median_ms": 128.900958,
+          "recall": {
+            "observation_count": 19,
+            "mean": 0.9473684210526316,
+            "median": 1.0,
+            "minimum": 0.7,
+            "maximum": 1.0,
+            "p05": 0.79,
+            "p95": 1.0,
+            "fraction_meeting_target": 0.631578947368421
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.25_to_0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 110.47816675,
+          "latency_median_ms": 115.3344375,
+          "recall": {
+            "observation_count": 4,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 130.21870825,
+          "latency_median_ms": 116.00999999999999,
+          "recall": {
+            "observation_count": 4,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        }
+      ]
+    },
+    "HNSW_HYBRID": {
+      "strategy": "HNSW_HYBRID",
+      "observation_count": 32,
+      "latency_mean_ms": 43.39549084375,
+      "latency_median_ms": 4.2340625,
+      "latency_p95_ms": 212.15510449999994,
+      "latency_stddev_ms": 77.96703415946735,
+      "latency_model": {
+        "model_type": "empirical_bucket_median",
+        "observation_count": 32,
+        "bucket_median_ms": {
+          "<=0.05": 263.4944375,
+          ">0.05_to_0.10": 175.575292,
+          ">0.10_to_0.25": 3.834291,
+          ">0.25_to_0.50": 3.4165205,
+          ">0.50": 4.225937500000001
+        },
+        "global_median_ms": 4.2340625,
+        "mae_ms": 12.45211075,
+        "rmse_ms": 37.29797876200054,
+        "used_small_sample_fallback": false
+      },
+      "recall": {
+        "observation_count": 32,
+        "mean": 0.975,
+        "median": 1.0,
+        "minimum": 0.9,
+        "maximum": 1.0,
+        "p05": 0.9,
+        "p95": 1.0,
+        "fraction_meeting_target": 0.75
+      },
+      "buckets": [
+        {
+          "bucket": "<=0.05",
+          "observation_count": 2,
+          "latency_mean_ms": 263.4944375,
+          "latency_median_ms": 263.4944375,
+          "recall": {
+            "observation_count": 2,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.05_to_0.10",
+          "observation_count": 3,
+          "latency_mean_ms": 153.01762499999998,
+          "latency_median_ms": 175.575292,
+          "recall": {
+            "observation_count": 3,
+            "mean": 0.9333333333333333,
+            "median": 0.9,
+            "minimum": 0.9,
+            "maximum": 1.0,
+            "p05": 0.9,
+            "p95": 0.99,
+            "fraction_meeting_target": 0.3333333333333333
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.10_to_0.25",
+          "observation_count": 19,
+          "latency_mean_ms": 19.32559642105263,
+          "latency_median_ms": 3.834291,
+          "recall": {
+            "observation_count": 19,
+            "mean": 0.968421052631579,
+            "median": 1.0,
+            "minimum": 0.9,
+            "maximum": 1.0,
+            "p05": 0.9,
+            "p95": 1.0,
+            "fraction_meeting_target": 0.6842105263157895
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.25_to_0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 3.80402075,
+          "latency_median_ms": 3.4165205,
+          "recall": {
+            "observation_count": 4,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        },
+        {
+          "bucket": ">0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 5.0528855,
+          "latency_median_ms": 4.225937500000001,
+          "recall": {
+            "observation_count": 4,
+            "mean": 1.0,
+            "median": 1.0,
+            "minimum": 1.0,
+            "maximum": 1.0,
+            "p05": 1.0,
+            "p95": 1.0,
+            "fraction_meeting_target": 1.0
+          },
+          "conservative_feasibility": "reliably_feasible"
+        }
+      ]
+    },
+    "IVFFLAT_HYBRID": {
+      "strategy": "IVFFLAT_HYBRID",
+      "observation_count": 32,
+      "latency_mean_ms": 58.8743854375,
+      "latency_median_ms": 50.219271,
+      "latency_p95_ms": 107.81322105,
+      "latency_stddev_ms": 31.447946713062656,
+      "latency_model": {
+        "model_type": "empirical_bucket_median",
+        "observation_count": 32,
+        "bucket_median_ms": {
+          "<=0.05": 55.7631455,
+          ">0.05_to_0.10": 27.591875,
+          ">0.10_to_0.25": 54.889584,
+          ">0.25_to_0.50": 51.243375,
+          ">0.50": 50.994271
+        },
+        "global_median_ms": 50.219271,
+        "mae_ms": 21.108759218750002,
+        "rmse_ms": 31.25055875138042,
+        "used_small_sample_fallback": false
+      },
+      "recall": {
+        "observation_count": 32,
+        "mean": 0.80625,
+        "median": 0.8,
+        "minimum": 0.4,
+        "maximum": 1.0,
+        "p05": 0.5,
+        "p95": 1.0,
+        "fraction_meeting_target": 0.1875
+      },
+      "buckets": [
+        {
+          "bucket": "<=0.05",
+          "observation_count": 2,
+          "latency_mean_ms": 55.7631455,
+          "latency_median_ms": 55.7631455,
+          "recall": {
+            "observation_count": 2,
+            "mean": 0.9,
+            "median": 0.9,
+            "minimum": 0.8,
+            "maximum": 1.0,
+            "p05": 0.81,
+            "p95": 0.99,
+            "fraction_meeting_target": 0.5
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.05_to_0.10",
+          "observation_count": 3,
+          "latency_mean_ms": 34.449153,
+          "latency_median_ms": 27.591875,
+          "recall": {
+            "observation_count": 3,
+            "mean": 0.7666666666666667,
+            "median": 0.8,
+            "minimum": 0.6,
+            "maximum": 0.9,
+            "p05": 0.62,
+            "p95": 0.89,
+            "fraction_meeting_target": 0.0
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.10_to_0.25",
+          "observation_count": 19,
+          "latency_mean_ms": 64.15614257894737,
+          "latency_median_ms": 54.889584,
+          "recall": {
+            "observation_count": 19,
+            "mean": 0.768421052631579,
+            "median": 0.8,
+            "minimum": 0.4,
+            "maximum": 1.0,
+            "p05": 0.49,
+            "p95": 1.0,
+            "fraction_meeting_target": 0.10526315789473684
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.25_to_0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 49.873656249999996,
+          "latency_median_ms": 51.243375,
+          "recall": {
+            "observation_count": 4,
+            "mean": 0.9,
+            "median": 0.9,
+            "minimum": 0.8,
+            "maximum": 1.0,
+            "p05": 0.8150000000000001,
+            "p95": 0.985,
+            "fraction_meeting_target": 0.25
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        },
+        {
+          "bucket": ">0.50",
+          "observation_count": 4,
+          "latency_mean_ms": 62.6613125,
+          "latency_median_ms": 50.994271,
+          "recall": {
+            "observation_count": 4,
+            "mean": 0.875,
+            "median": 0.9,
+            "minimum": 0.7,
+            "maximum": 1.0,
+            "p05": 0.715,
+            "p95": 1.0,
+            "fraction_meeting_target": 0.5
+          },
+          "conservative_feasibility": "not_reliably_feasible"
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Calibration uses one completed 32-query workload and is not an independent training set.",
+    "Bucket medians are descriptive empirical estimates, not a causal database performance model.",
+    "Recall feasibility is conservative observed evidence; unobserved selectivities have insufficient evidence.",
+    "Measurements use the baseline's warm persistent-session protocol and uncontrolled cache state."
+  ]
+}

@@ -1,0 +1,71 @@
+# SDAO Reproducibility – Frozen Configuration
+# All numbers in this file are produced by the published pipeline and are
+# reproducible from the artifacts in final/audit/ and final/reproducibility/.
+
+system:
+  os: macOS 14.6 (darwin arm64)
+  python: 3.12.13
+  postgres_image: pgvector/pgvector:pg17
+  postgres_version: 17.10
+  pgvector: built-in
+  libc: Apple clang / libc++ (HNSW graph quality diverges from glibc)
+
+data:
+  dataset: SIFT1M (1M SIFT-128 vectors + 10K queries)
+  base_vectors: 200000  # held-out subset
+  query_count: 250
+  seed: 20260820
+  normalization: none
+  distance: L2
+
+indexes:
+  hnsw:
+    m: 16
+    # Note: current host (PG 17.10, Apple clang libc++) was rebuilt with
+    # ef_construction=200 for higher graph quality, NOT the original 64 used
+    # in the PG 16.14 Docker baseline. This is the dominant driver of the
+    # recall gap documented in final/audit/baseline_reproduction_report.md
+    # (Section 5: HNSW construction is not bit-exact across libc).
+    ef_construction: 200
+    ef_search: 100
+    distance: vector_l2_ops
+  ivfflat:
+    lists: 100
+    probes: 10
+    distance: vector_l2_ops
+
+strategies:
+  - SQL_FIRST: SELECT with WHERE without ANN
+  - VECTOR_FIRST_HNSW: ORDER BY embedding <=> $1 LIMIT 10
+  - HNSW_HYBRID: SQL filter pre-narrows; HNSW ANN on remainder
+  - IVFFLAT_HYBRID: SQL filter pre-narrows; IVFFLAT ANN on remainder
+  - Adaptive: per-query selector using EXPLAIN selectivity + calibration
+
+admission_policy:
+  rule: min_recall
+  target_recall: 0.95
+  calibration_size: 25 per (strategy, bucket)
+  bucket_edges: [0.0, 0.05, 0.1, 0.25, 0.5, 0.75, 1.0]
+  comparison_arms: [min_recall, mean_recall, quantile_recall, lcb_recall, failure_rate]
+
+workload:
+  pre_filter_selectivity_distribution: see final/audit/workload_audit.md
+  heldout_queries: 125
+  calibration_queries: 125
+
+expected_headline_results:
+  sql_first_recall_at_10: 1.000
+  hnsw_hybrid_recall_at_10: 1.000
+  ivfflat_hybrid_recall_at_10: 1.000
+  vector_first_hnsw_recall_at_10: 0.829   # below target
+  adaptive_recall_at_10: 1.000            # safety layer rejects VFH
+  adaptive_ann_selection_rate: 0.80
+  safety_violation_rate: 0.00
+  vector_first_hnsw_min_recall: 0.00      # highly bimodal
+
+reproducibility_artifacts:
+  audit_dir: final/audit/
+  results_dir: final/results/
+  figures_dir: final/figures/
+  paper: final/paper/main.pdf
+  manifest: final/reproducibility/manifest.json

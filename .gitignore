@@ -1,0 +1,42 @@
+# Python virtual environments & bytecode
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Large binary datasets & index dumps (keep reproducible scripts, not gigabyte blobs)
+sift_hnsw.bin
+dataset/
+*.bin
+*.dump
+audit.zip
+files.zip
+
+# Secrets & credentials
+.env
+.env.local
+*.secret
+final/audit/db_config.json
+final_1m/audit/db_config.json
+audit/db_config.json
+
+# OS & Editor files
+.DS_Store
+.DS_Store?
+._*
+.vscode/
+.claude/
+
+# LaTeX build residue
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+missfont.log

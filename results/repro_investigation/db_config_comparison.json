@@ -1,0 +1,28 @@
+{
+  "comparison": {
+    "shared_buffers": {"canonical": "128 MB (Debian default)", "current": "128 MB (16384 × 8KB)", "match": true},
+    "work_mem": {"canonical": "4 MB", "current": "4 MB (4096 kB)", "match": true},
+    "maintenance_work_mem": {"canonical": "64 MB", "current": "64 MB (65536 kB)", "match": true},
+    "effective_cache_size": {"canonical": "4 GB", "current": "4 GB (524288 × 8KB)", "match": true},
+    "random_page_cost": {"canonical": "4", "current": "4", "match": true},
+    "max_parallel_workers": {"canonical": "8", "current": "8", "match": true},
+    "max_parallel_workers_per_gather": {"canonical": "2", "current": "2", "match": true},
+    "max_connections": {"canonical": "100", "current": "100", "match": true},
+    "default_statistics_target": {"canonical": "100", "current": "100", "match": true}
+  },
+  "differences": [
+    {
+      "parameter": "postgresql_version",
+      "canonical": "16.14 (Debian pgdg)",
+      "current": "17.10 (Homebrew)",
+      "impact": "PG 17 may have different planner heuristics, but the core HNSW/IVFFLAT index behavior is the same"
+    },
+    {
+      "parameter": "OS/platform",
+      "canonical": "Debian 12 aarch64 (Docker)",
+      "current": "macOS 26.5.2 aarch64 (native)",
+      "impact": "Different OS page cache behavior, different memory allocation patterns, different disk I/O characteristics"
+    }
+  ],
+  "conclusion": "The PostgreSQL configuration is essentially identical between canonical and current environments. The main differences are PostgreSQL version (16.14 vs 17.10) and OS (Debian Docker vs macOS native). Neither difference explains the HNSW recall discrepancy, which must be due to index construction differences (graph quality)."
+}

@@ -1,0 +1,92 @@
+{
+  "dataset_file": "dataset/sift/sift_base.fvecs",
+  "n_vectors_full_expected": 1000000,
+  "dataset_sha256": "21f66e2975057b5728ba56de1c825bac4f4d89d596609ae985741c6242631816",
+  "n_vectors_loaded": 1000000,
+  "vector_dimension": 128,
+  "first_10_vector_sha256": "b145560646e5e415692eae663cb064e3a3c133521b8af59544e51d0d72ca050a",
+  "last_10_vector_sha256": "c8a7fd9d66a199e698362559de88278344a2bb64638068eb7dea95a05aa3c39b",
+  "vector_0_first_5_dims": [
+    0.0,
+    16.0,
+    35.0,
+    5.0,
+    32.0
+  ],
+  "vector_999999_first_5_dims": [
+    114.0,
+    31.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "query_determinism_check": [
+    {
+      "query_id": 0,
+      "category": "category_00",
+      "price_limit": 346.0117307293932,
+      "in_stock": false,
+      "target_selectivity": 0.3394057886155487,
+      "deterministic": true
+    },
+    {
+      "query_id": 1,
+      "category": "category_03",
+      "price_limit": 724.5849070947104,
+      "in_stock": true,
+      "target_selectivity": 0.7218029364593034,
+      "deterministic": true
+    },
+    {
+      "query_id": 2,
+      "category": "category_03",
+      "price_limit": 276.4417234387196,
+      "in_stock": true,
+      "target_selectivity": 0.2691330539785046,
+      "deterministic": true
+    },
+    {
+      "query_id": 3,
+      "category": "category_00",
+      "price_limit": 147.9481794660385,
+      "in_stock": false,
+      "target_selectivity": 0.1393415954202409,
+      "deterministic": true
+    },
+    {
+      "query_id": 4,
+      "category": "category_03",
+      "price_limit": 630.2904014837975,
+      "in_stock": false,
+      "target_selectivity": 0.626555961094745,
+      "deterministic": true
+    }
+  ],
+  "original_estimated_selectivity_first_5": [
+    {
+      "query_id": 0,
+      "estimated_selectivity": 0.130278,
+      "bucket": "[0.10,0.25)"
+    },
+    {
+      "query_id": 1,
+      "estimated_selectivity": 0.974913,
+      "bucket": "[0.50,1.00)"
+    },
+    {
+      "query_id": 3,
+      "estimated_selectivity": 0.00139,
+      "bucket": "[0.00,0.05)"
+    },
+    {
+      "query_id": 6,
+      "estimated_selectivity": 0.02171,
+      "bucket": "[0.00,0.05)"
+    },
+    {
+      "query_id": 7,
+      "estimated_selectivity": 0.127185,
+      "bucket": "[0.10,0.25)"
+    }
+  ]
+}

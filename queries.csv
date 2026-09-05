@@ -1,0 +1,33 @@
+type,predicate
+CATEGORY,category == 'Speaker'
+CATEGORY,category == 'Watch'
+CATEGORY,category == 'TV'
+CATEGORY,category == 'Camera'
+CATEGORY,category == 'Monitor'
+CATEGORY,category == 'Phone'
+CATEGORY,category == 'Tablet'
+CATEGORY,category == 'Laptop'
+BRAND,brand == 'Apple'
+BRAND,brand == 'Asus'
+BRAND,brand == 'Lenovo'
+BRAND,brand == 'HP'
+BRAND,brand == 'Sony'
+BRAND,brand == 'LG'
+BRAND,brand == 'Samsung'
+BRAND,brand == 'Dell'
+PRICE,price < 200
+PRICE,price < 500
+PRICE,price < 800
+PRICE,price < 1200
+PRICE,price < 1600
+RATING,rating > 2.5
+RATING,rating > 3.0
+RATING,rating > 3.5
+RATING,rating > 4.0
+RATING,rating > 4.5
+STOCK,stock == True
+STOCK,stock == False
+HYBRID,category == 'Laptop' and price < 500
+HYBRID,brand == 'Apple' and rating > 4
+HYBRID,category == 'Phone' and stock == True
+HYBRID,category == 'TV' and price < 1000

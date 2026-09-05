@@ -1,0 +1,30 @@
+{
+  "scale": {
+    "sql_first_p50_50_100_pct_ms": 157.04,
+    "hnsw_hybrid_p50_50_100_pct_ms": 2.57,
+    "hnsw_hybrid_speedup_50_100_pct": 61.15,
+    "hnsw_hybrid_recall_50_100_pct": 0.192,
+    "hnsw_hybrid_recall_000_005_pct": 0.112
+  },
+  "q_error": {
+    "labels": [
+      "0.1x_under",
+      "0.2x_under",
+      "0.5x_under",
+      "1.0x_baseline",
+      "2.0x_over",
+      "5.0x_over",
+      "10.0x_over"
+    ],
+    "n_plan_switches_to_hnsw": 35,
+    "n_total_buckets": 35
+  },
+  "cold_cache": {
+    "hnsw_hybrid_inflation_50_100": 0.99,
+    "sql_first_inflation_50_100": 1.01
+  },
+  "pac": {
+    "n_cells": 20,
+    "empirical_coverage": 1.0
+  }
+}

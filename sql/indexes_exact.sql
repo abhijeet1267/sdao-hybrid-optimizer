@@ -1,0 +1,3 @@
+-- Exact baseline: pgvector exact search uses a sequential scan followed by
+-- exact L2 ordering.  No approximate vector index is created by this script.
+-- Apply sql/indexes_relational.sql separately for predicate support.

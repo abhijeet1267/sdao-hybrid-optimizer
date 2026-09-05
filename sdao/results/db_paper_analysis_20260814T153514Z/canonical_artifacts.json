@@ -1,0 +1,43 @@
+{
+  "canonical": {
+    "baseline": {
+      "path": "sdao/results/db_baseline_20260814Tfinal/db_baseline_results.json",
+      "sha256": "5db40f15d07f7ea2bd1d985e4401825b34ddcb6286dae38865ccf0c8a3568c71"
+    },
+    "calibration": {
+      "path": "sdao/results/db_calibration_20260814/db_strategy_calibration.json",
+      "sha256": "09cbeeb42f502950d95736a65920f1afc5b39c19db8e268bb573bcd075ce0496"
+    },
+    "explain": {
+      "path": "sdao/results/db_explain_selectivity_20260814T142459Z/postgres_explain_selectivity.json",
+      "sha256": "6f6e351128b53e7f70e6fdd4592c53eeb9e8cc38ca206d5381d1f9834a22c198"
+    },
+    "final": {
+      "path": "sdao/results/db_final_adaptive_20260814T145013Z/final_adaptive_results.json",
+      "sha256": "fc1eb55945d40a97064792aa0465879b748ce763930f650fbd454d5bc5c2f770"
+    },
+    "adaptive_csv": {
+      "path": "sdao/results/db_final_adaptive_20260814T145013Z/adaptive_per_query.csv",
+      "sha256": "502e419d52aaba51cb5192f3a6ce22b507b784ae900a2a1395ceb577bb207349"
+    },
+    "fixed_csv": {
+      "path": "sdao/results/db_final_adaptive_20260814T145013Z/fixed_strategies_per_query.csv",
+      "sha256": "1575f7a02dbec4cceddfa006f2e51700f174c187f3f7f9648e110e7b84dfea76"
+    }
+  },
+  "non_canonical": {
+    "preliminary_db_runs": [
+      "sdao/results/db_explain_selectivity_20260814T141915Z",
+      "sdao/results/db_final_adaptive_20260814T143112Z"
+    ],
+    "legacy_hnswlib_results": [
+      "sdao/results/csv",
+      "sdao/results/plots",
+      "results/"
+    ],
+    "old_paper_material": [
+      "sdao/selectivity_driven_hybrid_optimizer_conference_revision.pdf",
+      "sdao/latex/sdao_manuscript_source_patch.tex"
+    ]
+  }
+}

@@ -1,0 +1,3 @@
+strategy,queries,mean_latency_ms,median_latency_ms,p95_latency_ms,mean_recall,minimum_recall,fraction_recall_at_least_095
+HNSW_HYBRID,10,26.860924899999997,21.750937,47.82391889999998,1.0,1.0,1.0
+SQL_FIRST,22,62.43233518181818,50.6705835,144.04552704999995,1.0,1.0,1.0

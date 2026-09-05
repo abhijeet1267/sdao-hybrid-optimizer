@@ -1,0 +1,8 @@
+Scope,named_path_verified,records
+Adaptive ANN selections,0,0
+Fixed SQL_FIRST,250,250
+Fixed VECTOR_FIRST_HNSW,250,250
+Fixed HNSW_HYBRID,238,250
+Fixed IVFFLAT_HYBRID,240,250
+All ANN executions,728,750
+SQL_FIRST executions (no ANN required),250,250

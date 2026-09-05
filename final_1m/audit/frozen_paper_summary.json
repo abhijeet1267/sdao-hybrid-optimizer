@@ -1,0 +1,24 @@
+{
+  "_comment": "Frozen paper summary -- extracted from the agg_summary.json produced by the run that generated the camera-ready PDF. Used by scripts/reproduce_all.sh verify: latencies/speedups within +/- 10 %, recalls within +/- 0.02, inflations within +/- 0.10, counts/coverages exact.",
+  "scale": {
+    "_comment": "num_*: exact per-cell p50 from the 1M run that generated the PDF.",
+    "sql_first_p50_50_100_pct_ms":   149.69,
+    "hnsw_hybrid_p50_50_100_pct_ms":   2.51,
+    "hnsw_hybrid_speedup_50_100_pct": 59.57,
+    "hnsw_hybrid_recall_50_100_pct":   0.192,
+    "hnsw_hybrid_recall_000_005_pct":  0.112,
+    "wall_ceiling_ms":               99999
+  },
+  "q_error": {
+    "n_plan_switches_to_hnsw": 35,
+    "n_total_buckets":         35
+  },
+  "cold_cache": {
+    "hnsw_hybrid_inflation_50_100": 1.02,
+    "sql_first_inflation_50_100":   1.02
+  },
+  "pac": {
+    "n_cells":            20,
+    "empirical_coverage": 1.0
+  }
+}
