@@ -76,6 +76,48 @@ under tight selectivity and the admission gate prevents it, and (b) the
 top-10), which is stable across the entire parameter sweep. We report both rather
 than only the flattering parts — see [Honest Findings](#honest-findings).
 
+## 📈 Visual Results
+
+Charts regenerated from the frozen result artifacts (source CSV noted under each
+figure; regenerate with the snippets in [`final/scripts/`](final/scripts/)).
+
+**Strategy summary — frozen main run** (`final/results/tables/main_summary.csv`).
+All three leading strategies are statistically indistinguishable on the 200K
+subset; `VECTOR_FIRST_HNSW` pays more latency for *worse and unstable* recall —
+the failure mode the admission gate exists to catch:
+
+<img src="assets/charts/strategy_summary.png" alt="Mean latency and Recall@10 by strategy, frozen main run" width="720">
+
+**Per-query behaviour** (`final/results/main_run/per_query.csv`). One dot per
+held-out query: the leading strategies sit at recall 1.0, while
+`VECTOR_FIRST_HNSW` spreads from 1.0 down to 0.0 depending on selectivity:
+
+<img src="assets/charts/latency_recall_scatter.png" alt="Per-query latency versus Recall@10 scatter" width="720">
+
+**Admission policies** (`final/results/tables/policy_table.csv`). All four
+calibration policies admit ANN plans for exactly 100/125 held-out queries with
+**zero unsafe selections** — on an easy subset, policy choice is
+unidentifiable (see [Honest Findings](#honest-findings)):
+
+<img src="assets/charts/policy_comparison.png" alt="ANN admissions and safety violations per admission policy" width="720">
+
+**Candidate-budget sensitivity** (`final/results/tables/budget_table.csv`).
+`VECTOR_FIRST_HNSW` recall vs its candidate budget — the parameter sweep behind
+Table IV:
+
+<img src="assets/charts/vf_budget_sensitivity.png" alt="VECTOR_FIRST_HNSW Recall@10 versus candidate budget" width="720">
+
+From the frozen publication set (`final/figures/`), the two headline views:
+which strategy the framework selects per query, and the latency–recall Pareto
+frontier:
+
+<p align="center">
+  <img src="final/figures/figure_3_adaptive_selection.png" alt="Adaptive strategy selection per query" width="640">
+</p>
+<p align="center">
+  <img src="final/figures/figure_4_latency_recall_pareto.png" alt="Latency-recall Pareto frontier" width="640">
+</p>
+
 ## 📊 Figure Index
 
 All eight publication figures exist as PDF + PNG, regenerated from the frozen
